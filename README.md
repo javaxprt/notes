@@ -1,12 +1,34 @@
 #To access a password from HashiCorp Vault
 
 <dependencies>
-<dependency>
-<groupId>org.springframework.cloud</groupId>
-<artifactId>spring-cloud-starter-vault-config</artifactId>
-</dependency>
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-vault-config</artifactId>
+  </dependency>
   <!-- Other necessary dependencies -->
 </dependencies>
+
+
+![img.png](img.png)
+
+ya[dev.yaml](dev.yaml)ml
+
+spring:
+cloud:
+vault:
+uri: http://localhost:8200 # Replace with your Vault server URI
+connection-timeout: 5000
+read-timeout: 15000
+authentication: TOKEN
+token: ${VAULT_TOKEN} # Token for authentication, set as an environment variable
+kv:
+enabled: true
+backend: secret # Vault secrets backend mount path
+profile-separator: '/'
+default-context: application
+
+
+![img_1.png](img_1.png)
 
 
 Bootstrap Configuration: Create a bootstrap.yml file in your src/main/resources directory. 

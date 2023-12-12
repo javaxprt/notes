@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    vault:
+      uri: http://localhost:8200 # Replace with your Vault server URI
+      connection-timeout: 5000
+      read-timeout: 15000
+      authentication: TOKEN
+      token: ${VAULT_TOKEN} # Token for authentication, set as an environment variable
+      kv:
+        enabled: true
+        backend: secret # Vault secrets backend mount path
+        profile-separator: '/'
+        default-context: application
