@@ -53,6 +53,8 @@ default-context: application
 
 Environment Variable: Set the VAULT_TOKEN environment variable with the token that has permissions to access the secrets in Vault.
 
+![img_2.png](img_2.png)
+
 Access the Secret in Code: Use the @Value annotation to inject the secret into your Spring Boot application:
 
 java
