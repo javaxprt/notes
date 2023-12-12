@@ -1,3 +1,36 @@
+Antrun Plugin with Replace Task:
+Use the Maven Antrun Plugin in combination with Ant's replace task, which supports regular expressions. Here's an example of how you could configure it in your pom.xml:
+
+`<project>
+<!-- ... other configurations ... -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-sources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <!-- Define the directory and include Java files -->
+                                <fileset dir="${project.basedir}/src/main/java" includes="**/*.java" id="java-files"/>
+                                <replace file="@(java-files)" token="originalRegex" value="replacement" flags="g"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+`
+
 Here's an example of how you can configure your pom.xml to copy hardCodedConfig.yaml from your project's root directory to the src/main/resources folder:
 
 `<project>
