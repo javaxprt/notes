@@ -1,3 +1,63 @@
+#To access a password from HashiCorp Vault
+
+<dependencies>
+<dependency>
+<groupId>org.springframework.cloud</groupId>
+<artifactId>spring-cloud-starter-vault-config</artifactId>
+</dependency>
+  <!-- Other necessary dependencies -->
+</dependencies>
+
+
+Bootstrap Configuration: Create a bootstrap.yml file in your src/main/resources directory. 
+This file is read before application.yml during the bootstrap phase to configure Spring Cloud Vault:
+
+
+
+`spring:
+cloud:
+vault:
+uri: http://localhost:8200 # Replace with your Vault server URI
+connection-timeout: 5000
+read-timeout: 15000
+authentication: TOKEN
+token: ${VAULT_TOKEN} # Token for authentication, set as an environment variable
+kv:
+enabled: true
+backend: secret # Vault secrets backend mount path
+profile-separator: '/'
+default-context: application
+`
+
+Environment Variable: Set the VAULT_TOKEN environment variable with the token that has permissions to access the secrets in Vault.
+
+Access the Secret in Code: Use the @Value annotation to inject the secret into your Spring Boot application:
+
+java
+Copy code
+@Component
+public class MyComponent {
+
+@Value("${dbpassword}")
+private String dbPassword;
+
+// Use dbPassword as needed
+}
+Vault Configuration in application.yml: If you have specific keys in Vault that you want to map directly in your application.yml, you can specify the path:
+
+yaml
+Copy code
+dbpassword: ${vault:secrets/eds-password/dbpassword}
+Then, Spring will replace ${vault:secrets/eds-password/dbpassword} with the value from Vault when the application context is loaded.
+
+Remember that this is a high-level overview and your actual implementation details may vary based on your Vault setup, such as the authentication method, Vault KV secrets engine version, and your application's specific configuration needs.
+
+Ensure that your Vault server is properly running and accessible from the Spring Boot application, and that the Vault token provided has the correct policies attached to read the desired secrets.
+
+
+#Regular Expression
+
+
 ^base64-secret:\s*([A-Za-z0-9+/]{40,}={0,2})$
 
 
