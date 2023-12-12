@@ -1,3 +1,7 @@
+^base64-secret:\s*([A-Za-z0-9+/]{40,}={0,2})$
+
+
+
 Antrun Plugin with Replace Task:
 Use the Maven Antrun Plugin in combination with Ant's replace task, which supports regular expressions. Here's an example of how you could configure it in your pom.xml:
 
