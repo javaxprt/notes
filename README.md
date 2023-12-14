@@ -18,9 +18,7 @@ type Book {
 const resolvers = {
   Query: {
     books: (parent, args, context, info) => {
-      let filteredBooks = myBookArray; // Assume this is your book data array
-
-      // Apply filters if they exist
+      let filteredBooks = myBookArray; 
       if (args.filter) {
         if (args.filter.title) {
           filteredBooks = filteredBooks.filter(book => book.title === args.filter.title);
@@ -29,7 +27,6 @@ const resolvers = {
           filteredBooks = filteredBooks.filter(book => book.author === args.filter.author);
         }
       }
-
       return filteredBooks;
     },
   },
