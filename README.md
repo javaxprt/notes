@@ -15,7 +15,7 @@ type Book {
 
 -----------------------------------
 // Resolver Implementation
-const resolvers = {
+`const resolvers = {
   Query: {
     books: (parent, args, context, info) => {
       let filteredBooks = myBookArray; 
@@ -31,7 +31,7 @@ const resolvers = {
     },
   },
 };
-
+`
 -----------------------------------
 query GetBooks {
   books(filter: { author: "J.K. Rowling" }) {
