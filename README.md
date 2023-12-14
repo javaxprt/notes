@@ -1,3 +1,52 @@
+# Schema Definition
+type Query {
+  books(filter: BookFilter): [Book]
+}
+
+input BookFilter {
+  title: String
+  author: String
+}
+
+type Book {
+  title: String
+  author: String
+}
+javascript
+Copy code
+// Resolver Implementation
+const resolvers = {
+  Query: {
+    books: (parent, args, context, info) => {
+      let filteredBooks = myBookArray; // Assume this is your book data array
+
+      // Apply filters if they exist
+      if (args.filter) {
+        if (args.filter.title) {
+          filteredBooks = filteredBooks.filter(book => book.title === args.filter.title);
+        }
+        if (args.filter.author) {
+          filteredBooks = filteredBooks.filter(book => book.author === args.filter.author);
+        }
+      }
+
+      return filteredBooks;
+    },
+  },
+};
+graphql
+Copy code
+# Query with Filter
+query GetBooks {
+  books(filter: { author: "J.K. Rowling" }) {
+    title
+    author
+  }
+}
+
+
+
+-----------------------------------
 #To access a password from HashiCorp Vault
 
 <dependencies>
