@@ -13,9 +13,9 @@ type Book {
   author: String
 }
 
------------------------------------
+
 // Resolver Implementation
-`const resolvers = {
+const resolvers = {
   Query: {
     books: (parent, args, context, info) => {
       let filteredBooks = myBookArray; 
@@ -31,8 +31,8 @@ type Book {
     },
   },
 };
-`
------------------------------------
+
+
 query GetBooks {
   books(filter: { author: "J.K. Rowling" }) {
     title
