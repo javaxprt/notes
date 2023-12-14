@@ -1,4 +1,4 @@
-# Schema Definition
+
 type Query {
   books(filter: BookFilter): [Book]
 }
@@ -12,8 +12,8 @@ type Book {
   title: String
   author: String
 }
-javascript
-Copy code
+
+-----------------------------------
 // Resolver Implementation
 const resolvers = {
   Query: {
@@ -34,9 +34,8 @@ const resolvers = {
     },
   },
 };
-graphql
-Copy code
-# Query with Filter
+
+-----------------------------------
 query GetBooks {
   books(filter: { author: "J.K. Rowling" }) {
     title
