@@ -1,5 +1,156 @@
 
+1. Setup Subgraphs
+Customer Location Subgraph
+Schema Definition (customer_location.graphqls):
 
+graphql
+Copy code
+type CustomerLocation @key(fields: "id") {
+    id: ID!
+    name: String!
+    extendedMcc: ExtendedMcc @requires(fields: "id")
+}
+
+extend type Query {
+    customerLocation(id: ID!): CustomerLocation
+}
+
+extend type ExtendedMcc @key(fields: "id") {
+    id: ID! @external
+}
+Java Configuration (CustomerLocationGraphQLConfiguration.java):
+
+java
+Copy code
+@Configuration
+public class CustomerLocationGraphQLConfiguration {
+
+    @Bean
+    public GraphQLSourceBuilderCustomizer federationTransform() {
+        return builder -> 
+            builder.schemaFactory((registry, wiring) -> 
+                Federation.transform(registry, wiring)
+                    .fetchEntities(env -> {
+                        // Implement fetch logic here
+                    })
+                    .resolveEntityType(env -> {
+                        // Implement type resolution logic here
+                    })
+                    .build()
+            );
+    }
+
+    @Bean
+    public GraphQLScalarType getJoinFieldSetScalar() {
+        return ExtendedScalars.GraphQLScalarType.newScalar()
+            .name("join__FieldSet")
+            .coercing(new Coercing<Object, Object>() {
+                // Implement scalar coercion here
+            })
+            .build();
+    }
+}
+Reference Data Subgraph
+Schema Definition (reference_data.graphqls):
+
+graphql
+Copy code
+type ExtendedMcc @key(fields: "id") {
+    id: ID!
+    value: String!
+}
+
+extend type Query {
+    extendedMcc(id: ID!): ExtendedMcc
+}
+Java Configuration (ReferenceDataGraphQLConfiguration.java):
+
+java
+Copy code
+@Configuration
+public class ReferenceDataGraphQLConfiguration {
+
+    @Bean
+    public GraphQLSourceBuilderCustomizer federationTransform() {
+        return builder -> 
+            builder.schemaFactory((registry, wiring) -> 
+                Federation.transform(registry, wiring)
+                    .fetchEntities(env -> {
+                        // Implement fetch logic here
+                    })
+                    .resolveEntityType(env -> {
+                        // Implement type resolution logic here
+                    })
+                    .build()
+            );
+    }
+
+    @Bean
+    public GraphQLScalarType getJoinFieldSetScalar() {
+        return ExtendedScalars.GraphQLScalarType.newScalar()
+            .name("join__FieldSet")
+            .coercing(new Coercing<Object, Object>() {
+                // Implement scalar coercion here
+            })
+            .build();
+    }
+}
+2. Run a Federated Query
+To query data that spans both subgraphs, you need to have a gateway set up. Here’s an example of a federated query:
+
+graphql
+Copy code
+query {
+  customerLocation(id: "1") {
+    id
+    name
+    extendedMcc {
+      value
+    }
+  }
+}
+Example Fetch Entities Implementation
+java
+Copy code
+// In CustomerLocationGraphQLConfiguration.java
+@Bean
+public GraphQLSourceBuilderCustomizer federationTransform() {
+    return builder -> 
+        builder.schemaFactory((registry, wiring) -> 
+            Federation.transform(registry, wiring)
+                .fetchEntities(env -> {
+                    List<Map<String, Object>> representations = env.getArgument(_Entity.argumentName);
+                    return representations.stream()
+                        .map(rep -> {
+                            if ("ExtendedMcc".equals(rep.get("__typename"))) {
+                                return fetchExtendedMcc((String) rep.get("id"));
+                            }
+                            return null;
+                        })
+                        .collect(Collectors.toList());
+                })
+                .resolveEntityType(env -> {
+                    Object src = env.getObject();
+                    if (src instanceof ExtendedMcc) {
+                        return env.getSchema().getObjectType("ExtendedMcc");
+                    }
+                    return null;
+                })
+                .build()
+        );
+}
+
+private ExtendedMcc fetchExtendedMcc(String id) {
+    // Implement your fetch logic here
+    return new ExtendedMcc(id, "some_value");
+}
+This setup will help you host two subgraphs and run federated queries between them. Make sure to adjust your implementation details, such as fetch logic and entity resolution, to fit your specific requirements.
+
+-----------------------------
+
+-----------------------------
+
+-----------------------------
 https://github.com/javaxprt/notes.git
 
 Max
