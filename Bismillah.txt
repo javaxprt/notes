@@ -1,0 +1,17 @@
+admin@admins-MBP jdk-17.0.11.jdk % history
+  363  brew install wget
+  364  clear
+  365  wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/java/17/latest/jdk-17_macos-x64_bin.tar.gz"\n
+  366  ls -ltr
+  367  tar -xvzf jdk-17_macos-x64_bin.tar.gz
+  368  ls -ltr
+  369  cd jdk-17.0.11.jdk
+  370  ls -ltr
+  371  pwd
+  372  ls -ltr /Users/admin/tools/jdk/java17/jdk-17.0.11.jdk/Contents/Home
+  373  clear
+  374  echo 'export JAVA_HOME="/Users/admin/tools/jdk/java17/jdk-17.0.11.jdk/Contents/Home"' >> ~/.zshrc
+  375  echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.zshrc
+  376  source ~/.zshrc
+  377  java -version
+  378  which java
