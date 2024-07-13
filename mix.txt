@@ -1,1 +1,641 @@
 
+All.txt
+
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>
+
+
+>>>>>>>>>>>>>>>>>>>>>
+c089602@ME-C02DP89EMD6R tools % env
+__CFBundleIdentifier=com.apple.Terminal
+TMPDIR=/var/folders/r7/_p401x257qdckc6hvbg5ftv50x_rh0/T/
+XPC_FLAGS=0x0
+TERM=xterm-256color
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.8DhWnsbQIi/Listeners
+XPC_SERVICE_NAME=0
+TERM_PROGRAM=Apple_Terminal
+TERM_PROGRAM_VERSION=453
+TERM_SESSION_ID=C24BF9FC-DCFF-42DC-A779-08C4E94A5D7E
+SHELL=/bin/zsh
+HOME=/Users/c089602
+LOGNAME=c089602
+USER=c089602
+PATH=/Users/c089602/tools/flyway-10.9.1:/Users/c089602/tools/rover-v0.21.0/dist:/Users/c089602/tools:/Users/c089602/tools:/Users/c089602/tools/consul_1.17.0:/Users/c089602/.docker/bin:/Users/c089602/tools/apache-maven-3.9.4/bin:/Users/c089602/tools/node-v18.17/bin:/Users/c089602/tools/jdk-17.0.2.jdk/Contents/Home/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/usr/local/sbin
+SHLVL=1
+PWD=/Users/c089602/tools
+OLDPWD=/Users/c089602
+Bismillah=proxyon
+HTTP_PROXY=http://web-proxymain.us.bank-dns.com:3128
+HTTPS_PROXY=http://web-proxymain.us.bank-dns.com:3128
+http_proxy=http://web-proxymain.us.bank-dns.com:3128
+https_proxy=http://web-proxymain.us.bank-dns.com:3128
+no_proxy=127.0.0.1,localhost,.us.bank-dns.com,.internal,.nip.io,192.168.*,10.*,servers.global.prv,bank-dns.com
+NO_PROXY=127.0.0.1,localhost,.us.bank-dns.com,.internal,.nip.io,192.168.*,10.*,servers.global.prv,bank-dns.com
+SSL_CERT_FILE=/Users/c089602/usb_ca_chain.crt
+NODE_EXTRA_CA_CERTS=/Users/c089602/usb_ca_chain.crt
+HOMEBREW_BOTTLE_DOMAIN=https://artifactory.us.bank-dns.com/artifactory/homebrew-bottles
+HOMEBREW_CURLRC=true
+HOMEBREW_FORCE_BREWED_GIT=false
+JAVA_HOME=/Users/c089602/tools/jdk-17.0.2.jdk/Contents/Home
+MAVEN_HOME=/Users/c089602/tools/apache-maven-3.9.4
+VAULT_ADDR=https://hashicorp-vault-test.us.bank-dns.com
+TNS_ADMIN=/Users/c089602/tnsnames.ora
+LANG=en_US.UTF-8
+_=/usr/bin/env
+c089602@ME-C02DP89EMD6R tools % 
+
+
+>>>>>>>>>>>>>>>>>>>>>
+drwxr-xr-x@  9 c089602  1654643491        288 Jul 26  2023 apache-maven-3.9.4
+drwxr-xr-x@ 10 c089602  1654643491        320 Aug  8  2023 node-v18.17
+drwxr-xr-x   4 c089602  1654643491        128 Aug  9  2023 jdk-17.0.2.jdk
+drwxr-xr-x   5 c089602  1654643491        160 Sep  1  2023 beyond-compare
+-rwxr-xr-x@  1 c089602  1654643491  390437696 Oct 20  2023 vault
+-rw-r--r--@  1 c089602  1654643491  140903212 Nov  8  2023 vault_1.15.1_darwin_amd64.zip
+drwxr-xr-x   3 c089602  1654643491         96 Dec  6  2023 consul_1.17.0
+drwxr-xr-x   5 c089602  1654643491        160 Dec 11  2023 rover-v0.21.0
+drwxr-xr-x  10 c089602  1654643491        320 Dec 11  2023 graphql-server-example
+drwxr-xr-x   2 c089602  1654643491         64 Dec 13  2023 ng
+-rw-r--r--@  1 c089602  1654643491  262818847 Mar 12 15:16 flyway-commandline-10.9.1-macosx-x64.tar.gz
+drwxr-xr-x@ 12 c089602  1654643491        384 Mar 12 15:18 flyway-10.9.1
+>>>>>>>>>>>>>>>>>>>>>
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import com.auth0.jwk.JwkException;
+import com.auth0.jwk.JwkProvider;
+import com.auth0.jwk.UrlJwkProvider;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.auth0.jwt.interfaces.JWTVerifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.security.InvalidParameterException;
+import java.security.interfaces.RSAPublicKey;
+import java.util.Collections;
+import java.util.List;
+
+public class JwtValidator {
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtValidator.class);
+    //private static final List<String> allowedIsses = Collections.singletonList("https://uat-federation.usbank.com");
+    private static final List<String> allowedIsses = Collections.singletonList("https://it-federation.usbank.com");
+
+    private String getKeycloakCertificateUrl(DecodedJWT token) {
+        return token.getIssuer() + "/protocol/openid-connect/certs";
+    }
+
+    private RSAPublicKey loadPublicKey(DecodedJWT token) throws JwkException, MalformedURLException {
+
+        final String url = getKeycloakCertificateUrl(token);
+        JwkProvider provider = new UrlJwkProvider(new URL(url));
+
+        return (RSAPublicKey) provider.get(token.getKeyId()).getPublicKey();
+    }
+
+    /**
+     * Validate a JWT token
+     * @param token
+     * @return decoded token
+     */
+    public DecodedJWT validate(String token) {
+        try {
+            final DecodedJWT jwt = JWT.decode(token);
+            //https://it-federation.usbank.com
+            if (!allowedIsses.contains(jwt.getIssuer())) {
+                throw new InvalidParameterException(String.format("Unknown Issuer %s", jwt.getIssuer()));
+            }
+
+            RSAPublicKey publicKey = loadPublicKey(jwt);
+
+            Algorithm algorithm = Algorithm.RSA256(publicKey, null);
+            JWTVerifier verifier = JWT.require(algorithm)
+                    .withIssuer(jwt.getIssuer())
+                    .build();
+
+            verifier.verify(token);
+            return jwt;
+
+        } catch (Exception e) {
+            logger.error("Failed to validate JWT", e);
+            throw new InvalidParameterException("JWT validation failed: " + e.getMessage());
+        }
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class LoadTestDev {
+    private static final String URL = "http://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/";
+    private static final int NUMBER_OF_THREADS = 1;
+    private static final String JWT_TOKEN = "eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJhblBzd2llRkp2Z2ltRTg2cVFOR1hkd3JsUXBkTUt4UCIsImlzcyI6Imh0dHBzOi8vaXQtZmVkZXJhdGlvbi51c2JhbmsuY29tIiwic3ViIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsIkZpcnN0TmFtZSI6ImVsbmFkc2ludHVzckFQUElESVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbkJ5SWQiXSwidXNlcmlkIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsImV4cCI6MTcxNTI2OTUxN30.V8o-417UvEWtoGHl9J7UWI8GK0CiLocxwNKzR5c6Dej9B_MxqP6-KIPavDqH7wwKb4hxBhyS4pCBcLpWm5SY1-xBwFveK6hkn2IFaVFkiCBPumU09ZV0E2_OGCqRDtYfd1QY6MjBZRXNnYGyZi-mh8bzmWwmNyzxTNb0BiP1hz5jY5TjFi7ekio-IEU92HzGIr0watF6wW2-aqjx_xrLrAyaQfsAXUJu5lxU7U64QC4zrJ-CuF7iKemYeHxlAFej9B3svIlKgCiVX4Dq2CXINvF7i3k7K9FG40yfjsg289C0KMenDLk9WkBpDMHyoUdXYAaCdCw9cHcgHo6vz8NhJg";
+    // Replace with your actual JWT token
+    private static List ids = new ArrayList();
+    public static void main(String[] args) {
+        loadIds();
+        ExecutorService executorService = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+        AtomicInteger successCount = new AtomicInteger();
+        AtomicInteger failureCount = new AtomicInteger();
+
+        for (int i = 0; i < NUMBER_OF_THREADS; i++) {
+            for (int j = 0; j < ids.size()/5 ;j++){
+                String id = ids.get(j).toString();
+                sendGET(executorService, successCount, failureCount, id);
+            }
+        }
+
+        executorService.shutdown();
+        while (!executorService.isTerminated()) {
+            // wait for all tasks to finish
+        }
+
+        System.out.println("Success count: " + successCount.get());
+        System.out.println("Failure count: " + failureCount.get());
+    }
+
+    private static void loadIds() {
+        try
+        {
+            File file=new File("/Users/c089602/Desktop/LoadTesting/dev-ids.txt");    //creates a new file instance
+            FileReader fr=new FileReader(file);   //reads the file
+            BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream
+            StringBuffer sb=new StringBuffer();    //constructs a string buffer with no characters
+            String line;
+            while((line=br.readLine())!=null)
+            {
+                ids.add(line);
+                //sb.append(line);      //appends line to string buffer
+                //sb.append("\n");     //line feed
+            }
+            fr.close();    //closes the stream and release the resources
+            //System.out.println("Contents of File: ");
+            //System.out.println(sb.toString());   //returns a string that textually represents the object
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        ids.add("93003262-4362-459e-9c13-546feabc0c9e");
+    }
+
+    private static void sendGET(ExecutorService executorService, AtomicInteger successCount, AtomicInteger failureCount, String id) {
+        executorService.submit(() -> {
+            try {
+                String serviceURL = URL+id;
+                HttpURLConnection connection = (HttpURLConnection) new URL(serviceURL).openConnection();
+                connection.setRequestMethod("GET");
+
+                // Set headers
+                connection.setRequestProperty("X-Authorization", JWT_TOKEN);
+                connection.setRequestProperty("Correlation-ID", UUID.randomUUID().toString());
+
+                int responseCode = connection.getResponseCode();
+                //
+
+                System.out.print("ResponseCode:" + responseCode);
+                System.out.println(" -- serviceURL:" + serviceURL);
+                if (responseCode == HttpURLConnection.HTTP_OK) { // 200 OK
+                    successCount.incrementAndGet();
+
+/*                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                    reader.close();*/
+                } else {
+                    failureCount.incrementAndGet();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                failureCount.incrementAndGet();
+            }
+        });
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+public class Utils {
+    public static void loadIds(String idsFile, List ids) {
+        try
+        {
+            File file=new File(idsFile);    //creates a new file instance
+            FileReader fr=new FileReader(file);   //reads the file
+            BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream
+            StringBuffer sb=new StringBuffer();    //constructs a string buffer with no characters
+            String line;
+            while((line=br.readLine())!=null)
+            {
+                ids.add(line);
+                //sb.append(line);      //appends line to string buffer
+                //sb.append("\n");     //line feed
+            }
+            fr.close();    //closes the stream and release the resources
+            //System.out.println("Contents of File: ");
+            //System.out.println(sb.toString());   //returns a string that textually represents the object
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        //ids.add("c6acbb87-dcfe-4df4-a4da-7b24a46642a4");
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+public class Bismillah {
+    private static final String BASE_URL = "https://hcvault.us.bank-dns.com/";
+
+    public static void main(String[] args) {
+        Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+        VaultService service = retrofit.create(VaultService.class);
+        LoginCredentials credentials = new LoginCredentials("f862ce36-268a-e895-8689-88ecdf694a6c", "d0bee905-838f-7fc9-277d-c8f83a20398d");
+
+        Call<LoginResponse> call = service.login(credentials);
+        call.enqueue(new retrofit2.Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, retrofit2.Response<LoginResponse> response) {
+                if (response.isSuccessful()) {
+                    //System.out.println("Auth Token: " + response.body().getAuth_token());
+                    System.out.println("Auth Token: " + response.body());
+                } else {
+                    System.out.println("Request Failed: " + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+}
+
+
+>>>>>>>>>>>>>>>>>>>>>
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
+
+public interface VaultService {
+    @Headers({
+        "X-Vault-Namespace: 10066",
+        "Content-Type: application/json"
+    })
+    @POST("v1/auth/approle/login")
+    Call<LoginResponse> login(@Body LoginCredentials credentials);
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/*
+*
+* curl --location --request GET 'http://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/c6acbb87-dcfe-4df4-a4da-7b24a46642a4' \
+--header 'correlation-ID: 25ff29c5-9366-4c50-8c17-67f8b75de7a3' \
+--header 'x-authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxNTI1NDk1NX0.DQpMCyWt98_8tUVMU4RfB7ZyrrHDFSc7SFVYXebPHp5Ucxjq5QlGZufEiyBcAsy--5OKbIYESf5Fsi7UXyn05kA8vxYZptZ-Ge2PM5_-Spb2SGDPAEfPXo_mqJdDE09QWPOfX8qsCtY12d-OFel6U8g6fcAe62LFhMHJELI_DNKf2csGT2hDR3qhmbk62V6f6uKaBMxn8NRslUIhxxVTF1dQppTw_URMMwpOhwgPG5mwjvJ4wj1VN96czvjnb1dOVua51ZrzWAC0HxZNnoUgTH6btqIiwkvLmuvNiGDgJqpXFTkSCbTzvZ1M2HKCNIdNxn3ZipqZw9bqIOQDA3u4Xg' \
+--header 'Authorization: Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0='
+* */
+public class LoadTestDevUATCustomerLocation {
+    private static final String SERVICE_URL = "http://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/";
+    public static final String IDS_TXT_FILE = "/Users/c089602/Desktop/LoadTesting/dev-ids.txt";
+
+    //public static final String IDS_TXT_FILE = "/Users/c089602/Desktop/LoadTesting/uat-ids.txt";
+    //private static final String SERVICE_URL = "http://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/";
+    private static final int NUMBER_OF_THREADS = 1;
+    private static final String JWT_TOKEN = "eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJhblBzd2llRkp2Z2ltRTg2cVFOR1hkd3JsUXBkTUt4UCIsImlzcyI6Imh0dHBzOi8vaXQtZmVkZXJhdGlvbi51c2JhbmsuY29tIiwic3ViIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsIkZpcnN0TmFtZSI6ImVsbmFkc2ludHVzckFQUElESVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbkJ5SWQiXSwidXNlcmlkIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsImV4cCI6MTcxNTk2MzYxNH0.pyDSfzKQAATIhRGt4rR9WxhilkOHWKppAhZCT4U-R5_ghsFVk65ORVTM-6QeJtK1fGJvt4AwfupLj9GCdWjl_scILyY6iytR62tHsgCinsoB1BJZlZY7kgJQyQGupWiMF1fcVBTV4MhZdtdTm5pkVgd3pvxBkJiEt7Qs5hJCGtaLX-ixnF2-eUHtkjkzMe6rZvL4vnBMdhNw5n49-gqW2zpx5Vtmnd71AJGi5tx6vkHMP3UQPOX40j7Bd1F8coDj-OtkRlZXpxZ99pMvIwL_dYTc74ncnvKssKtBbrtJht4is66TrMEVfTj9a67zVViBA-1rH0kInMn-k3fUM20IzA";
+    //private static final String JWT_TOKEN = "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxNTg5ODQ1NH0.VUMj3kdlbcBehJq2QrJmQ_GrXvFGC4_ibhdIyUGs829D1gg9Omk9tBfYUsRhK1rtuPpA8iKJTU8W01K0KOf0tT3jfRUWExDJESczVyO8LsVNxGh5K07id9gk5j5z9blzhTXc3yxwuizyNzAj2IB-Y4VPYvXw43b0JQ0SNDvamrfyGXxVSlj13IDkuHpiET1EDL4neY-1zlbgBkVFlAWfOogFvIx1-ysQyohcMOzIwXYFIwROEsMHrfKFaL3nmFfz1DSsT9vRvMP7D9Si6mKI1Z_wreC0waP5co9uR8CDF94A65nAlwvM0aBrB04FKmfl4Wv4zqmo3e735TEl5nkb3A";
+
+    private static List ids = new ArrayList();
+    private static List failures = new ArrayList();
+    Map<String, String> errorCodes = new HashMap<>();
+    public static void main(String[] args) {
+        Utils.loadIds(IDS_TXT_FILE, ids);
+        ExecutorService executorService = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+        AtomicInteger successCount = new AtomicInteger();
+        AtomicInteger failureCount = new AtomicInteger();
+        //int size = ids.size();
+        int size = 5;
+        for (int i = 0; i < NUMBER_OF_THREADS; i++) {
+            for (int j = 0; j < size; j++){
+                String id = ids.get(j).toString();
+                sendGET(executorService, successCount, failureCount, id);
+            }
+        }
+
+
+        executorService.shutdown();
+        while (!executorService.isTerminated()) {
+            // wait for all tasks to finish
+        }
+
+
+        failures.forEach((e) -> {
+                System.out.println( "Failure record: " + e + ", ");
+        });
+        System.out.println("Total Failures: "+ failures.size());//75%
+        System.out.println("Failures: "+ failures.toString());
+        System.out.println("Success count: " + successCount.get());
+        System.out.println("Failure count: " + failureCount.get());
+
+        //System.out.println("Failure count: " + failureCount.get() + "Total Failures: "+ failures.size() + );
+
+    }
+
+
+    private static void sendGET(ExecutorService executorService, AtomicInteger successCount, AtomicInteger failureCount, String id) {
+        executorService.submit(() -> {
+            try {
+                String serviceURL = SERVICE_URL+id;
+                HttpURLConnection connection = (HttpURLConnection) new URL(serviceURL).openConnection();
+                connection.setRequestMethod("GET");
+
+                // Set headers
+                connection.setRequestProperty("X-Authorization", JWT_TOKEN);
+                connection.setRequestProperty("Correlation-ID", UUID.randomUUID().toString());
+                int responseCode = connection.getResponseCode();
+
+
+
+
+                String threadName = Thread.currentThread().getName();
+                String log = "ResponseCode:" + responseCode +  "-- serviceURL:" + serviceURL + " threadName: " + threadName;
+
+                if (responseCode == HttpURLConnection.HTTP_OK) { // 200 OK
+                    successCount.incrementAndGet();
+
+                    //printResponse(connection);
+                } else {
+                    printResponse(connection);
+                    failures.add(log);
+                    failureCount.incrementAndGet();
+                }
+                System.out.println(log);
+            } catch (Exception e) {
+                e.printStackTrace();
+                failureCount.incrementAndGet();
+            }
+        });
+    }
+
+    private static void printResponse(HttpURLConnection connection) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
+}
+
+/*
+* https://uat-sso.us.bank-dns.com/as/token.oauth2
+* */
+
+>>>>>>>>>>>>>>>>>>>>>
+package com.elavon.eds.na.customerlocation.loadtesting;
+
+import com.auth0.jwt.interfaces.DecodedJWT;
+
+import java.security.InvalidParameterException;
+import java.util.HashMap;
+
+/**
+ * Hello world!
+ *
+ */
+public class App
+{
+    //IT
+    public static final String PINGFED_TOKEN_IT = "eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJhblBzd2llRkp2Z2ltRTg2cVFOR1hkd3JsUXBkTUt4UCIsImlzcyI6Imh0dHBzOi8vaXQtZmVkZXJhdGlvbi51c2JhbmsuY29tIiwic3ViIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsIkZpcnN0TmFtZSI6ImVsbmFkc2ludHVzckFQUElESVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbkJ5SWQiXSwidXNlcmlkIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsImV4cCI6MTcxMzk2NjI3OH0.q9wSmmMwveanfJB3WHPoT9eY574gJQptREmCrprUgXkIqS-W5G-gw-4moNmYUg5iHxB8Fyq7Uwum82KKd8MFna5NTxd_o1Kh7-9iMfZv7bl1ZFkeZXL4JXB6fwZ7m6gEBt6M5ASt7yWVMrrXOdLtn8yq5s1wXU6rvK_sqJ4QT8IHBfTq1N3HRiWZO4B6JHGdr3yu7t401rPT0xUY7lRtGYB4L3EqN56wkNaTJWnxSQKDCTaZYBpbDpemKyO-xipO0OpT3YwzWi_ANVJIF2U8K0d7o-Gu2pNTB83UZwFhYChL3AnYExkwz20xLvL-e1XYWD60nFB3CrXoAR7MMOhyN";
+    public static final String PINGFED_TOKEN_UAT = "eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJhblBzd2llRkp2Z2ltRTg2cVFOR1hkd3JsUXBkTUt4UCIsImlzcyI6Imh0dHBzOi8vaXQtZmVkZXJhdGlvbi51c2JhbmsuY29tIiwic3ViIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsIkZpcnN0TmFtZSI6ImVsbmFkc2ludHVzckFQUElESVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0N1c3RvbWVyTG9jYXRpb25fQ3VzdG9tZXJMb2NhdGlvbkJ5SWQiXSwidXNlcmlkIjoiZWxuYWRzaW50dXNyQVBQSURJVCIsImV4cCI6MTcxNTIxMjQ5Nn0.oDCi4FL4ewGM78uRI6UZLj-mJtypN3d06JCe3umY-x07u4XUqh6MoqeuaK-iohsOOQ_HwQtcApArUUGIzr_Gcsps25GYFVrUTkpBsAXi1qjZakTRIJK95YwM-YDPnBVeb5oED1oSG0k-4EkRETyBB8BssH7UWc_Jr44Sizxr37McfdTafx5ZI6CXvMa96duflPu3Za0vG9FZZntkQPsVyxz7jf7EOz6cyFiOwULv8UCagg-kw1RLpzXSvxlve0lsjytVW7bmebEp2I2syaAWqsK_kTWflUImnSJdN8y39FkFe-ak7wx53cUwW47xTZWmL4IZK7dF3kSOa0d--DH8gw";
+    //UAT eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxNDA3NjYwMX0.fQIghc4eejCnPAbLl5MgOVJh4SXoNP6Ahz7lRbmQd5x7xpATjBTDbtoe8XtHAlELn5x6mUczjBE9fbeGvGuMoDdS4r3pKhhsWZrZDABdriWnBCYoNOE5O-ZyzqCqyyMxa5-l0eoevkLuQLgW1Ecnlwkl7ajdW49b0sdClWxXrf8ppBbVVIwPPxhpoOjvhyQQSs5UktUPcadgtupvRceshUe_FODVRHZBQ9Kas3G2wmbdKCwtSlsWv7RZScCY1KIbE_WPi1Zks3YJ5vrAZVjMYf3F5iEb5gaVEUtvPgo9uh1oe-Xup-q_SqW_1ssG7OIFkWWCRAEFH3UZwMtVEero8g
+
+    public static void main( String[] args )
+    {
+
+        final JwtValidator validator = new JwtValidator();
+
+        try {
+            DecodedJWT token = validator.validate(PINGFED_TOKEN_UAT);
+            System.out.println( "Jwt is valid" );
+        } catch (InvalidParameterException e) {
+            System.out.println( "Jwt is invalid" );
+            e.printStackTrace();
+        }
+
+    }
+
+    HashMap expectedTokens = new HashMap();
+    expectedTokens.put(GQL_ELAVON_SERVICING_EDSCustomerLocation);
+
+    String claim = "  \"roles\": [\n" +
+        "    \"GQL_ELAVON_SERVICING_EDSCollection\",\n" +
+        "    \"GQL_ELAVON_SERVICING_EDSCustomerLocation\",\n" +
+        "    \"GQL_ELAVON_SERVICING_EDSReferencedata\",\n" +
+        "    \"GQL_ELAVON_SERVICING_EDSPerson\",\n" +
+        "    \"GQL_ELAVON_SERVICING_Legalorganization\",\n" +
+        "    \"APP_10066_GQL_ELAVON_SVC_Collection_User_PROD\",\n" +
+        "    \"APP_10066_GQL_ELAVON_SVC_CustomerLocation_User_PROD\"\n" +
+        "  ]";
+
+    void m(){
+     //logic
+
+    }
+
+    client(){
+        AuthXXX.isRoleValid(expectedTokens, claim){
+
+        }
+    }
+}
+
+>>>>>>>>>>>>>>>>>>>>>
+#docker stop pg21March
+#docker rm pg21March
+#docker run -d --name pg21March -e POSTGRES_PASSWORD=postgres -p 5432:5432 artifactory.us.bank-dns.com:5000/postgres
+#cd customerlocation
+chmod +x mvnw
+#export COLLECTIONS_DB_CONNECTION_URL=jdbc:postgresql://na-elavondomain-services-nonprod.cluster-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocation2
+#export COLLECTIONS_DB_USERNAME=customerlocation
+#export COLLECTIONS_DB_PASSWORD=customerlocation
+
+#export ADMIN_PASSWORD=YWRtaW5QYXNzd29yZA==
+#export ADMIN_ROLE=ADMIN
+#export ADMIN_USERNAME=admin
+
+
+
+
+#export CUSTOMER_LOCATION_DB_CONNECTION_URL=jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_it?currentSchema=public
+#export CUSTOMER_LOCATION_DB_CONNECTION_URL=jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_it
+#export CUSTOMER_LOCATION_DB_USERNAME=customerlocation_app_it
+#export CUSTOMER_LOCATION_DB_PASSWORD=/bkOty"CHt/&&F#er
+
+#export TNS_ADMIN=/Users/c089602/tnsnames.ora
+
+
+#./mvnw -Pdev
+
+./mvnw spring-boot:run -Pdev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+
+>>>>>>>>>>>>>>>>>>>>>
+/Users/c089602/.zshrc
+export SHELL=/bin/zsh
+
+## US Bank Stuff
+#source ~/.zshrc-shakeel
+#source ~/.zshrc
+# Turn off proxy
+proxyoff(){
+  unset http_proxy
+  unset HTTP_PROXY
+  unset https_proxy
+  unset HTTPS_PROXY
+  unset NO_PROXY
+  unset no_proxy
+}
+
+# Turn on proxy
+proxyon(){
+  export Bismillah=proxyon
+  export HTTP_PROXY="http://web-proxymain.us.bank-dns.com:3128"
+  export HTTPS_PROXY="http://web-proxymain.us.bank-dns.com:3128"
+  export http_proxy="http://web-proxymain.us.bank-dns.com:3128"
+  export https_proxy="http://web-proxymain.us.bank-dns.com:3128"
+  export no_proxy=localhost,127.0.0.1,.us.bank-dns.com
+  export NO_PROXY=localhost,127.0.0.1,.us.bank-dns.com
+}
+# Enable proxy to be on by default
+#proxyon()
+#----------------------------------
+  export Bismillah=proxyon
+  export HTTP_PROXY="http://web-proxymain.us.bank-dns.com:3128"
+  export HTTPS_PROXY="http://web-proxymain.us.bank-dns.com:3128"
+  export http_proxy="http://web-proxymain.us.bank-dns.com:3128"
+  export https_proxy="http://web-proxymain.us.bank-dns.com:3128"
+  export no_proxy=127.0.0.1,localhost,.us.bank-dns.com,.internal,.nip.io,192.168.*,10.*,servers.global.prv,bank-dns.com
+  export NO_PROXY=127.0.0.1,localhost,.us.bank-dns.com,.internal,.nip.io,192.168.*,10.*,servers.global.prv,bank-dns.com
+#----------------------------------
+
+
+# Set path for USB Cert
+export SSL_CERT_FILE=~/usb_ca_chain.crt
+export NODE_EXTRA_CA_CERTS=~/usb_ca_chain.crt
+
+
+# Configure Homebrew
+export HOMEBREW_BOTTLE_DOMAIN=https://artifactory.us.bank-dns.com/artifactory/homebrew-bottles
+export HOMEBREW_CURLRC=true
+export HOMEBREW_FORCE_BREWED_GIT=false
+#Shakeel Variables
+
+
+
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home
+export JAVA_HOME=/Users/c089602/tools/jdk-17.0.2.jdk/Contents/Home
+#/Users/c089602/tools/jdk-17.0.2.jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH=/Users/c089602/tools/node-v18.17/bin:$PATH
+
+export MAVEN_HOME=/Users/c089602/tools/apache-maven-3.9.4
+export PATH=$MAVEN_HOME/bin:$PATH
+
+# Set the docker bin in path
+export PATH=/Users/c089602/.docker/bin:$PATH
+
+export PATH=/Users/c089602/tools/consul_1.17.0:$PATH
+
+# Set the vault executable in Path
+export PATH=/Users/c089602/tools:$PATH
+
+export PATH=/Users/c089602/tools:$PATH
+
+#Rover
+export PATH=/Users/c089602/tools/rover-v0.21.0/dist:$PATH
+
+
+#Hashicorp
+export VAULT_ADDR=https://hashicorp-vault-test.us.bank-dns.com
+
+#TNS_ADMIN
+export TNS_ADMIN=/Users/c089602/tnsnames.ora
+
+#Flywaydb
+export PATH=/Users/c089602/tools/flyway-10.9.1:$PATH
+>>>>>>>>>>>>>>>>>>>>>
