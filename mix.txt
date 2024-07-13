@@ -1,2 +1,14 @@
 https://www.apollographql.com/signup
 https://www.apollographql.com/docs/federation/quickstart/
+
+/Users/admin/gitLab/retail-supergraph
+npm run dev:subgraphs
+
+new terminal
+
+rover dev \
+  --supergraph-config supergraph-config-dev.yaml \
+  --router-config router-config-dev.yaml
+
+http://localhost:4000/
+
