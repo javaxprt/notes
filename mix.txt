@@ -16,3 +16,12 @@ http://localhost:4000/
 https://github.com/apollographql/federation-jvm-spring-example
 
 https://www.apollographql.com/docs/rover/getting-started/
+
+Commonad 1: npm run dev:subgraphs
+
+Commonad 2:
+rover dev \
+  --supergraph-config supergraph-config-dev.yaml \
+  --router-config router-config-dev.yaml
+
+
