@@ -11,4 +11,7 @@ rover dev \
   --router-config router-config-dev.yaml
 
 http://localhost:4000/
+-----------------------
+
+https://github.com/apollographql/federation-jvm-spring-example
 
