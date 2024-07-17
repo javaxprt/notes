@@ -1,0 +1,103 @@
+import graphql.ExecutionInput;
+import graphql.GraphQL;
+import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
+import graphql.schema.GraphQLObjectType;
+import graphql.schema.GraphQLSchema;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+import static graphql.schema.idl.RuntimeWiring.newRuntimeWiring;
+import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
+import static graphql.schema.idl.SchemaGenerator.makeExecutableSchema;
+import static graphql.schema.idl.SchemaParser.newParser;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class SchemaTransformerTest {
+
+    private GraphQL graphQL;
+
+    @BeforeEach
+    public void setup() {
+        String schema = "type Query { _entities(representations: [_Any!]!): [_Entity]! } "
+                      + "scalar _Any "
+                      + "union _Entity = YourEntityType "
+                      + "type YourEntityType { id: ID! }";
+
+        DataFetcher<List<Object>> entitiesDataFetcher = new SchemaTransformer().resolveEntities();
+
+        GraphQLSchema graphQLSchema = makeExecutableSchema(
+                newParser().parse(schema),
+                newRuntimeWiring()
+                        .type(newTypeWiring("Query")
+                                .dataFetcher("_entities", entitiesDataFetcher))
+                        .build()
+        );
+
+        graphQL = GraphQL.newGraphQL(graphQLSchema).build();
+    }
+
+    @Test
+    public void testResolveEntities() {
+        String query = "{ _entities(representations: [{__typename: \"YourEntityType\", id: \"1\"}]) { ... on YourEntityType { id } } }";
+
+        ExecutionInput executionInput = ExecutionInput.newExecutionInput().query(query).build();
+        Map<String, Object> result = graphQL.execute(executionInput).toSpecification();
+
+        Map<String, Object> data = (Map<String, Object>) result.get("data");
+        List<Map<String, Object>> entities = (List<Map<String, Object>>) data.get("_entities");
+        Map<String, Object> entity = entities.get(0);
+
+        assertEquals("1", entity.get("id"));
+    }
+
+    private static class SchemaTransformer {
+
+        public DataFetcher<List<Object>> resolveEntities() {
+            return new DataFetcher<List<Object>>() {
+                @Override
+                public List<Object> get(DataFetchingEnvironment env) {
+                    List<Map<String, Object>> representations = env.getArgument(_Entity.argumentName);
+                    return fetchEntities(representations);
+                }
+            };
+        }
+
+        private List<Object> fetchEntities(List<Map<String, Object>> representations) {
+            return representations.stream()
+                    .map(rep -> {
+                        String typeName = (String) rep.get("__typename");
+                        if ("YourEntityType".equals(typeName)) {
+                            return new YourEntityType((String) rep.get("id"));
+                        }
+                        return null;
+                    })
+                    .filter(entity -> entity != null)
+                    .collect(Collectors.toList());
+        }
+    }
+
+    private static class YourEntityType {
+        private String id;
+
+        public YourEntityType(String id) {
+            this.id = id;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+    }
+
+    private static class _Entity {
+        public static final String argumentName = "representations";
+    }
+}
