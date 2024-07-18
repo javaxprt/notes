@@ -1,3 +1,61 @@
+import static graphql.schema.idl.RuntimeWiring.newRuntimeWiring;
+import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
+import static graphql.schema.idl.SchemaGenerator.createdMockedSchema;
+import static graphql.schema.idl.SchemaParser.newParser;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import graphql.GraphQL;
+import graphql.schema.DataFetcher;
+import graphql.schema.GraphQLSchema;
+import graphql.schema.idl.RuntimeWiring;
+import graphql.schema.idl.SchemaGenerator;
+import graphql.schema.idl.SchemaParser;
+import graphql.schema.idl.TypeDefinitionRegistry;
+
+import java.util.List;
+
+public class ExtendedMccResolverTest {
+    private final Logger log = LoggerFactory.getLogger(ExtendedMccResolverTest.class);
+
+    private GraphQL graphQL;
+
+    @BeforeEach
+    public void setup() {
+        String schema = "type Query { _entities(representations: [_Any!]!): [_Entity]! } "
+                      + "scalar _Any "
+                      + "union _Entity = YourEntityType "
+                      + "type YourEntityType { id: ID! }";
+
+        SchemaParser schemaParser = new SchemaParser();
+        TypeDefinitionRegistry typeRegistry = schemaParser.parse(schema);
+
+        DataFetcher<List<Object>> entitiesDataFetcher = new SchemaTransformer().resolveEntities();
+
+        RuntimeWiring runtimeWiring = newRuntimeWiring()
+            .type(newTypeWiring("Query")
+                .dataFetcher("entities", entitiesDataFetcher))
+            .build();
+
+        SchemaGenerator schemaGenerator = new SchemaGenerator();
+        GraphQLSchema graphQLSchema = schemaGenerator.makeExecutableSchema(typeRegistry, runtimeWiring);
+
+        graphQL = GraphQL.newGraphQL(graphQLSchema).build();
+    }
+
+    @Test
+    public void testGraphQLSetup() {
+        // Add your test cases here
+    }
+}
+
+
+
+
 
 import static graphql.schema.idl.RuntimeWiring.newRuntimeWiring;
 import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
