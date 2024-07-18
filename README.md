@@ -103,7 +103,7 @@ Environment Variable: Set the VAULT_TOKEN environment variable with the token th
 Access the Secret in Code: Use the @Value annotation to inject the secret into your Spring Boot application:
 
 java
-Copy code
+TODO
 @Component
 public class MyComponent {
 
@@ -115,7 +115,7 @@ private String dbPassword;
 Vault Configuration in application.yml: If you have specific keys in Vault that you want to map directly in your application.yml, you can specify the path:
 
 yaml
-Copy code
+TODO
 dbpassword: ${vault:secrets/eds-password/dbpassword}
 Then, Spring will replace ${vault:secrets/eds-password/dbpassword} with the value from Vault when the application context is loaded.
 
