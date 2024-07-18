@@ -8,6 +8,204 @@
   
 
 >>>>>>>>>>>>>>>>>>>>
+CopyPasteQuick.txt
+Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
+CopyPasteQuick.txt
+Bismillah: GDrive Version
+
+it service 
+877-326-7989
+
+http://proxy.pac.us.bank-dns.com/autoproxy/web-proxyosxna.pac
+
+https://usbank.sharepoint.com/teams/SSPR
+
+
+C089602
+QID: 9982
+
+c089602
+
+c089602
+Gps%bRe@zKJR4nP4
+
+
+Gps%bRe@zKJR4nP4
+
+ContainerOnboardingServices@usbank.com
+
+soft token serial number 84367-72704 
+reg code: 28036-95200
+Mgr Preffered ID: FHVASA
+Bharrat's ID : bxalapa
+
+BXALAPA
+
+my number:
+404-747-4051
+
+shakeel.ahmad@elavon.com
+
+Car ID: 10066
+
+CAR ID - 10066
+
+Ahmad, Shakeel11
+Shakeel11.Ahmad@nttdata.com
+-----------------------------
+
+
+clarity.
+
+2023 TOS Elavon Amazon Connect (PRJ00035427)
+Elavon Dev API Domain Contractors
+Development and Implementation: In-House Solution Design, Construction, Test Execution, Initial Deployment
+
+
+2024 Elavon Resiliency (PRJ00036620)
+Development and Implementation (Contractor Engineers)
+Development and Implementation: In-House Solution Design, Construction, Test Execution, Initial Deployment
+
+Old: $Basuiar1857!
+
+[8:29 AM] D, Tharani
+https://selfservice.portal.nttdataservices.com/showLogin.cc
+NTT DATA Services Password Self Service
+[8:29 AM] D, Tharani
+Please try changin the password
+
+Email address: Shakeel11.Ahmad@nttdata.com
+
+NTT Data time sheet.
+
+Portal ID: 317543
+
+317543@nttdata.com
+
+New Password: $a1857Les1937
+
+OLD: &Sramfj2003!
+Time Sheet
+https://sapfip.portal.nttdatainc.com/fiori?_sap-hash=JTIzU2hlbGwtaG9tZQ#zhcmtime-manage&/
+
+-----------------------------
+hotspot iphone: bismillah!1867$abc
+-----------------------------
+3912503 -> New 
+3907328 -> Reason for rejection:	 	Rejecting as this is a duplicate request
+
+3907105 -> Reason for rejection:	 	Please provide a valid business justification. Please list what software needs to be installed. 
+                                        Please see the KB article for requesting MAC admin rights.
+                                        Self Service Knowledge - Workstation Admin Rights - How to Request | ITSMNow::ServiceNow (service-now.com)
+
+Local MAC Workstation Admin Rights
+
+Rejected: I am migrating from Windows to MAC book. I need to install sofwares and need Admin rights.
+
+Workstation: ME-C02DP89EMD6R
+
+I am a developer working on the Domain Services project. I need to setup this Mac machine for the server side tools to develop the Domain microservices. 
+
+Tool(s) I use that require admin rights:
+	- Docker Desktop
+	- DBeaver
+	- Certificates for JDK/keytool
+	
+I need permanent access so that the development can continue for the upcoming releases.
+
+------------------------------
+My old windows laptop name c089602@WNWH-CND3022S54
+
+My new MacBook name c089602@ME-C02DP89EMD6R
+-----------------------------
+-----------------------------
+
+
+My Artifactory Password:
+AP4vFk8DvwY5VBkbk47dNt9xuWh
+AP4vFk8DvwY5VBkbk47dNt9xuWh
+
+        <proxy>
+            <id>USBankProxy1</id>
+            <active>true</active>
+            <protocol>https</protocol>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <host>web-proxyapp.us.bank-dns.com</host>
+            <port>3128</port>
+            <nonProxyHosts>localhost|artifactory.us.bank-dns.com|*.bank-dns.com</nonProxyHosts>
+        </proxy>
+
+----------------------
+na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com
+
+postgres
+postgres
+=|o$$H1+^Q$fj^OR     
+
+----------------------
+AWS RDS:
+
+na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com
+
+customerdb_dev
+customer_app
+.Mt~zRPfsK%0$\5R
+
+----------------------
+customerlocation_app_it/bkOty"CHt/&&F#er
+----------------------
+
+legalorganization_it_app/+Zv9/?5E\le8&Q,v
+
+-----------------------
+[10:17 AM] Gopal, Devagi
+customerlocation_it  -- database
+[10:17 AM] Gopal, Devagi
+password   Y3VzdG9tZXJMb2NhdGlvSVRQYXNzd29yZA==
+[10:18 AM] Gopal, Devagi
+customerlocation_it_user
+----------------------
+
+Alapati, Bharath Kumar <bharathkumar.alapati@elavon.com>; Kumar, Neeraj <neeraj.kumar2@elavon.com>
+
+Vasa, Flavel Satish H <flavelsatish.vasa@elavon.com>
+
+----------------------
+Hi! Yes, for the API business owners please put my 
+information hrsiebe Heidi Skordos heidi.siebert@elavon.com 
+and for the production support please put Allen Hullbergs information
+--------------------
+
+sowjanyalavu.venkata@usbank.com
+
+--------------------
+
+PUTTA, RAVI CHANDU
+
+
+curl  -X GET \
+  'http://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --cert tls.crt \
+  --key tls.key
+
+--------------
+
+2023 TOS Elavon Amazon Connect (PRJ00035427)
+Elavon Dev API Domain Contractors
+Development and Implementation: In-House Solution Design, Construction, Test Execution, Initial Deployment
+
+
+2024 Elavon Resiliency (PRJ00036620)
+Development and Implementation (Contractor Engineers)
+Development and Implementation: In-House Solution Design, Construction, Test Execution, Initial Deployment
+
+--------
+
+muthuselvam.chandramohan@usbank.com
+
   >>>>>>>>>>>>>>>>>>>>
   notes.txt
 Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
