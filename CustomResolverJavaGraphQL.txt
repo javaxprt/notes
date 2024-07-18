@@ -1,8 +1,4 @@
-Custom Resolver for GraphQL
-July 15, 2024
-This conversation may reflect the link creator’s personalized data, which isn’t shared and can meaningfully change how the model responds.
-How to write a custom resolver in java for graphql entities to change some data before send to the graphql consumers?
-ChatGPT
+
 To write a custom resolver in Java for GraphQL entities, you can follow these steps using a popular GraphQL Java library like graphql-java along with Spring Boot to facilitate the process. This example will guide you through creating a resolver to modify data before sending it to GraphQL consumers.
 
 Step-by-Step Guide
@@ -10,7 +6,7 @@ Add Dependencies:
 Add the necessary dependencies to your pom.xml file if you're using Maven. You'll need spring-boot-starter-web, graphql-java-tools, and graphql-spring-boot-starter.
 
 xml
-Copy code
+TODO
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -36,7 +32,7 @@ Define Your GraphQL Schema:
 Create a GraphQL schema file (schema.graphqls) in the src/main/resources directory.
 
 graphql
-Copy code
+TODO
 type Query {
     getUser(id: ID!): User
 }
@@ -50,7 +46,7 @@ Create Entity and Repository:
 Define your User entity and repository.
 
 java
-Copy code
+TODO
 // User.java
 public class User {
     private String id;
@@ -60,7 +56,7 @@ public class User {
     // Getters and setters
 }
 java
-Copy code
+TODO
 // UserRepository.java
 import java.util.HashMap;
 import java.util.Map;
@@ -81,7 +77,7 @@ Create Data Fetcher:
 Implement a custom resolver (data fetcher) to modify the data before sending it to the consumer.
 
 java
-Copy code
+TODO
 // UserDataFetcher.java
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
@@ -113,7 +109,7 @@ Configure GraphQL:
 Configure the GraphQL schema and associate the data fetcher with the appropriate field.
 
 java
-Copy code
+TODO
 // GraphQLConfig.java
 import com.coxautodev.graphql.tools.SchemaParser;
 import graphql.schema.GraphQLSchema;
@@ -155,7 +151,7 @@ Run your Spring Boot application, and navigate to the GraphQL playground (usuall
 
 Example Query
 graphql
-Copy code
+TODO
 query {
   getUser(id: "1") {
     id
