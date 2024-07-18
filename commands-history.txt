@@ -9,9 +9,3703 @@
 
 >>>>>>>>>>>>>>>>>>>>
   >>>>>>>>>>>>>>>>>>>>
+  notes.txt
+Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
+notes.txt
+Bismillah:
+Notes
+----------------------------------
+APL_Elavon Domain Svcs:NA
+APL_Elavon Domain Svcs:NA
+--------------------------
+Tech Titans <TechTitans@elavon.com>
+----------------------------------
+
+Disabling the cache.
+Trace in all the services.
+Troubleshooting mechanism.
+Schedule next week.
+Data load needs coordination on the new deployment.
+
+---------
+Andy, Jodie are the product stakeholders, 
+
+Tate, Jodie E
+Hesselberg, Andrew J
+
+Ritesh, Darryl are from Tech Mgmt side
+
+authorizing-officials :
+  - FHVASA - Vasa, Flavel Satish H
+  - RKAGARW - Agarwal, Ritesh K
+  - BXALAPA - Alapati, Bharath Kumar
+#Specify the intranet ID(s) of the authorizing officials as a list
+
+designated-delegates :
+  - FHVASA
+  - BXALAPA
+
+
+----------------------------------
+Splunk PROD chat:
+
+Integration with MDM to capture Reference Data change events and update Reference Data Domain.
+
+@Ahmad, Shakeel to coordinate with @Skordos, Heidi R to add a Future Backlog Item:
+Integration with MDM to capture Reference Data change events and update Reference Data Domain. This involves the following:
+i.      Integration with On-Prem Kafka where MDM currently publishes the following reference data changes:
+Extended MCC Data
+Country Code Data (Need to check if MDM is publishing these events or not)
+
+-------------
+
+kubectl logs deployment/elavon-customerlocation-service-ds-na-1-0-249 --all-containers -n apl-edsna-customerlocation-prod1 | more
+
+kubectl logs deployment/elavon-customerlocation-service-ds-na-1-0-249 --all-containers -n apl-edsna-customerlocation-prod1 | grep propertyPath=postalCode
+
+-------------
+
+PROD Notes:
+
+-  CTASK
+1- JenkinsJOB.
+2- signalfx.com
+3- Test Data. https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/qa/dev-postman-collection/-/tree/main/latest_postman_collections/PROD?ref_type=heads
+
+
+
+----------------------------------
+2024-06-17 19:00:00
+2024-06-18 22:00:00
+
+
+
+------------------------------------
+R53:
+collections-uat-dr.nn000312.aws.bank-dns.com
+
+Code:
+collections-uat-dr.edsna.nn000312.aws.bank-dns.com
+
+
+----------------------------------
+index="uat_k8s_onprem_gen-*-k8-uat*"
+-----------------
+http://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/2b6aa50f-cbfe-4480-bc21-4eecba1d27f7
+
+http://customerlocation-it.edsna.nn000312.aws.bank-dns.com/api/customer-locations/2b6aa50f-cbfe-4480-bc21-4eecba1d27f7
+
+
+customer location connected without proxy.
+
+salesforce connected with proxy 
+ 
+http://proxy.us-east-2.nonprod.aws.prv:3128/
+ 
+Please add this to troubleshooting pages  AWS Proxy settings - Cloud Platform Solutions - Enterprise Confluence (bank-dns.com)
+
+-----------------
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IlBST0RRMTIyIiwieDV0IjoiNjk4MnNZdDAyWGota1lROW9rUEg2NnVPNmZZIiwicGkuYXRtIjoidGtveiJ9.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCxBUFAiXSwiY2xpZW50X2lkIjoibms2NTBRQzc3WjNoUDA1c3NVSDVDbmpXQjYzZW14NlYiLCJpc3MiOiJodHRwczovL2ZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6ImVsbmFkc2ludHVzciIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUmVmZXJlbmNlZGF0YSIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU1BlcnNvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0xlZ2Fsb3JnYW5pemF0aW9uIiwiQVBQXzEwMDY2X0dRTF9FTEFWT05fU1ZDX0NvbGxlY3Rpb25fVXNlcl9QUk9EIiwiQVBQXzEwMDY2X0dRTF9FTEFWT05fU1ZDX0N1c3RvbWVyTG9jYXRpb25fVXNlcl9QUk9EIl0sInVzZXJpZCI6ImVsbmFkc2ludHVzciIsImV4cCI6MTcxODI4OTc4MH0.NvJ9X8EvwIvSzJOVwm2DjvRwY45ig06a7VZFI9oEWzvyJIbWbRte8FQnKaZfN1vEMHwVzXHN2gFQPJsgl1pF4UPYvgp9v99vF3Rc_PZEOiMKknZB79Nr4WrwWbH-0HCgbruG_qm72XlRzSHl4RtNiNiTzkfdf8JPAqccIMhKs7gH7CHUMWA6OENT_cv91QvqWChodadX07dN_s_9gEb3P03HiluSuW8sL6UsRx7uU6j3ZUHaDVvT8QN-puf-S4XZN3gQ19BOCekfiiAdUpeann8ty1Q9lrXUOvZYmT4LwGDn8zxOi7YKoeJ7VtP2nOGg1YUds_iHiy1i0MFgBx574A
+
+curl --location --request GET 'http://customerlocation-prd-dr.edsna.pn000302.aws.bank-dns.com/api/customer-locations/58778f40-3ceb-4408-9b79-3d125a356b24' \
+--header 'correlation-ID: 941c0040-fc0b-4863-817c-d3f1bf182f92' \
+--header 'x-authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6IlBST0RRMTIyIiwieDV0IjoiNjk4MnNZdDAyWGota1lROW9rUEg2NnVPNmZZIiwicGkuYXRtIjoidGtveiJ9.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCxBUFAiXSwiY2xpZW50X2lkIjoibms2NTBRQzc3WjNoUDA1c3NVSDVDbmpXQjYzZW14NlYiLCJpc3MiOiJodHRwczovL2ZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6ImVsbmFkc2ludHVzciIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUmVmZXJlbmNlZGF0YSIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU1BlcnNvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0xlZ2Fsb3JnYW5pemF0aW9uIiwiQVBQXzEwMDY2X0dRTF9FTEFWT05fU1ZDX0NvbGxlY3Rpb25fVXNlcl9QUk9EIiwiQVBQXzEwMDY2X0dRTF9FTEFWT05fU1ZDX0N1c3RvbWVyTG9jYXRpb25fVXNlcl9QUk9EIl0sInVzZXJpZCI6ImVsbmFkc2ludHVzciIsImV4cCI6MTcxODI4OTc4MH0.NvJ9X8EvwIvSzJOVwm2DjvRwY45ig06a7VZFI9oEWzvyJIbWbRte8FQnKaZfN1vEMHwVzXHN2gFQPJsgl1pF4UPYvgp9v99vF3Rc_PZEOiMKknZB79Nr4WrwWbH-0HCgbruG_qm72XlRzSHl4RtNiNiTzkfdf8JPAqccIMhKs7gH7CHUMWA6OENT_cv91QvqWChodadX07dN_s_9gEb3P03HiluSuW8sL6UsRx7uU6j3ZUHaDVvT8QN-puf-S4XZN3gQ19BOCekfiiAdUpeann8ty1Q9lrXUOvZYmT4LwGDn8zxOi7YKoeJ7VtP2nOGg1YUds_iHiy1i0MFgBx574A'
+
+-----------------
+
+Configure, Install and migration Customer Location scripts in UAT
+
+Need to configure, Install and migration Customer Location scripts in UAT.
+-----------------
+
+  "roles": [
+    "GQL_ELAVON_SERVICING_EDSCollection",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSReferencedata",
+    "GQL_ELAVON_SERVICING_EDSPerson",
+    "GQL_ELAVON_SERVICING_Legalorganization",
+    "APP_10066_GQL_ELAVON_SVC_Collection_User_PROD",
+    "APP_10066_GQL_ELAVON_SVC_CustomerLocation_User_PROD"
+  ],
+
+  (GQL_ELAVON_SERVICING_EDSCustomerLocation,APP_10066_GQL_ELAVON_SVC_CustomerLocation_User_PROD)
+
+- Use a AuthXXX Class.
+- Be able to test with a main method. With Hard Code Token/Roles.
+- Linux. javac PratikAPI.java
+- 
+
+Future: Vault Logic. 
+
+-----------------
+
+[9:02 AM] Ahmad, Shakeel
+RO on UAT: na-elavondomain-services-nonprod-instance-1.csp9vyfqrddy.us-east-1.rds.amazonaws.com
+[9:05 AM] Ahmad, Shakeel
+DNS - domain-db-non-prd-ro-dr.nn000312.aws.bank-dns.com
+na-elavondomain-services-nonprod-cluster-1.cluster-ro-csp9vyfqrddy.us-east-1.rds.amazonaws.com
+
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+----------------------------------
+
+Checkout AWSEDSNA_PRD_EMER1-3 from CyberArk
+
+Checkout AWSEDSNA_PRD_EMER1-3 from CyberArk
+CTASK2 : Deploy Customer Location migration scripts in Pentaho Server
+
+Checkout AWSEDSNA_PRD_EMER1-3 from CyberArk
+CTASK3 : Run Initial Load Customer Location Migration Process in Pentaho Server
+
+----------------------------------
+PROD:
+CTASK1474271
+AWSEDSNA_PRD_EMER1
+-_9Sk7r$Fg2EJdh
+https://rancher.cps.aws.prv/dashboard/home
+
+https://d-9a6713e0f0.awsapps.com/start/#/?tab=accounts
+
+
+AWSEDSNA_PRD_EMER1@usbank.com
+
+curl -v domain-db-ro-prd-dr.edsna.pn000302.aws.bank-dns.com:5432
+
+curl -v domain-db-non-prd-ro-dr.nn000312.aws.bank-dns.com:5432
+
+domain-db-ro-prd-dr.edsna.pn000302.aws.bank-dns.com 
+
+
+domain-db-ro-prd-dr.edsna.pn000302.aws.bank-dns.com 
+
+Before the Fail Over:
+Writer instance	Aurora PostgreSQL	us-east-2b
+
+----------------------------------
+UAT:
+DR/Failover Testing - Switch-Away to Second Region Evidence - CAR 10066 
+CTASK1481731
+
+https://rancher.cps.nonprod.aws.prv/
+
+AWSEDSNA_UAT_EMER1@usbank.com
+uBD#V3+EtwH4,0f
+
+
+Primary - customerlocation-uat.edsna.nn000312.aws.bank-dns.com
+
+Secondary: 
+todo Satish:
+
+We are missing these two Route53 Records for DR. Or we are good with localhost testing in standby mode?
+
+customerlocation-uat-dr.edsna.nn000312.aws.bank-dns.com
+collections-uat-dr.edsna.nn000312.aws.bank-dns.combination
+
+
+collections-uat.edsna.nn000312.aws.bank-dns.com
+
+
+Secondary Cluster LB Istio Ingress Gateway:
+k8s-systemp5-istioing-5d6cd25fa2-37a634d415b6984b.elb.us-east-1.amazonaws.com
+
+
+RO Test.
+customerlocationdb_uat_read_only
+password2
+
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+
+Old Backup:
+CUSTOMER_LOCATION_DB_CONNECTION_URL
+
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+
+New R53 
+jdbc:postgresql://domain-db-non-prd.nn000312.aws.bank-dns.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+
+///
+
+collections-uat-dr.nn000312.aws.bank-dns.com
+collections-uat-dr.edsna.nn000312.aws.bank-dns.com 
+////
+
+
+
+k8s-systemp5-istioing-5d6cd25fa2-37a634d415b6984b.elb.us-east-1.amazonaws.com
+
+curl --location --request GET 'k8s-systemp5-istioing-5d6cd25fa2-37a634d415b6984b.elb.us-east-1.amazonaws.com:8080/api/customer-locations/d92c870e-5bfa-4957-accb-c06ad9b27ccb' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Connection: keep-alive' \
+--header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxODA0OTg3NX0.eVEe1v75OfRBd_g_1XIVYKyc0a85fFYr5Q806CtaAv1_iB5su8_LX85ZpkrxjYC7p_5bhiu5jIut0jkCfY_BiZm8tGu_ayokqRFSUmW5Q942T6eU1XVXOwmtGvbFDW6LIm0FFpnFmfG1-49Z0YSCZ8-QUS33jFjv1m6QhRKZ29J4qJPXRCRpf1aeTlVuhE95GIosPE8uKqvcri0PMNPl3JY6n8Rzpdrkloyrrtj2T5Q1eTVPDanaAziadrzXoEKDQxOXi2qmWj5sbLusx8p5CnyHhDAY9GqZZnIUOBiN95Ed5JWgXEXk7z7pXBYyWG5_QLthFGGz0kfj_A29Pbhjyg' \
+--header 'Content-Type: application/json' \
+--header 'correlation-id: 0a75830a-8f52-4a69-b24a-cea2e2883f89' \
+--data '{"query":"","variables":{}}'
+
+curl --location --request GET 'http://localhost:8080/api/customer-locations/d92c870e-5bfa-4957-accb-c06ad9b27ccb' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Connection: keep-alive' \
+--header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxODA0OTg3NX0.eVEe1v75OfRBd_g_1XIVYKyc0a85fFYr5Q806CtaAv1_iB5su8_LX85ZpkrxjYC7p_5bhiu5jIut0jkCfY_BiZm8tGu_ayokqRFSUmW5Q942T6eU1XVXOwmtGvbFDW6LIm0FFpnFmfG1-49Z0YSCZ8-QUS33jFjv1m6QhRKZ29J4qJPXRCRpf1aeTlVuhE95GIosPE8uKqvcri0PMNPl3JY6n8Rzpdrkloyrrtj2T5Q1eTVPDanaAziadrzXoEKDQxOXi2qmWj5sbLusx8p5CnyHhDAY9GqZZnIUOBiN95Ed5JWgXEXk7z7pXBYyWG5_QLthFGGz0kfj_A29Pbhjyg' \
+--header 'Content-Type: application/json' \
+--header 'correlation-id: 0a75830a-8f52-4a69-b24a-cea2e2883f89' \
+--data '{"query":"","variables":{}}'
+
+curl --location --request GET 'http://customerlocation-uat.edsna.nn000312.aws.bank-dns.com/api/customer-locations/d92c870e-5bfa-4957-accb-c06ad9b27ccb' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Connection: keep-alive' \
+--header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxODA0OTg3NX0.eVEe1v75OfRBd_g_1XIVYKyc0a85fFYr5Q806CtaAv1_iB5su8_LX85ZpkrxjYC7p_5bhiu5jIut0jkCfY_BiZm8tGu_ayokqRFSUmW5Q942T6eU1XVXOwmtGvbFDW6LIm0FFpnFmfG1-49Z0YSCZ8-QUS33jFjv1m6QhRKZ29J4qJPXRCRpf1aeTlVuhE95GIosPE8uKqvcri0PMNPl3JY6n8Rzpdrkloyrrtj2T5Q1eTVPDanaAziadrzXoEKDQxOXi2qmWj5sbLusx8p5CnyHhDAY9GqZZnIUOBiN95Ed5JWgXEXk7z7pXBYyWG5_QLthFGGz0kfj_A29Pbhjyg' \
+--header 'Content-Type: application/json' \
+--header 'correlation-id: 0a75830a-8f52-4a69-b24a-cea2e2883f89' \
+--data '{"query":"","variables":{}}'
+
+
+
+
+
+
+curl --location --request POST 'http://localhost:8080/api/customer-locations/graphql' \
+--header 'correlation-ID: 4ded5afa-29b3-4772-bbc7-f197affc7a08' \
+--header 'x-authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxODA0ODM1OX0.kI0KjmNohtAijXRgES_TFSLGRG2rQ2H7sGDpcVxcfBU2S5No5V1X_RC5W2JuJEJcHHZl1Odofv22zt9pUvQKdCA8KHakBUg0vBX5zwo5KTV7A_t_Gj-SITM_O4a2jh6Uef5NTCTTfbFR8tHjWuPAhJm1DiTU1dY4aUF0S6uE3OvNJwURLzVE06iqCYTH_Jsk6BqDcgPp7c__QF5wVqrwkc7pPjYxOoMsruVceiQQj7YHtbP3YLv9I0jusPY9M9wYuUiER61yIc4jYtKTWMQQkPKt7Kfmt2MS_d3UBB6cXSmY8k3lFVgby5mMDmnXIXAkThjGn4wasDtQ1YU25eGz7w' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":"query{\r\n    customerLocation(customerLocationEnterpriseId:\"uattest\"){\r\n\tid \r\n    accountStatus\r\n    specialityAccountType\r\n    customerLocationEnterpriseId\r\n    fullDbaName\r\n    globalMidKey\r\n    midGroup\r\n    externalMerchantId\r\n    processingCenterCode\r\n    siteId\r\n    legalOrganization {\r\n        organizationEnterpriseId\r\n    }\r\n    businessInfo {\r\n        id\r\n        businessDescription\r\n        establishedYear\r\n        countryOfFormationCode {\r\n            isoCountryCode\r\n        }\r\n        extendedMcc {\r\n            extendedMccCode\r\n        }\r\n    }\r\n    grouping {        \r\n        workCenterName\r\n        financialInstitutionPortfolioAgentNumber\r\n        financialInstitutionPortfolioCode\r\n        portfolioCountryCode\r\n        portfolioId\r\n        portfolioName\r\n        principalAssociationGroupCode\r\n        reportingCustomerRelationshipName\r\n        associationGroupCodeList \r\n            {               \r\n                code\r\n            }          \r\n       \r\n    }\r\n    applicationContext {\r\n        submittingClientName\r\n        applicationEnterpriseId\r\n    }\r\n    generalFinanceSetup {\r\n        billingMerchantNumber\r\n        clientGroupNumber\r\n        parentCustomerChainNumber\r\n        parentFinancialEntityName\r\n        parentFinancialEntityNumber\r\n        principalCustomerChainNumber\r\n        primaryFundingCurrencyCode {\r\n            isoCurrencyCode\r\n        }\r\n    }\r\n    contactModeList\r\n        {\r\n            contactMode\r\n            contactAddress {\r\n                addressClassName\r\n                address {\r\n                    addressLine1\r\n                    addressLine2\r\n                    addressLine3\r\n                    cityName\r\n\t\t\t\t\tstateProvinceCode\r\n\t\t\t\t\tpostalCode\r\n\t\t\t\t\tcountryCode {\r\n                       isoCountryCode\r\n                    }\r\n                }\r\n            }\r\n            contactMeans\r\n                {\r\n                    contactMeansValue\r\n                    contactMeansName\r\n                }\r\n           \r\n        }\r\n    \r\n    contactPersonList\r\n        {\r\n            primaryTitleName\r\n            primaryRoleName\r\n            additionalRoleList\r\n            person {\r\n                personEnterpriseId\r\n            }\r\n        }\r\n    }\r\n}","variables":{}}'
+
+curl --location --request POST 'http://k8s-systemp5-istioing-5d6cd25fa2-37a634d415b6984b.elb.us-east-1.amazonaws.com/api/customer-locations/graphql' \
+--header 'correlation-ID: 4ded5afa-29b3-4772-bbc7-f197affc7a08' \
+--header 'x-authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxODA0ODM1OX0.kI0KjmNohtAijXRgES_TFSLGRG2rQ2H7sGDpcVxcfBU2S5No5V1X_RC5W2JuJEJcHHZl1Odofv22zt9pUvQKdCA8KHakBUg0vBX5zwo5KTV7A_t_Gj-SITM_O4a2jh6Uef5NTCTTfbFR8tHjWuPAhJm1DiTU1dY4aUF0S6uE3OvNJwURLzVE06iqCYTH_Jsk6BqDcgPp7c__QF5wVqrwkc7pPjYxOoMsruVceiQQj7YHtbP3YLv9I0jusPY9M9wYuUiER61yIc4jYtKTWMQQkPKt7Kfmt2MS_d3UBB6cXSmY8k3lFVgby5mMDmnXIXAkThjGn4wasDtQ1YU25eGz7w' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":"query{\r\n    customerLocation(customerLocationEnterpriseId:\"uattest\"){\r\n\tid \r\n    accountStatus\r\n    specialityAccountType\r\n    customerLocationEnterpriseId\r\n    fullDbaName\r\n    globalMidKey\r\n    midGroup\r\n    externalMerchantId\r\n    processingCenterCode\r\n    siteId\r\n    legalOrganization {\r\n        organizationEnterpriseId\r\n    }\r\n    businessInfo {\r\n        id\r\n        businessDescription\r\n        establishedYear\r\n        countryOfFormationCode {\r\n            isoCountryCode\r\n        }\r\n        extendedMcc {\r\n            extendedMccCode\r\n        }\r\n    }\r\n    grouping {        \r\n        workCenterName\r\n        financialInstitutionPortfolioAgentNumber\r\n        financialInstitutionPortfolioCode\r\n        portfolioCountryCode\r\n        portfolioId\r\n        portfolioName\r\n        principalAssociationGroupCode\r\n        reportingCustomerRelationshipName\r\n        associationGroupCodeList \r\n            {               \r\n                code\r\n            }          \r\n       \r\n    }\r\n    applicationContext {\r\n        submittingClientName\r\n        applicationEnterpriseId\r\n    }\r\n    generalFinanceSetup {\r\n        billingMerchantNumber\r\n        clientGroupNumber\r\n        parentCustomerChainNumber\r\n        parentFinancialEntityName\r\n        parentFinancialEntityNumber\r\n        principalCustomerChainNumber\r\n        primaryFundingCurrencyCode {\r\n            isoCurrencyCode\r\n        }\r\n    }\r\n    contactModeList\r\n        {\r\n            contactMode\r\n            contactAddress {\r\n                addressClassName\r\n                address {\r\n                    addressLine1\r\n                    addressLine2\r\n                    addressLine3\r\n                    cityName\r\n\t\t\t\t\tstateProvinceCode\r\n\t\t\t\t\tpostalCode\r\n\t\t\t\t\tcountryCode {\r\n                       isoCountryCode\r\n                    }\r\n                }\r\n            }\r\n            contactMeans\r\n                {\r\n                    contactMeansValue\r\n                    contactMeansName\r\n                }\r\n           \r\n        }\r\n    \r\n    contactPersonList\r\n        {\r\n            primaryTitleName\r\n            primaryRoleName\r\n            additionalRoleList\r\n            person {\r\n                personEnterpriseId\r\n            }\r\n        }\r\n    }\r\n}","variables":{}}'
+
+----------------------------------
+
+Aurora 
+
+We are using Aurora PostgreSQL, Global Database. It can span multiple AWS Regions to enable fast local reads and quick disaster recovery. 
+It uses storage-based replication to replicate a database across multiple Regions, with typical latency of less than one second. 
+
+- We will use the manual failover in AWS Console.
+- Once the Global database is ready we will confirm the RO instance has become the Writer Instance now.
+- The APIs are already configured to use the Route53 DNS.
+- We will test the INSERT operation from the K8s API using postman.
+- We will confirm the data accuracy of the new and old records on both the Primary and Secondary regions.
+
+DR/Failover Testing - Switch-Away to Second Region Evidence - CAR 10066 
+
+- We will use the manual failover in AWS Console.
+- Once the Global database is ready we will confirm the RO instance has become the Writer Instance now.
+- The APIs are already configured to use the Route53 DNS.
+- We will test the INSERT operation from the K8s API using postman.
+- We will confirm the data accuracy of the new and old records on both the Primary and Secondary regions.
+
+
+You can use a secondary Region as a backup option in case you need to quickly recover from a regional degradation or outage.
+A database in a secondary Region can be promoted to full read/write capabilities in less than 1 minute. 
+
+
+na-elavondomain-services-nonprod-instance-1.cfnhcyaezu82.us-east-2.rds.amazonaws.com
+
+na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_uat?currentSchema=customerlocation
+
+
+
+
+
+
+
+
+--
+<Subgraph_Name> | <GIT_Tag, Backout_GIT_Tag> | <publish> | EASE BACKUP SUPPORT TASK
+
+ELAVON-SERVICING-EDSCustomerLocation | 1.0.2565-NA-ELAVON-ONPREM-IT, 1.0.2565-NA-ELAVON-ONPREM-IT | publish | EASE BACKUP SUPPORT TASK
+
+Subgraph Name: ELAVON-SERVICING-EDSCustomerLocation 
+ 
+GraphQL Service URL: https://customerlocation-prd.edsna.pn000302.aws.bank-dns.com/api/customer-locations/graphql
+ 
+Git URL: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-customerlocation-service-ds-na/-/blob/main/schema.gql 
+Git Tag: 1.0.2565-NA-ELAVON-ONPREM-IT 
+ 
+GRAPHQL_CONTINENT: NA 
+GRAPHQL_PLATFORM: ONPREM
+GRAPHQL_ORG: ELAVON
+GRAPHQL_ENV: PROD
+
+Note: This is the first time schema registration so there is no backout tag.
+ 
+Contact Details: 
+ 
+Contact Name: Venkata, Sowjanya Lavu
+Contact Email: sowjanyalavu.venkata@usbank.com
+
+
+ 
+GEN_EASE:Engagement 
+ 
+
+https://collections-prd.edsna.pn000302.aws.bank-dns.com/api/collection-accounts/graphql
+
+----------------------------------
+CTASK1435583
+----------------------------------
+UAT DR Cluster.
+------
+elnadsentusr, elnadsintusr, edsnaetlint
+
+----------------------------------
+Example:
+IT - 1.0.226 - After one week
+UAT - 1.0.225 - After Two week 
+
+PROD - 1.0.227 - After 2 Sprints.
+----------------------------------
+
+EASE
+1.0.2565-NA-ELAVON-ONPREM-IT
+
+1.0.223-CUSTLOC-EDSNA-UAT
+1.0.223-COLLXON-EDSNA-UAT
+
+1.0.223-CUSTOMERLOCATION-EDSNA-UAT-06_06_2024
+
+1.0.<BuildNumber>-CUSTOMERLOCATION-EDSNA-<ENV>-<MM_DD_YYYY>
+
+06_06_2024
+
+
+1.0.223-COLLECTION-EDSNA-UAT
+
+customerlocation : CUSTLOC
+collection: COLXN
+----------------------------------
+Generate API credentials (UAT) for Product elavon-lbi-EDSCustomerLocation
+
+A In this change Apigee, API Key will be created in for the CARID 10066 (Elavon Domain Services) on UAT.
+
+Why: Without this API Key the Domain Services can not be accessed. 
+
+Benefit of Change: Benefit for this Change is that GraphQL Procesor will allow Domain services to authenticate the AWS Connect services to access the CustomerLocation and Collection APIs 
+
+Business Justification: To secure the Domain Services Access to the APIs must be authenticated 
+
+A new Apigee, API Key will be created. 
+
+LOBs: APL_Elavon Domain Svcs:NA, APL_Elavon AWS:IVR,  
+
+----------------------------------
+collections-uat.edsna.nn000312.aws.bank-dns.com
+
+http://collections-uat.edsna.nn000312.aws.bank-dns.com/api/collection-accounts/graphql
+https://collections-uat.edsna.nn000312.aws.bank-dns.com/api/collection-accounts/graphql 
+----------------------------------
+elavon-customerlocation-service-ds-na
+main 
+
+222 PROD.
+
+main branch 
+TAG- 220
+TAG- 221
+
+220 DEV.
+221 IT.
+221 UAT.
+
+------------
+Submit a Request for API Keys
+
+------------
+
+------------
+CHG Tasks.
+R53 for PROD. Failover.
+UAT GQL new DNS.
+DEV 
+Configure DR 
+Pre Impl for Tim to prov UAT Cluster.
+Prod DR Deployments.
+
+------------
+Hi @Shakeel Ahmad You can cerate a new branch named "release" from ""release-uat" and delete the old branch ""release-uat".
+Please let us know if that helps.
+
+-------------
+https://rancher.cps.aws.prv/dashboard/home
+
+i049!2n1uP{/WQr
+
+AWSEDSNA_PRD_EMER1
+
+CTASK1473782
+
+AWSEDSNA_PRD_EMER1@usbank.com
+
+https://d-9a6713e0f0.awsapps.com/start/#/?tab=accounts
+
+
+k8s-systemp6-istioing-3482762584-8568ff5ad4fff01d.elb.us-east-2.amazonaws.com (eks-edsna-prod-use2-wmex)
+
+customerlocation-prd.edsna
+collections-prd.edsna
+legalorganization-prd.edsna
+person-prd.edsna
+reference-data-prd.edsna
+
+
+DR - k8s-systemp7-istioing-ecfc62f831-e9640fd40ae69c57.elb.us-east-1.amazonaws.com (eks-edsna-prod-use1-5cwj
+
+customerlocation-prd-dr.edsna
+collections-prd-dr.edsna
+legalorganization-prd-dr.edsna
+person-prd-dr.edsna
+reference-data-prd-dr.edsna
+
+RDS.
+Primary.
+Writer: na-elavondomain-services-prod.cluster-cj6q7kjvv1oo.us-east-2.rds.amazonaws.com
+Reader: na-elavondomain-services-prod.cluster-ro-cj6q7kjvv1oo.us-east-2.rds.amazonaws.com
+
+Secondary.
+Writer: na-elavondomain-services-global-prod-cluster-1.cluster-cwxyfmvzytgk.us-east-1.rds.amazonaws.com
+Reader: na-elavondomain-services-global-prod-cluster-1.cluster-ro-cwxyfmvzytgk.us-east-1.rds.amazonaws.com
+
+This will be the JDBC Interface and its added in R53.
+
+jdbc:postgresql://domain-db-prd.edsna.pn000302.aws.bank-dns.com:5432/customerlocationdb_prod?currentSchema=customerlocation
+
+API Test:
+
+jdbc:postgresql://domain-db-prd.edsna.pn000302.aws.bank-dns.com:5432/customerlocationdb_prod?currentSchema=customerlocation
+
+-------------
+lucas:
+
+istio-ingressgateway-p-n4jgm-7985cdb475-bdkls
+istio: ingressgateway-p-n4jgm
+------------
+AWSEDSNA_PRD_EMER1
+
+ph{kO?N.V4D7,Z[
+------------
+
+
+-------------
+
+GM Ahmad, Shakeel,
+
+CTASK1461521 (Created under AWS Connect ClearPATH) for PROD K8 Cluster Creation and CHG is not approved.
+
+
+Redo the CHG Task. 
+
+Create a new CHG under Domain Services ClearPATH Parent. 
+
+
+Get the CHG ticket approved for CHG implementation.
+
+Then work with Tim to get the PROD cluster created.
+
+Create a PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA)
+
+* 
+Create a PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA). 
+
+Account: 861289595506
+
+Instance size: m5.4xlarge
+
+Availability Zone(s): use2-az1, use2-az2 
+
+Auto Scaling Group Size:  min/desired/max (eg. 2-3-4): 2-3-5
+
+PCI/Non-PCI: Non-PCI
+
+Cluster Name (limited # of characters): edsna
+
+!!!!
+
+Create a PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA)
+
+APL_Cloud Platform Solutions
+
+In this change a new PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA) will be created.
+
+Why: Without this Cluster the Domain Services can not be deployed for AWS Connect/IVR.
+
+Benefit of Change: Benefit for this Production Change is that the AWS Connect/IVR will be able to access the CustomerLocation and Collection APIs. 
+
+Business Justification: To ensure that the Salesforce data is available for Merchant Location through Domain Services APIs through Enterprise GraphQL. 
+
+A new PROD Cluster will be created. 
+
+LOBs: APL_Elavon Domain Svcs:NA, APL_Elavon AWS:IVR,  
+
+------------
+lucas
+p-n4jgm
+c-6674k
+d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+~~~~~~
+
+u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+u-cusloc.p-cv5sw.c-f4wb9.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+New:
+p-cv5sw
+c-f4wb9
+
+d-cusloc.p-cv5sw.c-f4wb9.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+
+d-cusloc.p-cv5sw.c-f4wb9.use2.nonprod.cps.aws.cloud.bank-dns.com
+i-cusloc.p-cv5sw.c-f4wb9.use2.nonprod.cps.aws.cloud.bank-dns.com
+u-cusloc.p-cv5sw.c-f4wb9.use2.nonprod.cps.aws.cloud.bank-dns.com
+--------------
+Release from same job ?
+Hashicorp value for collection.
+Clean up for the orphan services. like el-collections-ds-na-hazelcast-embedded-headless-1-0-1
+
+Bad1: jdbc:oracle://sfdomain2.servers.global.prv:1521/rm01
+Good: jdbc:oracle:thin:@sfdomain2.servers.global.prv:1521:rm01
+--------------
+Request for UAT GraphQL Schema Registration - ELAVON-SERVICING-EDSCustomerLocation
+
+Subgraph Name: ELAVON-SERVICING-EDSCustomerLocation
+
+GraphQL Service URL- Gateway default https://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/graphql
+
+
+Git URL: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-customerlocation-service-ds-na/-/blob/main/schema.gql
+Git Tag: <Auto-generated Git tag from successful IT registration>
+
+GRAPHQL_CONTINENT: NA
+GRAPHQL_PLATFORM: ONPREM
+GRAPHQL_ORG: ELAVON
+GRAPHQL_ENV: UAT
+Contact Details:
+
+Contact Name: Venkata, Sowjanya Lavu
+Contact Email: sowjanyalavu.venkata@usbank.com
+--------------
+Request to add AD Group to all the APPIDs : 
+
+AD Groups: “GQL_ELAVON_SERVICING_EDSCustomerLocation" "GQL_ELAVON_SERVICING_EDSCollection" “GQL_ELAVON_SERVICING_Legalorganization” "GQL_ELAVON_SERVICING_EDSPerson" "GQL_ELAVON_SERVICING_EDSReferencedata" 
+ 
+APPIDs: elnadsentusr, elnadsentusr, elnadsintusr, edsnaetlint
+
+Environment: PROD 
+Domain: US 
+
+REQ2495554
+
+...
+8977
+Request to add AD Group to all the APPIDs : 
+
+AD Groups: “GQL_ELAVON_SERVICING_EDSCustomerLocation" "GQL_ELAVON_SERVICING_EDSCollection" “GQL_ELAVON_SERVICING_Legalorganization” "GQL_ELAVON_SERVICING_EDSPerson" "GQL_ELAVON_SERVICING_EDSReferencedata" 
+ 
+APPIDs: elnadsentusr
+
+Environment: PROD 
+Domain: US  
+
+REQ2495559
+
+REQ2495554, REQ2495559
+--------------
+
+CL CheckPass ID 41d298e3-9c08-4a3f-8e70-59cae5847124
+
+------------
+Collection Active Directory Elavon: Request 417622 
+Customer Location - Active Directory Elavon: Request 417613 
+-----------
+
+curl --location 'http://localhost:8080/api/collection-accounts/graphql' \
+--header 'Correlation-ID: 38557d44-f618-43da-b5c0-shakeel2' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IlBST0RRMTIyIiwieDV0IjoiNjk4MnNZdDAyWGota1lROW9rUEg2NnVPNmZZIiwicGkuYXRtIjoidGtveiJ9.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCxBUFAiXSwiY2xpZW50X2lkIjoibms2NTBRQzc3WjNoUDA1c3NVSDVDbmpXQjYzZW14NlYiLCJpc3MiOiJodHRwczovL2ZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6ImVsbmFkc2ludHVzciIsInJvbGVzIjpbIkFQUF8xMDA2Nl9HUUxfRUxBVk9OX1NWQ19Db2xsZWN0aW9uX1VzZXJfUFJPRCIsIkFQUF8xMDA2Nl9HUUxfRUxBVk9OX1NWQ19DdXN0b21lckxvY2F0aW9uX1VzZXJfUFJPRCJdLCJ1c2VyaWQiOiJlbG5hZHNpbnR1c3IiLCJleHAiOjE3MTc1MzAyMzd9.hxHOj5LsvHvMiCt89VizK4DPqQ0BjAmsdPBBzjfAwqODWBek4ZKb2G_lHU4r5KCW2FnVUeE59HjLHFLc_r3VtYJhJByTA8v6leHHDULbI9xkuTYVAD-4WLYJ4XqizxRqiEGlPkdMYhr91ilvZ3ULN2ZkNScjCg_FFLeiJsHiC0DFBGftg8podk6N99Ba9L2dU97VP3ILfVCC80OEjCySrgDe-pOGyxiqgIcnqFohLXFaEI1Fc9em3kprf-wxQgmc_I4ms6GjQGHZkz87h9oDwSkd6V358e9UM9RZ0tyKEi540dEle9Pw1UqPZdI76D2EbZaiSHqXadWZCDx97T5f8g' \
+--header 'Content-Type: application/json' \
+--data '{"query":"query totalCollectionAmountByCustomerLocationEnterpriseId($customerLocationEnterpriseId: String!){\r\n  totalCollectionAmountByCustomerLocationEnterpriseId(customerLocationEnterpriseId: $customerLocationEnterpriseId) {\r\n    customerLocationEnterpriseId\r\n       balance{\r\n        amount\r\n        currencyCode{\r\n            isoCurrencyCode\r\n        }\r\n    }\r\n  }\r\n}","variables":{"customerLocationEnterpriseId":"12345"}}'
+
+-----------
+PROD Security Groups for NHIDs.
+(417938, 417940)
+
+GQL ELAVON SERVICING CustomerLocation - GQL_ELAVON_SERVICING_CustomerLocation (Request 417938)
+GQL ELAVON SERVICING Collection - GQL_ELAVON_SERVICING_Collection(Request 417940)
+
+GQL ELAVON SERVICING CustomerLocation User Elavon CRM Domain Services NA PROD	
+CN=APP_10066_GQL_ELAVON_SERVICING_CustomerLocation_User_PROD,OU=APPS,DC=us,DC=bank-dns,DC=com
+
+GQL ELAVON SERVICING Collection User Elavon CRM Domain Services NA PROD	
+CN=APP_10066_GQL_ELAVON_SERVICING_Collection_User_PROD,OU=APPS,DC=us,DC=bank-dns,DC=com
+
+
+	Request Number:	 	0000417938
+ 	Request Type:	 	Create Entitlement
+ 	Application:	 	Active Directory US
+ 	Name:	 	CN=APP_10066_GQL_ELAVON_SERVICING_CustomerLocation_User_PROD,OU=APPS,DC=us,DC=bank-dns,DC=com
+ 	Display Name:	 	GQL ELAVON SERVICING CustomerLocation User Elavon CRM Domain Services NA PROD
+
+
+ 	Request Number:	 	0000417940
+ 	Request Type:	 	Create Entitlement
+ 	Application:	 	Active Directory US
+ 	Name:	 	CN=APP_10066_GQL_ELAVON_SERVICING_Collection_User_PROD,OU=APPS,DC=us,DC=bank-dns,DC=com
+ 	Display Name:	 	GQL ELAVON SERVICING Collection User Elavon CRM Domain Services NA PROD
+
+
+Elavon CRM Domain Services -NA
+access to authorize query access in Enterprise GraphQL Gateway for App-IDs
+fhvasa
+
+------------
+for Legal
+CTASK1463145  
+CHG0603001
+-------------
+
+EDSNAINTRUSRAPPIDUAT
+
+Here is an example from UAT.
+CN=EDSNAINTRUSRAPPIDUAT,OU=Hashicorp_Managed,OU=ALT,OU=DelegatedGroups,DC=US-UAT,DC=UATT3,DC=NET
+
+
+GQL_ELAVON_SERVICING_EDSCollection
+GQL_ELAVON_SERVICING_EDSCustomerLocation
+GQL_ELAVON_SERVICING_EDSPerson
+GQL_ELAVON_SERVICING_EDSReferencedata
+GQL_ELAVON_SERVICING_Legalorganization	
+
+
+-------------
+I am available Mon - Fri 10:30 AM CST to 08:00 AM CST. 
+For any urgent issue please contact my team by droping a mail to DL : 
+ISSIAMProvisioningPartner@usbank.com for immediate assistance.
+-------------
+James  Correct Data:
+
+CTASK1463605
+InfoSec_Authentication Svcs L3
+Privileged ID Needed
+Create a PROD - PingFed Authentication for CARID 10066
+
+Login to Ping Fed UAT using privileged ID PingFed_PRD_EMER1-8,
+Create a new OAuth Client ID and secret using OAuth Client ID 8hpj8bOLNjfBUemTwgjLKGN3Otw8vnHd in Ping Fed UAT as a model.  Upon completion, notify the requestor of the new Client ID and secret in separate secured emails.
+
+2024-05-21 19:33:26
+2024-05-24 19:33:30
+
+My CHG0629369 was created.
+-------------
+Hashicord_managed
+
+Test the PingFed Authentication with the new Secret
+End to End flow test with the JWT Token provided by the PingFed Auth.
+
+Change cannot be moved from New state when Planned Start Date is in the past.
+
+Error MessageImplementation task CTASK1461651 is scheduled outside of the change window, please update to align.
+Error MessageImplementation task CTASK1461521 is scheduled outside of the change window, please update to align.
+Error MessageImplementation task CTASK1463097 is scheduled outside of the change window, please update to align.
+Error MessageImplementation task CTASK1463067 is scheduled outside of the change window, please update to align.
+
+Error MessageProduction Validation task CTASK1431949 is scheduled outside of the change window, please update to align.
+Error MessageInvalid update
+Info Message
+
+
+-------------
+The UAT test tonight: 
+CTASK1463126
+CHG0603001
+
+PRE:
+RITM3012515
+REQ2463846
+InfoSec_Authentication Svcs L3
+??
+
+Timothy:
+CTASK1463097
+------------
+@Library('enterprise-pipeline-library@bomFix') _
+
+@Library('enterprise-pipeline-library@master') _
+
+
+Based on the previous Request (RITM3009586) we followed the steps and that brought us to create the Request again. It is already very late for our deadlines. This is requested to please process this request soon, thanks.
+
+
+We need this access for CARID 10066 to manage the deployments for Elavon Domain Services.
+Add Entitlement: 
+
+Splunk Observability User PROD on Active Directory US
+
+Add Entitlement: 
+
+Splunk Power User on Active Directory US
+------------
+kubectl -n apl-lucas-customerlocation-dev1 scale deployment --all --replicas=0
+------------
+
+CHG0611841 - Satish CHG in AWS Connect.
+
+CHG0611990 - Shakeel's CHG.
+
+Create a PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA)
+-
+Create a PROD Cluster for CARID 10066 (APL_Elavon Domain Svcs:NA). 
+
+Account: 861289595506
+
+Instance size: m5.4xlarge
+
+Availability Zone(s): use2-az1, use2-az2 
+
+Auto Scaling Group Size:  min/desired/max (eg. 2-3-4): 2-3-5
+
+PCI/Non-PCI: Non-PCI
+
+Cluster Name (limited # of characters): edsna
+-----------
+
+1- Enums.
+2- Pause on PCI Cluster.
+3- Create a new Cluster for Splunk/UAT. Non PCI Cluster.
+4- Offshore team support.
+
+
+Office Time: 8 to 6 PM EST. Use the CTASK.
+
+Ask them if they want to be approvaers.
+
+Release build: ready for PROD.
+- Any bugs. Like Enum etc.
+- Similar type of bugs reported again and again.
+- Log Level for PROD.
+- Logs  performance issues in Splunk.
+- Add more resources.
+- Debug/Info
+- Auto scaling params.
+- We will have schema changes in this phase.
+
+
+
+3- 
+
+------------
+Collection GQL Test.
+curl --location --request POST 'http://u-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts/graphql' \
+--header 'accept: */*' \
+--header 'correlation-ID: 12eb3dc3-302c-4310-baca-71fc6653ede9' \
+--header 'x-authorization: eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiI4aHBqOGJPTE5qZkJVZW1Ud2dqTEtHTjNPdHc4dm5IZCIsImlzcyI6Imh0dHBzOi8vdWF0LWZlZGVyYXRpb24udXNiYW5rLmNvbSIsInN1YiI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiRmlyc3ROYW1lIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJyb2xlcyI6WyJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNSZWZlcmVuY2VkYXRhIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTUGVyc29uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfTGVnYWxvcmdhbml6YXRpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDb2xsZWN0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbiJdLCJ1c2VyaWQiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsImV4cCI6MTcxNTI2NzczMX0.PGRV9NHjoc5vj-vEJZ-UcJt2KvvOUCQBzgn2BOgviNfpJZUfVc5yOAlxP7aXm6Ai_vzyzAx6V2TPuwolhcTK0Fx0i4GbJgLKLYUpunDg0k8gHMZoKels44g9d6OVFnDvwiVZ7zxasD4ETeYdaMchf0SWZ9Nxos9OHgzW7dI3LUcAe5y8qeDP40Kp0U3Y_W6yf_ooByT8Y4ILd9ygyhOcO4A1J50MIFhK64a8vN3Ubzb-B7Pmo74V-GrceKwt_QwzItWKGjw7AozFwNe0pgXdhv-mhcGotZFJReNfKwJD8BciEMTlKZ4aXQ0PDugxAuURFLxDlXm4qOC6NDfiGazjcw' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":"query CollectionsByCustomerLocationId($customerLocationEnterpriseId: String!){\r\n    collectionsByCustomerLocationEnterpriseId(customerLocationEnterpriseId: $customerLocationEnterpriseId) {\r\n    accountId\r\n    merchantIdentifierGroup\r\n    accountType\r\n    customerLocationEnterpriseId\r\n    billingAccountEnterpriseId\r\n    balance{\r\n        amount\r\n        currencyCode{\r\n            isoCurrencyCode\r\n        }\r\n    }\r\n    \r\n  }\r\n}","variables":{"customerLocationEnterpriseId":"NA100008030522945678120"}}'
+
+------------
+
+Notes:
+
+today: LUCAS test connection from non pci?? RM01..
+Firewall ??
+
+? logs for health are too frequent?
+
+info/debug log?
+getAll should not be supported?
+Only send 10 or 100 most recent records.
+
+1.0 to 2.0 release
+or from 2.0 to 1.0
+using istio canary releases??
+How to handle schema level changes and roll back??
+Liquibase roll back??
+
+UAT 100K Records. With Praveen??
+
+Tagging ??
+
+------------
+
+Place your curl command in a file named curl_command.txt.
+Save the script above in a file, for example run_curls.sh.
+Make the script executable with the command chmod +x run_curls.sh.
+Run the script using ./run_curls.sh.
+#!/bin/bash
+
+# Read the curl command from the text file
+curl_command=$(<curl_command.txt)
+
+# Function to execute the curl command 100 times
+function run_curl() {
+    for ((i=0; i<100; i++)); do
+        # Execute the curl command
+        $curl_command
+    done
+}
+
+# Start 10 parallel processes
+for ((j=0; j<10; j++)); do
+    run_curl &
+done
+
+# Wait for all background processes to complete
+wait
+
+
+------------
+For CARID, 10066 we need to create the namespace and deploy the Collections service on UAT PCI C;uster.
+
+------------
+CustomerLocation
+Collection
+Legalorganization
+Person
+Referencedata
+---------------
+
+release-1.0.145-customerlocation-UAT
+
+release-1.0.115-collections-UAT
+
+
+
+------------
+QPP Release 2.0
+IP Address for Collect UAT?
+------
+DEV Cluster.
+100.111.182.253
+100.111.167.76
+100.111.xxx.xxx
+
+------
+
+curl  -X POST \
+  'https://uat-sso.us.bank-dns.com/as/token.oauth2' \
+  --header 'Accept: */*' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'Authorization: Basic OGhwajhiT0xOamZCVWVtVHdnakxLR04zT3R3OHZuSGQ6dlJrMXBZdnFPVDZMSDRTenAxOHNzR1Z0Q0dGZDZjY280cnNuZGx2UEI2dmZ1d0UxWjVDb01FQUNZdUllZnhTeQ==' \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'grant_type=password' \
+  --data-urlencode 'username=EDSNAINTRUSRAPPIDUAT' \
+  --data-urlencode 'password=?@09AZNi6wmvgoe5gABgyMYCIkn2vxHMU3HP5tvvrM2anxjxXeSRFwa1bz7FTmrW' \
+  --data-urlencode 'scope=openid role:GQL' \
+  --data-urlencode 'validator=ROCredsUAT'
+
+
+------------
+
+it:
+postman Basic YW5Qc3dpZUZKdmdpbUU4NnFRTkdYZHdybFFwZE1LeFA6TGxHZXFCTk5KTzgxUkhiN2t3Y2x4TGxGRXpWRFVESHNacVRuRlVuRUV2OUdTRWtDY1F4a2xvWnpBZmhNbmplZA==
+Basic YW5Qc3dpZUZKdmdpbUU4NnFRTkdYZHdybFFwZE1LeFA6TGxHZXFCTk5KTzgxUkhiN2t3Y2x4TGxGRXpWRFVESHNacVRuRlVuRUV2OUdTRWtDY1F4a2xvWnpBZmhNbmplZA=='
+
+QA:
+postman: Basic OGhwajhiT0xOamZCVWVtVHdnakxLR04zT3R3OHZuSGQ6dlJrMXBZdnFPVDZMSDRTenAxOHNzR1Z0Q0dGZDZjY280cnNuZGx2UEI2dmZ1d0UxWjVDb01FQUNZdUllZnhTeQ==
+
+------------
+
+release-1.0.127-customerlocation-UAT
+release-1.0.101-collections-UAT
+
+
+------------
+NA000008030500253
+NA-ELAVON-PCI-UAT-Graph
+
+eks-lucas-pci-uat-pci-use2-653g
+ 
+
+timeout 3 bash -c 'cat < /dev/null > /dev/tcp/[collect-one-dev-db.ccsh9owlrnzg.us-east-2.rds.amazonaws.com]/[1521]'
+
+timeout 3 bash -c 'cat < /dev/null > /dev/tcp/collect-one-dev-db.ccsh9owlrnzg.us-east-2.rds.amazonaws.com/1521'
+
+collect-one-dev-db.ccsh9owlrnzg.us-east-2.rds.amazonaws.com:1521
+
+-------------
+curl --location 'https://dev-api2.elavon.com/graphql/v1' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'Correlation-ID: 723fd7b8-e769-4464-bc41-41429781d673' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic RUIxM2NvWW9UbWJlSExNTjVwMUFEZWJMaUlBWFB0VFc6a1VKUzVIaHlSUTBBdWxpYg==' \
+--data '{"query":"query CollectionsByCustomerLocationId($customerLocationEnterpriseId: String!){\n    collectionsByCustomerLocationEnterpriseId(customerLocationEnterpriseId: $customerLocationEnterpriseId) {\n    accountId\n    merchantIdentifierGroup\n    accountType\n    customerLocationEnterpriseId\n    billingAccountEnterpriseId\n    balance{\n        amount\n        currencyCode{\n            isoCurrencyCode\n        }\n    }\n    \n  }\n}","variables":{"customerLocationEnterpriseId":"NA100008033731061"}}'
+
+------------
+
+Need to release tag for UAT.
+
+-----------
+UAT Key Gen:
+
+Apigee UAT: Generate API credentials for Product elavon-lbi-EDSCustomerLocation
+
+------------
+https://uat-api.elavon.com/graphql/v1  **
+https://uat-api2.elavon.com/graphql/v1  (mTLS)
+https://uat-apip.elavon.com/graphql/v1  (PCI)  **
+https://uat-apip2.elavon.com/graphql/v1  (PCI - mTLS)
+
+
+curl --location 'https://uat-api.elavon.com/graphql/v1' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'Correlation-ID: a4a2e424-d2cc-405b-af56-c276e7982ab9' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic QWgweTRUc0U2aElYcVFCSzJ0R2JxUGxPWVROV0lvMnE6R1ZJWEZrYjRBSXFET0pveg==' \
+--data '{"query":"query totalCollectionAmountByCustomerLocationEnterpriseId($customerLocationEnterpriseId: String!){\r\n  totalCollectionAmountByCustomerLocationEnterpriseId(customerLocationEnterpriseId: $customerLocationEnterpriseId) {\r\n    customerLocationEnterpriseId\r\n       balance{\r\n        amount\r\n        currencyCode{\r\n            isoCurrencyCode\r\n        }\r\n    }\r\n  }\r\n}","variables":{"customerLocationEnterpriseId":"NA100008033731061"}}'
+
+Basic QWgweTRUc0U2aElYcVFCSzJ0R2JxUGxPWVROV0lvMnE6R1ZJWEZrYjRBSXFET0pveg==
+
+
+------------
+
+
+
+http://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations' 
+
+https://u-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/graphql
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IkRlZmF1bHQiLCJ4NXQiOiJmRWowV2RSUFVFZktXLTRwYzNuSFhfd2JZdzgiLCJwaS5hdG0iOiJuaGlzIn0.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJjbGllbnRfaWQiOiJHcmFwaFFMIiwiaXNzIjoiaHR0cHM6Ly91YXQtZmVkZXJhdGlvbi51c2JhbmsuY29tIiwic3ViIjoiRURTTkFJTlRSVVNSQVBQSURVQVQiLCJGaXJzdE5hbWUiOiJFRFNOQUlOVFJVU1JBUFBJRFVBVCIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU1JlZmVyZW5jZWRhdGEiLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNQZXJzb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19MZWdhbG9yZ2FuaXphdGlvbiIsIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIl0sInVzZXJpZCI6IkVEU05BSU5UUlVTUkFQUElEVUFUIiwiZXhwIjoxNzEzODA5MzU5fQ.qn950SQ_oZVFHCiV43ApIn_5qiIDXjjTJXvkrlh0UtYQP6JmxWNxilL-cxOlLU6wiwpWZm1QvXpBgXLCay02XGrg8rdfuwmZrhhERTao4U0sl6yxOLFKkKF8dVgJOY6rFUyTmtOBclqETlLWaJhXJL0n35G6eAVtiCmXzCg8e6l4RUpS5mNqUdiEev1Nr_58q6Zr2bj48cHE1GcS_NMitezOvMPkYNuk0uoiYkV6MCK-wzo_n0zovz3EX_I6LlUICqCU4HUR2ey3-mZrP8s0ktZclh0bx9zmJcnXlAqwDSOWzEkKTtn7apK3ji6CK0Mg-A-5nsnZHyML5L3OEWuE_Q
+
+x-forwarded-proto=https, x-forwarded-for=10.42.5.0,10.42.8.234,10.128.30.205, accept=application/json, application/graphql-response+json, x-envoy-attempt-count=1, x-b3-traceid=b
+b5af9ca2f0c6cfca91040ae08b9dc1a, 
+
+
+x-b3-spanid=81178d665c1888bf, 
+x-forwarded-client-cert=Hash=e9fc86a718e35d656dc583a564437a495fe7f382e1c3e846b5ef42a260d0519b;Cert="-----BEGIN%20CERTIFICATE-----%0AMIIGBzCCBO%2BgAwIBAgIEX7e%2FCjANBgkqhkiG9w0BAQsFADB4MQswCQYDVQQGEwJV%0AUzEoMCYGA1UEChMfVS5TLiBCYW5rLCBOYXRpb25hbCBBc3NvY2lhdGlvbjEiMCAG%0AA1UECxMZQ2VydGlmaWNhdGlvbiBBdXRob3JpdGllczEbMBkGA1UEAxMSVVMgQmFu%0AayBJc3N1aW5nIENBMB4XDTIzMTEyOTAxMDQ1M1oXDTI0MTIyNzAxMzQ1M1owgZgx%0ACzAJBgNVBAYTAlVTMRIwEAYDVQQIEwlNaW5uZXNvdGExEjAQBgNVBAcTCVJpY2hm%0AaWVsZDEoMCYGA1UEChMfVS5TLiBCYW5rLCBOYXRpb25hbCBBc3NvY2lhdGlvbjEM%0AMAoGA1UECxMDSVNTMSkwJwYDVQQDEyB1YXQtZ3FsLWlkZW50aXR5LnVzLmJhbmst%0AZG5zLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMAMM5Ss%2FFMf%0AqE2J4ldPAKzeCrUDsSaMQqz8i2mWN73IbmXC%2BwxSH91EMNuQF%2FCuy7cfiYWB7g3z%0AgsSP2QpLDnV8R2bZjuiyL8Y%2BZLB%2F9LtATexVXBiqTZbTDaleuHEELUTqPaaYazO7%0Acgtsrwoz2cxn0W6uVKja05LvzPxoKgfKLx4g9FqF6gIABbAn8ub9C9bMssK1YqLl%0AngB3wUKtDzXl%2Fi8FpxPu0cG7ZPdXhU016F7UBy%2BDmq%2B%2BWuCeyFgs933JflotQA42%0AtgBoGcOyIYpqeq35oJ3sqaTVidkKRftOMofaM75xapCJkS1hAzZs1cFbgJWXft6Y%0A9NUTIJlqpk0CAwEAAaOCAnYwggJyMCsGA1UdEQQkMCKCIHVhdC1ncWwtaWRlbnRp%0AdHkudXMuYmFuay1kbnMuY29tMAsGA1UdDwQEAwIFoDAdBgNVHSUEFjAUBggrBgEF%0ABQcDAQYIKwYBBQUHAwIwVgYIKwYBBQUHAQEESjBIMEYGCCsGAQUFBzAChjpIVFRQ%0AOi8vY3JsLnVzYmFuay5jb20vQUlBL0NlcnRzSXNzdWVkVG9VU0JhbmtJc3N1aW5n%0AQ0EucDdjME8GA1UdIARIMEYwRAYNYIZIAYb6a4FIAwoPATAzMDEGCCsGAQUFBwIB%0AFiVIVFRQOi8vY3JsLnVzYmFuay5jb20vQ1AvVVNCYW5rQ1AucGRmMIHaBgNVHR8E%0AgdIwgc8wNKAyoDCGLmh0dHA6Ly9jcmwudXNiYW5rLmNvbS9DUkxzL1VTQmFua0lz%0Ac3VpbmdDQS5jcmwwgZaggZOggZCkgY0wgYoxCzAJBgNVBAYTAlVTMSgwJgYDVQQK%0AEx9VLlMuIEJhbmssIE5hdGlvbmFsIEFzc29jaWF0aW9uMSIwIAYDVQQLExlDZXJ0%0AaWZpY2F0aW9uIEF1dGhvcml0aWVzMRswGQYDVQQDExJVUyBCYW5rIElzc3Vpbmcg%0AQ0ExEDAOBgNVBAMTB0NSTDExMDIwKwYDVR0QBCQwIoAPMjAyMzExMjkwMTA0NTNa%0AgQ8yMDI0MDgzMDIwNDY1M1owHwYDVR0jBBgwFoAUFBK%2Fgzrsf1wdsHHlKqFU1fKV%0A6LkwHQYDVR0OBBYEFKhUFspSzrjROOQZoRO8Zz4vMCQAMAkGA1UdEwQCMAAwGQYJ%0AKoZIhvZ9B0EABAwwChsEVjguMwMCBLAwDQYJKoZIhvcNAQELBQADggEBAH%2FHIKvc%0ADkxs6DLpdNHwTSSIKc
+5ES7bnMM077%2FYsd1Ui9eTk%2BjrR4dILRO4CA6efLnjJNvq6%0AUumtUrhb%2BZEwATaElDZqwRwyjWWNPvbu1sfbanGOxwsuMe32div8CJHOXaFYOpVq%0AuH2PCswsSHY61z5Ckt%2FfJeai9e6zFsqur4AJOR%2B8kilr25BVpIcrKyuemCW15tu7%0A%2BvTIG9yeX98TTLeL%2BwQEaDgyuJYZBgHCfXFRUV9R3MpOG3xNEkofQyyBpPYz6tFx%0AgCNw3HVKKN7%2FaATwZDBXAQZwpdj6CFt87MRt1X9YFJlQ%2F4F8ebrC2LlUSB0bwAj6%0AeWjXgbAMgH986m8%3D%0A-----END%20CERTIFICATE-----%0A";Subject="CN=uat-gql-identity.us.bank-dns.com,OU=ISS,O=U.S. Bank\, National Association,L=Richfield,ST=Minnesota,C=US";URI=;DNS=uat-gql-identity.us.bank-dns.com,By=spiffe://cluster.local/ns/apl-lucas-customerlocation-uat1/sa/default;Hash=7e6ea2b05bb536949c5546d19e454e1c5e8f49e66cd68c6ebd9c9ab275001e5d;Subject="";URI=spiffe://cluster.local/ns/system-p-n4jgm/sa/istio-ingressgateway-p-n4jgm-service-account, traceparent=00-36bad154b52070aaac4b605e8ae674c1-7d2db4749eaa33e7-01, subgraph-name=ELAVON-SERVICING-EDSCollection, accept-encoding=gzip, br, deflate, subgraph-operation=totalCollectionAmountByCustomerLocationEnterpriseId, user-agent=PostmanRuntime/7.32.2, sec-fetch-dest=empty 
+------------
+UAT Service Deploy:
+
+CTASK1432422
+CHG0611841
+
+
+-----------
+ERROR: Evidence record does not exist for this request 
+
+https://evidence-storage.us.bank-dns.com/usb/v1/evidence-storage/evidences/records?
+
+applicationName=elavon-servicing-edscustomerlocation&
+environment=it&evidenceType=ApolloSchemaPublish&majorVersion=1.0.2144-NA-ELAVON-ONPREM-ITFinished: FAILURE
+-----------
+
+https://evidence-storage.us.bank-dns.com/usb/v1/evidence-storage/evidences/records
+
+?applicationName=elavon-servicing-edscustomerlocation&environment=it&evidenceType=ApolloSchemaPublish&majorVersion=1.0.2007-NA-ELAVON-ONPREM-ITFinished
+
+--------
+UAT Description.
+
+Deploy CustomerLocation v2 and Customer Insights Collections services on UAT ENV.
+
+Deploy CustomerLocation and Collections services on UAT ENV. We need to run the Jenkins Job for aws-uat for the CARID 10066
+
+1- This change will deploy the CustomerLocation Service to the UAT from IT to facilitate the AWS Connect Team for the Merchant Data.
+2 - Create the UAT Namespace in the AWS Cluster (eks-lucas-devtest-use2-onf1) for UAT PODs and K8 objects. 
+3-  Create the RDS Database for UAT to migrate the data for UAT. Using flywaydb follow the standard procedures. 
+4-  K8 Cluster will be deployed with the new PODs using the cloudbees job as shown below. 
+https://cloudbees.us.bank-dns.com/controller-7/view/EDS_10066/job/ELAVON_DOMAIN_SERVICES/job/elavon-customerlocation-service-ds-na_UAT/
+5- AWS Connect,  business that utilize the items listed above.
+
+Deploy Customer Location Domain Service (elavon-customerlocation-service-ds-na-1-0-111) to UAT
+
+ACTION:
+- The Elavon CRM Domain Services - NA Assignment Group will be Impacted.
+
+The following Actions will be followed.
+
+- This change will deploy the CustomerLocation Service to the UAT from IT to facilitate the AWS Connect Team for the Merchant Data.
+- Create the UAT Namespace in the AWS Cluster (eks-lucas-devtest-use2-onf1) for UAT PODs and K8 objects. 
+-  Create the RDS Database for UAT to migrate the data for UAT. Using flywaydb follow the standard procedures. 
+-  K8 Cluster will be deployed with the new PODs using the cloudbees job as shown below. 
+https://cloudbees.us.bank-dns.com/controller-7/view/EDS_10066/job/ELAVON_DOMAIN_SERVICES/job/elavon-customerlocation-service-ds-na_UAT/
+- AWS Connect,  business that utilize the items listed above.
+- These steps will be performed by Shakeel Ahmad.
+--------
+Ease:
+
+CTASK1433428	EDSCollection
+CTASK1433421  EDSCustomerLocation 
+
+
+Request for UAT GraphQL Schema Registration - ELAVON-SERVICING-EDSCustomerLocation
+...
+Subgraph Name: ELAVON-SERVICING-EDSCustomerLocation
+
+GraphQL Service URL - Default Gateway: <Subgraph Service Endpoint>
+GraphQL Service URL- Gateway 2 https://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/graphql
+
+
+Git URL: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-customerlocation-service-ds-na/-/blob/main/schema.gql
+Git Tag: <Auto-generated Git tag from successful IT registration>
+
+GRAPHQL_CONTINENT: NA
+GRAPHQL_PLATFORM: ONPREM
+GRAPHQL_ORG: ELAVON
+GRAPHQL_ENV: UAT
+Contact Details:
+
+Contact Name: Venkata, Sowjanya Lavu
+Contact Email: sowjanyalavu.venkata@usbank.com
+
+
+------------
+CTASK1432422
+CHG0611841
+
+Login to PingFed UAT using the privileged ID pingFed_UAT_Emer1-8.
+Create new Oauth Client ID and Secrete for CARID 10066 using the anPswieFJvgimE86qQNGXdwrlQpdMKxP as an example from IT.
+Send Client ID and Secrete via Secure Email to Shakeel Ahmad.
+
+InfoSec_Authentication Svcs L3
+
+Deploy CustomerLocation services on UAT ENV. We need to run the Jenkins Job for aws-uat for the CARID 10066
+
+1- This change will deploy the CustomerLocation Service to the UAT from IT to facilitate the AWS Connect Team for the Merchant Data.
+2 - Create the UAT Namespace in the AWS Cluster (eks-lucas-devtest-use2-onf1) for UAT PODs and K8 objects. 
+3-  Create the RDS Database for UAT to migrate the data for UAT. Using flywaydb follow the standard procedures. 
+4-  K8 Cluster will be deployed with the new PODs using the cloudbees job as shown below. 
+https://cloudbees.us.bank-dns.com/controller-7/view/EDS_10066/job/ELAVON_DOMAIN_SERVICES/job/elavon-customerlocation-service-ds-na_UAT/
+5- AWS Connect,  business that utilize the items listed above.
+
+------------
+Hazelcast, cache is working.
+Focus only on Auto Scaling.
+L2 is not in scope.
+Vipin has more work.
+Focus on the Patch operation.
+
+Jhip: 2 months 3 eleases.
+Check the frequency.
+
+javers franework more research.
+------------
+UAT Deploy:
+
+CHG0582664
+CHG0611990
+
+
+------------
+IT:
+
+This was correct for IT.
+
+curl --location 'https://it-sso.us.bank-dns.com/as/token.oauth2' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic YW5Qc3dpZUZKdmdpbUU4NnFRTkdYZHdybFFwZE1LeFA6TGxHZXFCTk5KTzgxUkhiN2t3Y2x4TGxGRXpWRFVESHNacVRuRlVuRUV2OUdTRWtDY1F4a2xvWnpBZmhNbmplZA==' \
+--header 'Cookie: PF=RXeVK5PE5HWdOKbXJHP7g5' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'username=elnadsintusrAPPIDIT' \
+--data-urlencode 'password=?@09AZnyFeipP5V6ZihL1OmCuGn0O52ZrfaVT0yjcIIxzVEfAXWmfU6G0TUafBNP' \
+--data-urlencode 'scope=openid role:GQL' \
+--data-urlencode 'validator_id=ROCredsITT3'
+
+c089602@ME-C02DP89EMD6R ~ % 
+
+curl --request GET \
+  --url https://hashicorp-vault-test.us.bank-dns.com/v1/ad-engine-usb_it/creds/elnadsintusrappidit \
+  --header 'Authorization: Basic Og==' \
+  --header 'X-Vault-Namespace: 10066' \
+  --header 'X-Vault-Token: X-Vault-Token
+{"request_id":"c73b50ba-bd89-6133-aa45-e26cfd4489fd","lease_id":"","renewable":false,"lease_duration":0,"data":{"
+
+current_password":"
+
+?@09AZnyFeipP5V6ZihL1OmCuGn0O52ZrfaVT0yjcIIxzVEfAXWmfU6G0TUafBNP
+
+",
+"last_password":"
+
+?@09AZ9nITeUKHJszIskM40DuWQ39F6m67H1sQSjEJurh8aEwWk2mVa7gcPVFvLg
+
+","username":"
+
+elnadsintusrAPPIDIT
+
+"},
+
+"wrap_info":null,"warnings":null,"auth":null,"mount_type":"ad"}
+
+UAT:
+curl --location 'https://it-sso.us.bank-dns.com/as/token.oauth2' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic YW5Qc3dpZUZKdmdpbUU4NnFRTkdYZHdybFFwZE1LeFA6TGxHZXFCTk5KTzgxUkhiN2t3Y2x4TGxGRXpWRFVESHNacVRuRlVuRUV2OUdTRWtDY1F4a2xvWnpBZmhNbmplZA==' \
+--header 'Cookie: PF=RXeVK5PE5HWdOKbXJHP7g5' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'username=EDSNAINTRUSRAPPIDUAT' \
+--data-urlencode 'password=?@09AZhsJxdadWwO6FMpm1gALEGF4S9XbJZkiQHe57rJ8E7oQ6yA6mBCgPg4YSTJ' \
+--data-urlencode 'scope=openid role:GQL' \
+--data-urlencode 'validator_id=ROCredsITT3'
+------------
+Vault Password for IT.
+
+ curl --request POST \
+  --url https://hashicorp-vault-test.us.bank-dns.com/v1/auth/approle/login \
+  --header 'X-Vault-Namespace: 10066' \
+  --data '{
+    "role_id": "3ee7310c-912a-415d-6456-98f30722f7e7",
+    "secret_id": "6acdd814-0d8d-c7b6-4057-192826922623"
+}'
+{"request_id":"9c58094d-eebc-8a3e-648c-0240433d07b7","lease_id":"","renewable":false,"lease_duration":0,"data":null,"wrap_info":null,"warnings":null,"auth":{"client_token":"
+
+X-Vault-Token
+
+","accessor":"XG45uLRO8Ni3D7OGtIwcr1wS.mVLY1","policies":["approle_10066_dev","default"],"token_policies":["approle_10066_dev","default"],"metadata":{"role_name":"approle_10066_dev"},"lease_duration":1200,"renewable":true,"entity_id":"e6789982-4e63-e9aa-87da-b8cea489b788","token_type":"service","orphan":true,"mfa_requirement":null,"num_uses":0},"mount_type":""}
+c089602@ME-C02DP89EMD6R ~ % 
+
+
+
+------------
+
+PingFed JWT Token Generator.
+
+curl --location 'https://it-sso.us.bank-dns.com/as/token.oauth2' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic YW5Qc3dpZUZKdmdpbUU4NnFRTkdYZHdybFFwZE1LeFA6TGxHZXFCTk5KTzgxUkhiN2t3Y2x4TGxGRXpWRFVESHNacVRuRlVuRUV2OUdTRWtDY1F4a2xvWnpBZmhNbmplZA==' \
+--header 'Cookie: PF=RXeVK5PE5HWdOKbXJHP7g5' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'username=EDSNAINTRUSRAPPIDUAT' \
+--data-urlencode 'password=?@09AZhsJxdadWwO6FMpm1gALEGF4S9XbJZkiQHe57rJ8E7oQ6yA6mBCgPg4YSTJ' \
+--data-urlencode 'scope=openid role:GQL' \
+--data-urlencode 'validator_id=ROCredsITT3'
+
+{
+    "error_description": "We didn't recognize the username or password you entered. Please try again.",
+    "error": "invalid_grant"
+}
+
+------------------
+https://it-sso.us.bank-dns.com/as/token.oauth2
+
+https://it-sso.us.bank-dns.com/.well-known/openid-configuration
+
+------------
+
+curl --location 'https://hcvault.us.bank-dns.com/v1/auth/approle/login' \
+--header 'X-Vault-Namespace: 10066' \
+--header 'Content-Type: application/json' \
+--data '{
+    "role_id": "f862ce36-268a-e895-8689-88ecdf694a6c",
+    "secret_id": "d0bee905-838f-7fc9-277d-c8f83a20398d"
+}'
+
+curl --location 'https://hcvault.us.bank-dns.com/v1/ad-engine-usb_uat/creds/edsnaintrusrappiduat' \
+--header 'X-Vault-Token: X-Vault-Token
+--header 'X-Vault-Namespace: 10066'
+
+******
+
+
+******
+
+{"request_id":"19fcdecc-d0e6-c850-3276-e0ad08872e62","lease_id":"","renewable":false,"lease_duration":0,"data":null,"wrap_info":null,"warnings":null,"auth":
+
+{"client_token":"
+
+X-Vault-Token
+
+"
+
+,"accessor":"ntwiiEMulX9hcUNzM3hu7wto.6IQG6","policies":["approle_10066_uat","default"],"token_policies":["approle_10066_uat","default"],"metadata":{"role_name":"approle_10066_uat"},"lease_duration":1200,"renewable":true,"entity_id":"12b380f1-0011-157f-6172-fedcea81564d","token_type":"service","orphan":true,"mfa_requirement":null,"num_uses":0}}
+c089602@ME-C02DP89EMD6R ~ % 
+------------
+
+https://hcvault.us.bank-dns.com/ui/vault/dashboard?namespace=10066
+
+role_id 
+secret_id 
+-----------------
+curl --location 'https://it-sso.us.bank-dns.com/as/token.oauth2' \
+--header 'grant_type: password' \
+--header 'username: anPswieFJvgimE86qQNGXdwrlQpdMKxP' \
+--header 'password: LlGeqBNNJO81RHb7kwclxLlFEzVDUDHsZqTnFUnEEv9GSEkCcQxkloZzAfhMnjed' \
+--header 'scope: openid' \
+--header 'role: GQL' \
+--header 'validator_id: ROCredsITT3' \
+--header 'Cookie: PF=RXeVK5PE5HWdOKbXJHP7g5'
+-----------------
+Hi Shakeel,
+ 
+The following OAuth Client IDs have been created in Ping Fed IT for CAR ID 10066.  
+I will send the Client secrets in a separate, secured email.
+ 
+Client ID created for DEV:
+eZSTFV8B8PqyZtniduxio2dbEj9sy0LZ
+ 
+Client ID created for IT:
+anPswieFJvgimE86qQNGXdwrlQpdMKxP
+ 
+ 
+ 
+Thanks,
+ 
+Jim Venhaus, CISSP
+Assistant Vice President | Info Security Specialist
+james.g.venhaus@usbank.com
+U.S. Bank
+
+Authentication Services Links:
+Incident Support
+Service Catalog - MyTech (service-now.com)
+Customer Portal for Products & Services
+----------------
+Hi Shakeel,
+ 
+Following are the Client secrets for the OAuth Client IDs I created and notified you of.
+ 
+Client secret for DEV ID:
+7oGEHsczQAUBPPUEQcIM3AJz4aIaLyVOw1hlh0kYnxexhkHvOjzJitjPWP4TNBlv
+ 
+Client secret for IT ID:
+LlGeqBNNJO81RHb7kwclxLlFEzVDUDHsZqTnFUnEEv9GSEkCcQxkloZzAfhMnjed
+ 
+ 
+NOTE: Client Secret MUST BE encrypted before storing in your application property files and MUST NOT be shared.  If the Client Secret is exposed to anyone or any system, immediately contact the Web Access Management Team to invalidate and update Client Secret (Change Management process will need to be followed).
+ 
+Please submit a new Authentication Services Service Request for UAT.  I will also need a Pre-Implementation Change task assigned to me to allow me to create the new OAuth Client ID and secret in Ping Fed UAT.
+ 
+ 
+Thanks,
+ 
+Jim Venhaus, CISSP
+Assistant Vice President | Info Security Specialist
+james.g.venhaus@usbank.com
+U.S. Bank
+
+Authentication Services Links:
+Incident Support
+Service Catalog - MyTech (service-now.com)
+Customer Portal for Products & Services
+-----------------
+HazelCast version is hard coded.
+Enable L2 Cache??
+-----------------
+
+
+
+
+REQ1843375	4 - RITM2297535 - Requested for Mobile.
+
+REQ1924508	- RITM2386489 - Rejected.
+
+REQ2357851	- RITM2889363 - Approved
+
+REQ2377807	- RITM2912256 - WFA
+
+REQ2377813	- RITM2912263 - Approved	Bharath Kumar Alapati
+REQ2377818- RITM2912268 - Approved	Bharath Kumar Alapati
+REQ2377823 - RITM2912273 - Approved	Bharath Kumar Alapati
+REQ2386484 - RITM2922607 - Approved	Bharath Kumar Alapati
+REQ2389817 - RITM2926075 - James Venhaus
+
+
+
+
+
+
+
+
+
+
+-----------------
+Reference Data - JHipster upgrade scan twist lock.
+
+-----------------
+CHG0603001
+CTASK1415597
+-----------
+New Stories.
+
+Research Reader Writer Instances for RDS. Only the writes should be with Writer Instance. Graph should be with the Reader.
+Refactor Pingfed Token as utuilities Jar.
+WAM Request for PingFed Token access - Need to get rid of the hack for the Token.
+Improve the Database changes with Liquibase through Jenkins Job. Learning from last phase.
+
+
+-----------------
+
+DEV 
+
+Please add the following AD Groups to AppID eldsclappiddev in the devt3 domain. 
+“GQL_ELAVON_SERVICING_Legalorganization” 
+"GQL_ELAVON_SERVICING_EDSPerson" 
+"GQL_ELAVON_SERVICING_EDSReferencedata" 
+
+IT 
+
+Please add the following AD Groups to AppID awsconextusrAPPIDIT in the itt3 domain. 
+“GQL_ELAVON_SERVICING_Legalorganization” 
+"GQL_ELAVON_SERVICING_EDSPerson" 
+"GQL_ELAVON_SERVICING_EDSReferencedata" 
+
+ 
+
+UAT Int 
+
+Please add the following AD Groups to AppID EDSNAINTRUSRAPPIDUAT in the uatt3 domain. 
+“GQL_ELAVON_SERVICING_Legalorganization” 
+"GQL_ELAVON_SERVICING_EDSPerson" 
+"GQL_ELAVON_SERVICING_EDSReferencedata" 
+"GQL_ELAVON_SERVICING_EDSCustomerLocation" 
+"GQL_ELAVON_SERVICING_EDSCollection" 
+
+ 
+
+UAT Ext 
+
+Please add the following AD Groups to AppID EDSNAEXTRUSRAPPIDUAT in the uatt3 domain. 
+“GQL_ELAVON_SERVICING_Legalorganization” 
+"GQL_ELAVON_SERVICING_EDSPerson" 
+"GQL_ELAVON_SERVICING_EDSReferencedata" 
+"GQL_ELAVON_SERVICING_EDSCustomerLocation" 
+"GQL_ELAVON_SERVICING_EDSCollection" 
+ 
+
+
+
+     
+------------------
+
+
+Call 1
+export NAMESPACE=10066
+export ROLE_ID=f862ce36-268a-e895-8689-88ecdf694a6c 
+export SECRET_ID=d0bee905-838f-7fc9-277d-c8f83a20398d 
+
+curl --location --request POST 'https://hcvault.us.bank-dns.com/v1/10066/approle/data/approle_10066_uat/login' \
+--header 'X-Vault-Namespace: $NAMESPACE' \
+--data-raw '{
+  "role_id": "$ROLE_ID",
+ "secret_id": "$SECRET_ID"
+}'
+
+Call 2
+curl --location --request GET 'https://hashicorp-vault-test.us.bank-dns.com/v1/secret/data/test' \
+--header 'X-Vault-Namespace: $NAMESPACE' \
+--header 'X-Vault-Token: $TOKEN' \
+
+
+
+------------
+CHG0252335
+
+https://clearpath-uat.us.bank-dns.com/Scope/Create
+
+------------
+limit 100 recent to all records
+or block the full table scan.
+add pagination
+------------
+@RequestMapping("/showHeaders")
+
+public String getHeaders(HttpServletRequest request) {
+    return Collections.list(request.getHeaderNames())
+                      .stream()
+                      .map(headerName -> headerName + "=" + request.getHeader(headerName))
+                      .collect(Collectors.joining(", "));
+}
+
+[1:43 PM] Mummadireddy, Krishna Varsha
+
+payload value : {"scope":["openid","role:GQL"],"authorization_details":[],"client_id":"GraphQL","iss":"https://it-federation.usbank.com","sub":"elnadsintusrAPPIDIT","FirstName":"elnadsintusrAPPIDIT","roles":["GQL_ELAVON_SERVICING_EDSCollection","GQL_ELAVON_SERVICING_EDSCustomerLocation","GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocation","GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocationById"],"userid":"elnadsintusrAPPIDIT","exp":1710529214} 
+
+{
+  "scope": [
+    "openid",
+    "role:GQL"
+  ],
+  "authorization_details": [],
+  "client_id": "GraphQL",
+  "iss": "https://it-federation.usbank.com",
+  "sub": "elnadsintusrAPPIDIT",
+  "FirstName": "elnadsintusrAPPIDIT",
+  "roles": [
+    "GQL_ELAVON_SERVICING_EDSCollection",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocationById"
+  ],
+  "userid": "elnadsintusrAPPIDIT",
+  "exp": 1710529214
+}
+
+    "GQL_ELAVON_SERVICING_EDSCollection",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocation",
+    "GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocationById"
+
+----------
+
+d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+curl -i --location 'http://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'correlation-ID: b79f770d-9b36-4981-8e1e-1c3f515c2b24' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJHcmFwaFFMIiwiaXNzIjoiaHR0cHM6Ly9pdC1mZWRlcmF0aW9uLnVzYmFuay5jb20iLCJzdWIiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiRmlyc3ROYW1lIjoiYXdzY29uZXh0dXNyQVBQSURJVCIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uQnlJZCJdLCJ1c2VyaWQiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiZXhwIjoxNzEwNzg1ODg5fQ.x2s5XPF9reJzd9DLdgyBpT-fBKl5p-vwzFvDSYLKlL6iNJqY5c_JjL2eKwyoxQIp9GWuyXEwJFiZc6v-tkjWUj1G7rwikQC-XOQmsTBItVRKdHqBceV8Mh6HwXExrgN8HCw-WrFabg_EjyjEe5Yao0ePY_dgYsQvXOwYhtxPT7GwveRdoPqvNF--5tSSPJ80A3K0R0LPy3WkXHRsmOdEHAuYxXA4_WQrVrNLMzmH6KLdHdyfPV1FFYWPiKrSYTh5RZRQXQYa7Ipv1JN1a-IiK6JCj2MeASJkDk15xnGyP-rQTa0pyz6ONsmuAlWVj3RFoaONpA2nchU4GiPiIGe0lA' \
+--header 'Authorization: Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0='
+-----------
+curl -i --location 'http://localhost:8080/api/customer-locations' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'correlation-ID: b79f770d-9b36-4981-8e1e-1c3f515c2b24' \
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJHcmFwaFFMIiwiaXNzIjoiaHR0cHM6Ly9pdC1mZWRlcmF0aW9uLnVzYmFuay5jb20iLCJzdWIiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiRmlyc3ROYW1lIjoiYXdzY29uZXh0dXNyQVBQSURJVCIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uQnlJZCJdLCJ1c2VyaWQiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiZXhwIjoxNzEwNzg1ODg5fQ.x2s5XPF9reJzd9DLdgyBpT-fBKl5p-vwzFvDSYLKlL6iNJqY5c_JjL2eKwyoxQIp9GWuyXEwJFiZc6v-tkjWUj1G7rwikQC-XOQmsTBItVRKdHqBceV8Mh6HwXExrgN8HCw-WrFabg_EjyjEe5Yao0ePY_dgYsQvXOwYhtxPT7GwveRdoPqvNF--5tSSPJ80A3K0R0LPy3WkXHRsmOdEHAuYxXA4_WQrVrNLMzmH6KLdHdyfPV1FFYWPiKrSYTh5RZRQXQYa7Ipv1JN1a-IiK6JCj2MeASJkDk15xnGyP-rQTa0pyz6ONsmuAlWVj3RFoaONpA2nchU4GiPiIGe0lA' \
+--header 'Authorization: Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0='
+-----------
+PingFed Roles logic, we have the following roles in our NHID Setup
+
+1- GQL_ELAVON_SERVICING_EDSCollection
+2- GQL_ELAVON_SERVICING_EDSCustomerLocation
+3- GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocation
+4- GQL_ELAVON_SERVICING_EDSCustomerLocation_CustomerLocationById
+
+-----------
+    url: jdbc:postgresql://na-elavondomain-services-nonprod.cluster-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocation2
+    username: customerlocation
+    password: customerlocation
+
+userDetailsService:
+  admin_username: admin
+  admin_password: YWRtaW5QYXNzd29yZA==
+  admin_role: ADMIN
+  user_username: user
+  user_password: YWRtaW5QYXNzd29yZA==
+  user_role: USER 
+
+
+Branches feature/mvp1-domain-model-changes   
+origin/feature/mvp1-domain-model-changes  
+-----------
+--header 'x-authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJHcmFwaFFMIiwiaXNzIjoiaHR0cHM6Ly9pdC1mZWRlcmF0aW9uLnVzYmFuay5jb20iLCJzdWIiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiRmlyc3ROYW1lIjoiYXdzY29uZXh0dXNyQVBQSURJVCIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uQnlJZCJdLCJ1c2VyaWQiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiZXhwIjoxNzEwNzg1ODg5fQ.x2s5XPF9reJzd9DLdgyBpT-fBKl5p-vwzFvDSYLKlL6iNJqY5c_JjL2eKwyoxQIp9GWuyXEwJFiZc6v-tkjWUj1G7rwikQC-XOQmsTBItVRKdHqBceV8Mh6HwXExrgN8HCw-WrFabg_EjyjEe5Yao0ePY_dgYsQvXOwYhtxPT7GwveRdoPqvNF--5tSSPJ80A3K0R0LPy3WkXHRsmOdEHAuYxXA4_WQrVrNLMzmH6KLdHdyfPV1FFYWPiKrSYTh5RZRQXQYa7Ipv1JN1a-IiK6JCj2MeASJkDk15xnGyP-rQTa0pyz6ONsmuAlWVj3RFoaONpA2nchU4GiPiIGe0lA' \
+--header 'Authorization: Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0='
+
+
+-----------
+can you provide some test data to AWS Connect team? 
+
+Basically, some customerLocationEnterpriseIds that are present in both Customer Location and Collections, 
+
+and some customerLocationEnterpriseIds that are present in Customer Location, but not in Collections 
+
+Suryawanshi, Vinayak. Here are the enterpriseId in dev environment . First set  exist in both customerlocation and collections.
+'NA100007400318018',
+'NA100007400318020',
+'NA100008002239732',
+'NA100007400318013',
+'NA100007400318016'
+ 
+second set exist only in customerlocation but not in collections
+NA100008025348155
+NA100008025435168
+NA100008025348460
+NA100008025348197
+NA100008025345706
+
+
+SELECT * from customer_location cl where customer_location_enterprise_id like 'NA%';
+
+SELECT * from customer_location cl where customer_location_enterprise_id in (
+'NA100007400318018',
+'NA100007400318020',
+'NA100008002239732'
+);
+
+Common:
+
+'NA100007400318018',
+'NA100007400318020',
+'NA100008002239732',
+'NA100007400318013',
+'NA100007400318016'
+------------
+
+
+
+------------
+Where are we in publishing the rest of the sub-graphs to Apollo Studio? Can we take up this activity since it takes time to get them deployed?
+We need ALN requests submitted
+We will need AD Groups to be created
+Our existing NHIDs need association with the new AD Groups
+Let's get these created for Legal Organization, Person and Refrence-Data Sub-Graphs as well. Plan for it this Sprint.
+------------
+
+[12:27 PM] Mitra, Debmalya
+
+------------
+curl --location 'https://it-api2.elavon.com/graphql/v1' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'Correlation-ID: 723fd7b8-e769-4464-bc41-41429781d673' \
+--header 'X-Authorization: Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0=' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic RVNRWHV2anN4NzdhbDg2aVdSY3lQZ2hxVVRJQUw3dHo6MnlZRW5tQTQ3eUhrcW04Qw==' \
+--data '{"query":"query {\n  totalCollectionAmountByCustomerLocationEnterpriseId(customerLocationEnterpriseId: \"NA100008033731061\") {\n    customerLocationEnterpriseId\n       balance{\n        amount\n        currencyCode{\n            isoCurrencyCode\n        }\n    }\n  }\n}","variables":{}}'
+------------
+https://it-api2.elavon.com/graphql/v1
+https://it-api2.elavon.com/graphql/v1
+------------
+Jodie Tate and Andy Hesslberg
+------------
+
+java.lang.IllegalArgumentException: A signing key must be specified if the specified JWT is digitally signed.
+	at io.jsonwebtoken.lang.Assert.notNull(Assert.java:82)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:391)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:550)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:610)
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173)
+	at com.elavon.eds.na.customerlocation.filter.CustomerLocationFilter.jwtTokenizerExtract(CustomerLocationFilter.java:131)
+	at com.elavon.eds.na.customerlocation.filter.CustomerLocationFilter.doFilter(CustomerLocationFilter.java:95)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:67)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at com.elavon.eds.na.customerlocation.config.RequestResponseTracker.doFilterInternal(RequestResponseTracker.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+
+header value Bearer 
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6IklUUTEyMyIsIng1dCI6IlJ2VnNPdWVFald4YWJKRkFuVnFIeFNpQjVLMCIsInBpLmF0bSI6Im01N2YifQ.eyJzY29wZSI6WyJvcGVuaWQiLCJyb2xlOkdRTCJdLCJhdXRob3JpemF0aW9uX2RldGFpbHMiOltdLCJjbGllbnRfaWQiOiJHcmFwaFFMIiwiaXNzIjoiaHR0cHM6Ly9pdC1mZWRlcmF0aW9uLnVzYmFuay5jb20iLCJzdWIiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiRmlyc3ROYW1lIjoiYXdzY29uZXh0dXNyQVBQSURJVCIsInJvbGVzIjpbIkdRTF9FTEFWT05fU0VSVklDSU5HX0VEU0NvbGxlY3Rpb24iLCJHUUxfRUxBVk9OX1NFUlZJQ0lOR19FRFNDdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uIiwiR1FMX0VMQVZPTl9TRVJWSUNJTkdfRURTQ3VzdG9tZXJMb2NhdGlvbl9DdXN0b21lckxvY2F0aW9uQnlJZCJdLCJ1c2VyaWQiOiJhd3Njb25leHR1c3JBUFBJRElUIiwiZXhwIjoxNzEwNTE5MjU3fQ.EQUGk1x7QnGrkdKUCdsdMWy05INzRZqISgsKw5JJP-LAfbe8M7FTkzXtekcPV7-ThoowFmjBkKWTiSVTTSGthtcpg_Idapbh_2e5YaFwgRlyLq0iQ_1pNKKL0PERBpDD_LhP8KlVLDAwu9-wlx_etlfOvC6uIPz7prL2PWV6qZsc-59S6qMZQOW5zLnd5B-VC3y_MoNems_R31VHEymCq5gROW4YrhdsCU_sDP7FqjgveuoHai8VQe1qQP_SQ1WMut7xHm92yEf7OgUK-WBzNbQOq-IPsi-FAcG6ybFXgGJ1qNeCHCrYG76JxsoGDtO0MlSkTvT6GaQtoLNwh9tnqA
+
+2024-03-15T15:14:18.000+01:00  INFO 1 --- [  XNIO-1 task-2] c.e.e.n.c.config.GraphQLInterceptor      : header name x-forwarded-proto 
   
+------------
+
+openssl pkcs12 -export -out YYY.pfx -inkey YYY.key -in YYY.crt
+
+openssl pkcs12 -export -out myTests.pfx -inkey el-collections-ds-na-tls-secret-it.key -in el-collections-ds-na-tls-secret-it.crt
+
+openssl pkcs12 -export -out el-collections-ds-na-tls-secret-it.pfx -inkey el-collections-ds-na-tls-secret-it.key -in el-collections-ds-na-tls-secret-it.crt
+
+openssl pkcs12 -export -out el-customerlocation-ds-na-tls-secret-it.pfx -inkey el-customerlocation-ds-na-tls-secret-it.key -in el-customerlocation-ds-na-tls-secret-it.crt
+
+openssl pkcs12 -export -out el-customerlocation-ds-na-tls-secret-uat.pfx -inkey el-customerlocation-ds-na-tls-secret-uat.key -in el-customerlocation-ds-na-tls-secret-uat.crt
+
+openssl pkcs12 -export -out el-collections-ds-na-tls-secret-uat.pfx -inkey el-collections-ds-na-tls-secret-uat.key -in el-collections-ds-na-tls-secret-uat.crt
+
+------------
+Good One: P04765
+
+Bad One:  P04759
+------------
+
+EB13coYoTmbeHLMN5p1ADebLiIAXPtTW
+kUJS5HhyRQ0Aulib
+
+admin
+YWRtaW5QYXNzd29yZA==
+
+Basic YWRtaW46WVdSdGFXNVFZWE56ZDI5eVpBPT0=
+------------
+https://it-api2.elavon.com/graphql/v1 
+
+openssl pkcs7 -print_certs -in certificatename.p7b -out certificatename.pem
+
+openssl pkcs7 -print_certs -in "Entrust Root Certification Authority - G2.p7b" -out Entrust_Root_Certification_Authority-G2.pem
+
+
+Correct 
+
+openssl pkcs7 -in Entrust\ Root\ Certification\ Authority\ -\ G2.p7b -inform DER -print_certs -out cert_for_shakeel.pem 
+--------\\
+
+
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocationdb_it?currentSchema=customerlocation
+
+jdbc:postgresql://na-elavondomain-services-nonprod.cluster-cfnhcyaezu82.us-east-2.rds.amazonaws.com:5432/customerlocation2
+
+
+---------
+
+dev - customerlocation2
+it - customerlocationdb_it
+
+
+
+Work on using the new customerlocationdb_it for IT env and deploy CustomerLocation API
+
+Collection API IT will point to the same CollectOne DB as DEV.
+
+---------
+Can you please focus on the following:
+Get Customer Location and Collection API to both work together through Apollo.
+The current issues I notice is:
+Collection has implemented Basic Auth, while CustomerLocation still has JWT based authentication. Both APIs will have to use the same form of authentication. And both should use the same credentials. Please ensure the username and password are different and share it with the team.
+
+
+mTLS is not enabled for Collection API. Please work on enabling mTLS.
+
+Once the above 2 issues are resolved, I think we can test both the subgraphs through Apollo in a single query.
+
+For a positive test scenario, set up a customerLocationEnterpriseId that matches a MID already present in the CollectOne DB.
+Test mTLS endpoint from Apigee once Gaayatri adds US Bank Root CA to Dev / IT Apigee.
+
+
+Follow up with Randy to make sure the Apigee change he did in Dev becomes more of a permanent change and is available in IT as well.
+IT Env Setup
+Work on using the new customerlocationdb_it for IT env and deploy CustomerLocation API
+
+Collection API IT will point to the same CollectOne DB as DEV.
+Data Migration
+Work on performing CDC based migration of records from Unified Cloud QA to DEV Env.
+Both DEV and IT will point to the same Unified Cloud QA Env.
+Fix any mapping issues and work with Product team on any mapping gaps.
+Update stagingdb tables to be able to track migration progress.
+Ongoing Sync
+This is a new one that we haven't started work on. 
+We should pick this up the following week or when #1 and #2 are completed. 
+Basically, we should look at integrating with LUCAS framework to consume the Salesforce Business Events and update Domain Services with the changes.
+
+------------
+
+curl --request GET \
+  --url https://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/62cc6224-5964-4f5d-9410-ee6dc6205a99 \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwOTA0MDI1OCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA4OTUzODU4fQ.8V9CZ4GO0xzNAG88JaeL7bNaF1l145jbb2WJl1GX3r3YyfRgE8HvNYAahgqa7vmvJh3g9BzWJBoLIQ63RAJ1LQ' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"'
+------------
+WARNING
+------------
+
+Weekly Status:
+  - Microservices part of customer Location Domain are now deployed and running in AWS Dev Environment.
+  - Blackduck scans are succesful and generated reports are being reviewed.
+  - Fortify scans are succesful and generated reports are being reviewed.
+  In Progress:
+    - Producing Postman API collections for each micro service
+    - Hazelcast Caching deployment is in in progress
+    - Apigee GraphQL gateway registration and review is in progress. 
+      Risk - Integration between ALN and GitLabs broken due to new access management tool. EASE team is engaged to unblock us.
+
+
+- TLS has been confuigured on all the microservices.
+- mTLS has been configured for legal organization. 
+- ALN Record for Customer Location has been approved.
+- ALN Graph is being published and validations are being taken care of.
+- Working on Mapper for the response to be rendered as per schema
+- Added new endpoints in graphQL for customerLocation  and Collection 
+- SONAR configuration is complete and reports are created.
+- Twistlock scan is in progress.
+- Blackduck reports have been fixed.
+- Fortify scans are being worked on and related development is in progress.
+- Postman API collections are completed.
+- K8 Secretes and configuration management is complete.
+
+Week - Feb7.
+[3:39 PM] Alapati, Bharath Kumar
+Here are the status updates for Elavon Domain Services - NA  
+
+Blocked
+
+  - GraphQL onboarding due to authentication setup/configuration.
+
+  - Data discrepency between environments needs clarification before we can complete migration scripts.
+ 
+  In Progress:
+
+    - Working on Mapper for the response to be rendered as per schema.
+
+    - Twistlock/fortify scan remediation is in progress.
+
+    - QA Automation in progress.
+-  
+
+Next in plan.
+
+
+- Hashicorp and configuration management.
+
+Here are the new expected stories.
+
+- GraphQL - Develop API/Query Response for Subgraph Collections.
+- GraphQL - Develop API/Query Response for Subgraph Customerlocation.
+- GraphQL - Develop API/Query Response for Subgraph Referencedata.
+- GraphQL - Develop API/Query Response for Subgraph Person.
+- GraphQL - Develop API/Query Response for Subgraph Legalorganization.
+- Cascade config for insert/updates.
+- Test Automation - 
+- Cleanup on Jenkins and AWS. Remove the test repos.
+- Cleanup RDS.
+- Improve the faker data.
+-----------
+secrete-id: 6acdd814-0d8d-c7b6-4057-192826922623
+role_id: 3ee7310c-912a-415d-6456-98f30722f7e7
+-----------
+		"current_password": "?@09AZpdTrmjLqifWyPfjUwLmFCY83J2ugCZfoB1AsiSFQKXV1QnO8ysPuj3yLUU",
+		"last_password": "?@09AZuT0NecNYONAik2tVhPYzaqWQoVBH7dSg8m37XdfMiHzVwpC60Y3AabJNA9",
+		"username": "elnadsintusrAPPIDIT"
+-----------
+https://{{apollo-router-endpoint}}
+
+"apollo-router-endpoint": "dev-gql-elavon.us.bank-dns.com/graphql",
+
+curl --request POST \
+  --url 'https://dev-gql-elavon.us.bank-dns.com/graphql?=' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwODUyMDE5MywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA4NDMzNzkzfQ.RD18ix07Mk9LJR-2atgsulpXv2IDcheXzhrgzYyzSRHZvMc8aMNuuyb3wjK1EOpz0IzsZuq499DDrhW-39kUSQ' \
+  --header 'Connection: keep-alive' \
+  --header 'Content-Type: application/json' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'correlation-ID: EDS10066-20thFebDebug-001' \
+  --header 'r-authorization: Basic ZWxuYWRzaW50dXNyQVBQSURJVDo/QDA5QVp5NkZ1VThtSGw2ME94bHRtUjBMakFORE9FNnNwWmdHRkw4Zm40T2dMQ0paRGs1NTNVd0dYY1FLWFpp' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --data '{"query":"query {\n\tcustomerlocationById(id: \"415b2a10-3023-44cf-a2a5-11de9533dd54\") {\n\t\tid\n\t\tcustomerLocationEnterpriseId\n\t\tmid\n\t\tmidGroup\n\t\tgeneralFinanceSetup {\n\t\t\tclientGroupNumber\n\t\t}\n\t\tbusinessInfo {\n\t\t\tid\n\t\t\testablishedYear\n\t\t\tbusinessDescription\n\t\t}\n\t\tgrouping {\n\t\t\tportfolioId\n\t\t\tportfolioName\n\t\t}\n\t\tapplicationContext {\n\t\t\tapplicationEnterpriseId\n\t\t\tsubmittingClientName\n\t\t}\n\t\tgeneralFinanceSetup {\n\t\t\tclientGroupNumber\n\t\t\tbillingMerchantNumber\n\t\t}\n\t}\n}\n"}'
+
+
+
+-----------
+
+ALN q
+
+Can internel comm app be hit but an External Consumer??
+
+Alapati, Bharath Kumar
+
+
+
+
+----------
+
+ELDSCLAPPIDDEV
+
+eldsclappiddev
+
+-----------
+		"username": "ELDSCLAPPIDDEV"
+		"current_password": "?@09AZFfsPcZTPOlUcNIergC6VeGHf8ysLhkey5zd5nHoKak4OkWeE4O6AiDw4yd",
+
+
+elnadsintusrAPPIDIT
+
+elnadsintusrappidit
+
+
+curl --request POST \
+  --url 'https://dev-gql-elavon.us.bank-dns.com/graphql?=' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwODE4Mjc0MywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA4MDk2MzQzfQ.SweG2MXDGbidEE5nCia-X6lZD9Z4WWhbIbFoEKtLECGs3IGmqpxR3auSHixQXHX9JyyUHsSLP1RkBpLXTMCu2Q' \
+  --header 'Connection: keep-alive' \
+  --header 'Content-Type: application/json' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'correlation-ID: EDS1006612thFebDebug002' \
+  --header 'r-authorization: Basic ZWxuYWRzaW50dXNyQVBQSURJVDo/QDA5QVp6VVRweEZsYmVSZXZuRDdPOHhiVVVoMnpJQTlPcmxMWmdBY28zWmd4MWthSXdlRDJiejJmUXNnMEtI' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --data '{"query":"query {\n\tcustomerLocation(customerLocationEnterpriseId: \"spaghetti\") {\n\t\tid\n\t\tcustomerLocationEnterpriseId\n\t\tmid\n\t\tmidGroup\n\t\tglobalMidKey\n\t\tgeneralFinanceSetup {\n\t\t\tclientGroupNumber\n\t\t}\n\t\tbusinessInfo {\n\t\t\tid\n\t\t\testablishedYear\n\t\t\tbusinessDescription\n\t\t}\n\t\tgrouping {\n\t\t\tportfolioId\n\t\t\tportfolioName\n\t\t}\n\t\tapplicationContext {\n\t\t\tapplicationEnterpriseId\n\t\t\tsubmittingClientName\n\t\t}\n\t\tgeneralFinanceSetup {\n\t\t\tclientGroupNumber\n\t\t\tbillingMerchantNumber\n\t\t}\n\t}\n}\n"}'
+
+curl --request GET \
+  --url http://localhost:8080/api/customer-locations \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Authorization: Bearer ' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"'
+
+---------
+
+role_id  3ee7310c-912a-415d-6456-98f30722f7e7 
+
+secret_id 6acdd814-0d8d-c7b6-4057-192826922623 
+
+curl --request POST \
+  --url https://hashicorp-vault-test.us.bank-dns.com/v1/auth/approle/login \
+  --header 'X-Vault-Namespace: 10066' \
+  --data '{ "role_id": "3ee7310c-912a-415d-6456-98f30722f7e7", "secret_id": "6acdd814-0d8d-c7b6-4057-192826922623" }'
+ 
+
+curl --location --request POST 'https://hashicorp-vault-test.us.bank-dns.com/v1/auth/approle/login' \ 
+--header 'X-Vault-Namespace: $NAMESPACE' \ 
+--data-raw '{ "role_id": "$ROLE_ID", "secret_id": "$SECRET_ID" }' 
+
+curl --request POST \
+  --url https://hashicorp-vault-test.us.bank-dns.com/v1/auth/approle/login \
+  --header 'X-Vault-Namespace: 10066' \
+  --data '{ "role_id": "3ee7310c-912a-415d-6456-98f30722f7e7", "secret_id": "6acdd814-0d8d-c7b6-4057-192826922623" }'
+
+curl --location --request GET 'https://hashicorp-vault-test.us.bank-dns.com/v1/secret/data/test' \
+--header 'X-Vault-Namespace: $NAMESPACE' \
+--header 'X-Vault-Token: $TOKEN' \
+
+curl --location --request GET 'https://hashicorp-vault-test.us.bank-dns.com/v1/ad-engine-usb_dev/creds/elnacustlocappiddev' \
+--header 'X-Vault-Namespace: 10066' \
+--header 'X-Vault-Token: X-Vault-Token' \
+
+  ad-engine-usb_dev
+
+  https://hashicorp-vault-test.us.bank-dns.com/v1/ad-engine-usb_dev/creds/elnacustlocappiddev
+
+elnacustlocappiddev
+
+----------
+
+
+Notes from Satish:
+
+We will not use postgres for Collections. We will use a SQL Query from Oracle. It will be READ. No iserts or updates.
+rm01 risk management the SQL for collections which is read only.
+We need to followup with Justin as Collections Data is aggregated in rm01 Oracle DB.
+
+
+9:40 AWS Connect - Cutomer Location API subgraph, is a good enough for go Live.
+2nd priority Collections.
+Graph Headers: correlation id. Extract the header and log in the logs. Append.
+
+Arun with Seetah.
+Test plan for testing.
+Automation + Performance.
+SLA Agreements.
+We are the system of reference for SF.
+
+
+saravana.kumar2@elavon.com
+-----------
+Questions for Devops call?
+What is the telemetry used for K8/AWS.
+-----------
+Questions for EASE.
+
+cert identity alt subject name.
+-----------
+vd 4k.
+
+
+
+edse_dashboard_dev_lead_prod (edse . . .
+EDSINTERNAL_Dev_Lead_PROD (EDSINTE . . .
+EDS_SPP_Development_PROD (EDS_SPP_ . . .
+
+
+
+ELAVON-SERVICING-EDSCollection v1
+https://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts/graphql
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-collections-service-ds-na/-/blob/main/schema.gql
+------------
+Friday:
+
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjk3Mjk5NSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2ODg2NTk1fQ.ymgofmLWtb8yMRivN4W5pbhJVVUSEh_xC706F6WtQqWeZivYOFXUzuLX3TAZn-aEiF6LTsSjO5eDx9GbL9Sh9g
+
+
+curl  -X GET \
+  'http://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/4500ef75-a1e5-4182-b68a-2dc0ce6b3fdb' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Authorization: ' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjk3Mjk5NSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2ODg2NTk1fQ.ymgofmLWtb8yMRivN4W5pbhJVVUSEh_xC706F6WtQqWeZivYOFXUzuLX3TAZn-aEiF6LTsSjO5eDx9GbL9Sh9g
+'
+
+curl  -X GET \
+  'http://d-cusloc.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjk3Mjk5NSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2ODg2NTk1fQ.ymgofmLWtb8yMRivN4W5pbhJVVUSEh_xC706F6WtQqWeZivYOFXUzuLX3TAZn-aEiF6LTsSjO5eDx9GbL9Sh9g
+'
+
+
+-----------
+
+curl  -X POST \
+  'https://hashicorp-vault-test.us.bank-dns.com/v1/secret/data/myKey4' \
+  --header 'Accept: */*' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'X-Vault-Token: X-Vault-Token' \
+  --header 'X-Vault-Namespace: 10066' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+   "data" : {
+        "MyKey4" : "MyValue4" } 
+}'
+
+-----------
+curl --location --request POST 'http://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts/graphql' \
+--header 'accept: */*' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjcwMDczMiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2NjE0MzMyfQ.Pxcl6Qc3kWrcc2UjoGfT0mrTqwCE9BvGcoEDnBps9doExKDBKJGNVZWOY8lLyQ5lF0DQdZrEg62MsVgb4wa7sw' \
+--header 'Content-Type: application/json' \
+--data-raw '{"query":"query {\r\n  collectionsByCustomerLocationEnterpriseId(customerLocationEnterpriseId: \"woot\") {\r\n    accountId\r\n    merchantIdentifierGroup\r\n    accountType\r\n    customerLocationEnterpriseId\r\n    billingAccountEnterpriseId\r\n  }\r\n}\r\n","variables":{}}'
+-----------
+
+curl  -X POST \
+  'http://localhost:8080/graphql' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjY0MzE1MywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2NTU2NzUzfQ.MRF8N4yHjGdGXggZoZ6LivXSy6IBVZ9Y-fyfVKI_Z0YiJJoldJbZN83pRM9BBYqmZtJmqneVQ8preoMEEu5BxQ' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{"query":"{}","variables":"{}"}'
+
+
+curl  -X GET \
+  'http://localhost:8080/api/currency-codes/1' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjY0MzgyOCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2NTU3NDI4fQ.qB956ZGhin8N_zx9mI85Ju2oXdel7XZKYjopFYor6A_mXaXIFFxmOujfFaH23PEaqvqdjkmW1Jv_80E0pwYQiQ'
+
+curl  -X GET \
+  'http://localhost:8080/api/currency-codes' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjY0MDcwNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2NTU0MzA3fQ.iuyZnIj-0ooPnVHsOoLhV2xg7x4OZvGD6kBuX_AIA7kULk8o06BIgTpW6rxhyt-kBXwIZtGuf5u1UaNzEdo2eQ'
+
+-----------
+
+curl  -X GET \
+  'http://localhost:8080/api/collection-accounts/graphql' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{"query":"query {\n  collectionsByCustomerLocationEnterpriseId(customerLocationEnterpriseId: \"woot\") {\n    accountId\n    merchantIdentifierGroup\n    accountType\n    customerLocationEnterpriseId\n    billingAccountEnterpriseId\n  }\n}","variables":"{}"}'
+
+curl  -X POST \
+  'http://localhost:8080/graphql' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{"query":"query {\n  collectionsByCustomerLocationEnterpriseId(customerLocationEnterpriseId: \"woot\") {\n    accountId\n    merchantIdentifierGroup\n    accountType\n    customerLocationEnterpriseId\n    billingAccountEnterpriseId\n  }\n}","variables":"{}"}'
+
+------------
+
+DB: LUCASAuroraDB
+User: LUCASAuroraUser 
+password: TFVDQVNBdXJvcmE=
+------------
+
+
+elavon-customerlocationv2-service-ds-na
+
+
+elavon-collections-service-ds-na
+elavon-customerlocation-service-ds-na
+elavon-referencedata-service-ds-na
+elavon-legalorganization-service-ds-na
+elavon-person-service-ds-na
+
+
+
+ELAVON-SERVICING-EDSPerson
+
+ELAVON-SERVICING-Person-Service-DS-NA
+
+Referencedata
+Legalorganization
+Person
+------------
+Old
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/schema.gql
+
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-customerlocation-service-ds-na/-/blob/main/schema.gql
+------------
+
+Caused by:
+    INVALID_FIELD_SHARING: Non-shareable field "ContactAddress.addressClassType" is resolved from multiple subgraphs: it is resolved from subgraphs "ELAVON-SERVICING-EDSCustomerLocation" and "ELAVON-OSL-Subgraph" and defined as non-shareable in subgraph "ELAVON-SERVICING-EDSCustomerLocation"
+    INVALID_FIELD_SHARING: Non-shareable field "ContactAddress.addressClassName" is resolved from multiple subgraphs: it is resolved from subgraphs "ELAVON-SERVICING-EDSCustomerLocation" and "ELAVON-OSL-Subgraph" and defined as non-shareable in subgraph "ELAVON-SERVICING-EDSCustomerLocation"
+    
+
+-----------
+
+Here are details:
+Cluster: eks-lucas-devtest-use2-onf1
+Project: apl-lucas-integ 
+Namespace : apl-lucas-customerlocation-dev1
+Pod: el-eds-customer-location-service-1-0-38-7f5fcdc4bc-l27ct
+-------------
+
+
+~/Desktop/tls/legalorganization/tls.key
+~/Desktop/tls/legalorganization/tls.crt
+
+
+
+
+-rw-r--r--  1 c089602  NA\Domain Users  3243 Jan 23 12:54 tls.key
+-rw-r--r--  1 c089602  NA\Domain Users  4455 Jan 23 12:54 tls.crt
+-------------
+
+http://d-legal.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/extended-mccs
+
+
+
+
+curl  -X GET \
+  'https://d-legal.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/extended-mccs' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjM0NjAwMCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2MjU5NjAwfQ.9Uv031mtk1cXYkAU4P0OL7JpAnUqXugjbfZikXYylLVDeWk-_zH8GO2grPO1PX3JgE9BrHlB4fl6I9gUZLi8nw' \
+  --cert ~/Desktop/tls/legalorganization/tls.crt \
+  --key ~/Desktop/tls/legalorganization/tls.key
+
+-------------
+
+https://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/management/health
+
+ALN 2 Delete??
+
+https://api-lifecycle-navigator.us.bank-dns.com/catalog/api-details/ELAVON-SERVICING-Collections
+
+
+
+
+
+
+
+
+d-prson.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+-------------
+
+dev-el-eds-legal-organization-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+d-legal.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-el-eds-reference-data-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+d-ref.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+
+
+--------------
+
+curl  -X GET \
+  'http://dev-el-eds-legal-organization-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/legal-organizations' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjA5MTA5MSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA2MDA0NjkxfQ.jQGzlo7VgzR6M3zpi-cdZbj0kA4XzgS66FLWBvNHFSoeROnhElc49Zz-o_EfVctU5SYQZ6yydyiX-zAcHcDUiw'
+
+https://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/management/health
+
+http://dev-el-eds-legal-organization-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/management/health
+-------------------
+
+dev-el-eds-collections-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-collections.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+xxxYYYzz.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+Reduced the DNS name due to the CN Validation in certs.
+------------
+
+curl  -X GET \
+  'http://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*'
+
+curl  -X GET \
+  'https://d-colxn.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts' \
+  --header 'User-Agent: Thunder Client (https://www.thunderclient.com)' \
+  --header 'accept: */*'
+
+
+------------
+
+curl  -v GET \
+  'https://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjAwNjAxNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1OTE5NjE3fQ.XWzA7m1bKUCJK-_FAOSbCRK9kDzfFWNxSE6k11e_ZIYM9V3SktPNU_8VDGB9qTp7olJA7uohqr5LPNGQmO9qAw' \
+  --cert ~/Downloads/tls.crt \
+  --key ~/Downloads/tls.key
+
+curl  -X GET \
+  'http://localhost:8080/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjAwNjAxNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1OTE5NjE3fQ.XWzA7m1bKUCJK-_FAOSbCRK9kDzfFWNxSE6k11e_ZIYM9V3SktPNU_8VDGB9qTp7olJA7uohqr5LPNGQmO9qAw'
+ 
+curl  -X GET \
+  'https://localhost:8443/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjAwNjAxNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1OTE5NjE3fQ.XWzA7m1bKUCJK-_FAOSbCRK9kDzfFWNxSE6k11e_ZIYM9V3SktPNU_8VDGB9qTp7olJA7uohqr5LPNGQmO9qAw'
+
+------------
+
+FixMe: el-eds-customer-location-service
+.mvn/
+
+el-ds-na-customerlocation_poc
+el-ds-na-edsna_customerlocation_v2_poc
+
+el-ds-na-edsna_collections-service_poc
+
+/el-ds-na-edsna_legal-organization-service_poc
+.mvn/el-ds-na-edsna_reference-data-service_poc
+el-ds-na-edsna_person-service_poc
+??
+--------------------------
+Questions for Satish
+
+Separate gql files.
+Errors due to the directives. join__graph
+--------------------------
+ALN 
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/schema.gql
+
+faker/sales force data.
+
+-----
+
+elavon-customer-location-ds-na
+
+elavon-customer-location-ds-na
+
+dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-el-customer-location-ds-na.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-cds.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-rds.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-reference-data-service.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com,
+dev-rds.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com
+------
+
+curl  -X GET \
+  'http://localhost:8080/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjAwNjAxNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1OTE5NjE3fQ.XWzA7m1bKUCJK-_FAOSbCRK9kDzfFWNxSE6k11e_ZIYM9V3SktPNU_8VDGB9qTp7olJA7uohqr5LPNGQmO9qAw'
+
+curl  -X GET \
+  'https://localhost/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNjAwNjAxNywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1OTE5NjE3fQ.XWzA7m1bKUCJK-_FAOSbCRK9kDzfFWNxSE6k11e_ZIYM9V3SktPNU_8VDGB9qTp7olJA7uohqr5LPNGQmO9qAw'
+
+------
+customer.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-clna.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com
+
+dev-cl
+
+dev-api-lbi-eu-aws.p-sf978.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com
+---------------
+New Brnch: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/ALN-Validation/schema.gql
+
+Bad: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/generated-code/local-graphql-server/schema.gql
+
+Good: https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/elavon-na-customer-location-supergraph-schema.graphql
+Try:  https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/schema.gql
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model/-/blob/main/generated-code/local-graphql-server/schema.gql
+
+--------------------------
+
+https://hashicorp-vault-test.us.bank-dns.com
+
+
+
+curl --location 'https://hashicorp-vault-test.us.bank-dns.com/v1/10066/approle/data/approle_10066_dev' --header 'X-Vault-Token: X-Vault-Token'
+
+
+--------------------------
+
+Here is a quick checklist for Ravi's machine.
+
+1- JHipster app generation from JDL and manual.
+2- JHipster CML to JDL Conversion.
+3- Istio/Docker Desktop with K8s.
+4- Consul.
+5- Gateway UI app with all insert/update and selects.
+6- Postman insert/update and selects.
+7- Local Apollo Server with queries test and development in resolvers.
+8- Postgres with local Docker Container.
+9- testcontainers success test on a local container.
+
+Here is a quick checklist for Sateesh's machine.
+
+1- JHipster app generation from JDL and manual.
+2- JHipster CML to JDL Conversion.
+3- Consul.
+4- Gateway UI app with all insert/update and selects.
+5- Postman insert/update and selects.
+6- Local Apollo Server with queries test and development in resolvers.
+
+---------------------------
+
+
+el-ds-na-edsna_person-service_poc *Bharrath
+-------------
+ALN P04725
+-------------------------------------------
+	
+-------------------------------------------
+API Key 
+user:po.usbank.shakeel.ahmad@elavon.com:ZqoUpVGIxIZEBxi34VwqtQ
+-------------------------------------------
+
+
+
+-------------------
+https://api-lifecycle-navigator.us.bank-dns.com/catalog/api-details/ELAVON-BOARDING-EDSCustomerLocation-v1
+
+-------------------------------------------
+
+dev-customer-domain-service.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com
+
+nc -vz dev-customer-domain-service.p-nwv44.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com 80
+nc -vz dev-el-eds-collections-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com 443
+
+nc -vz collect-one-dev-db.ccsh9owlrnzg.us-east-2.rds.amazonaws.com 1521
+-------------------------------------------
+
+curl 'http://dev-edsna_customerlocation_v2.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com:80/api/authenticate' \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --data-raw '{    "username": "admin",    "password": "admin",    "rememberMe": false}'
+
+-------------------------------------------
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDQ2NzYzNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzgxMjM2fQ.sqOE2ZkwPvH6yDiRJ3EFG_XpS-0SRM7yd9QPC2TxlB6nP8KVJnS5YQ1I-OEVUxBX8iILrH-3oyx_tQ-w4tpcjQ
+
+curl -X 'GET' \
+  'http://dev-el-eds-person-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/person-identifications' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDQ2NzYzNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzgxMjM2fQ.sqOE2ZkwPvH6yDiRJ3EFG_XpS-0SRM7yd9QPC2TxlB6nP8KVJnS5YQ1I-OEVUxBX8iILrH-3oyx_tQ-w4tpcjQ'
+
+-------------------------------------------
+curl -X 'GET' \
+  'http://dev-el-eds-legal-organization-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/legal-organizations' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM5NzcyNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzExMzI2fQ.nIJbywUIMGJHelzVx5a_s6YAgaGncTsWWXy2vCfTm24qoQ6Wmw7hcS4o-Tn2FoiypJIf4xUtXEAltqCs7NrNSA'
+
+-------------------------------------------
+
+curl -X 'GET' \
+  'http://dev-el-eds-reference-data-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/currencies' \
+  --header 'accept: */*' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM5NzcyNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzExMzI2fQ.nIJbywUIMGJHelzVx5a_s6YAgaGncTsWWXy2vCfTm24qoQ6Wmw7hcS4o-Tn2FoiypJIf4xUtXEAltqCs7NrNSA'
+
+-------------------------------------------
+curl -X 'GET' \
+ 'http://dev-el-eds-collections-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/collection-accounts' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM5NzcyNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzExMzI2fQ.nIJbywUIMGJHelzVx5a_s6YAgaGncTsWWXy2vCfTm24qoQ6Wmw7hcS4o-Tn2FoiypJIf4xUtXEAltqCs7NrNSA'
+
+
+-------------------------------------------
+
+curl --location 'http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations/' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM5NzcyNiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzExMzI2fQ.nIJbywUIMGJHelzVx5a_s6YAgaGncTsWWXy2vCfTm24qoQ6Wmw7hcS4o-Tn2FoiypJIf4xUtXEAltqCs7NrNSA' \
+--header 'Connection: keep-alive' \
+--header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"'
+
+------------
+curl -X 'GET' \
+ 'http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/contact-addresses' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM4Njk2MiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzAwNTYyfQ.gejdAkptzFQRnnJDrakxIo0ze1J34PTyUDu4qKfkbJrvl--Ukp2806YgfAVuA19MFPJcsWiosRH20oqk-xHa7A'
+
+curl -X 'GET' \
+ 'http://localhost:8084/api/contact-addresses' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM4Njk2MiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzAwNTYyfQ.gejdAkptzFQRnnJDrakxIo0ze1J34PTyUDu4qKfkbJrvl--Ukp2806YgfAVuA19MFPJcsWiosRH20oqk-xHa7A'
+
+
+---------------------------
+
+
+
+c089602@ME-C02DP89EMD6R ~ % nc -vz dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com 80  
+Connection to dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com port 80 [tcp/http] succeeded!
+
+/Users/c089602/gitlab/el-na-d-model/final/elavon-na-domain-model/generated-code/edsna_customerlocation_v2
+----------------------------------
+
+http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com:8084/
+
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM4Njk2MiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzAwNTYyfQ.gejdAkptzFQRnnJDrakxIo0ze1J34PTyUDu4qKfkbJrvl--Ukp2806YgfAVuA19MFPJcsWiosRH20oqk-xHa7A
+
+curl -X 'GET' \
+ 'http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com:80/api/contact-addresses' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDM4Njk2MiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MzAwNTYyfQ.gejdAkptzFQRnnJDrakxIo0ze1J34PTyUDu4qKfkbJrvl--Ukp2806YgfAVuA19MFPJcsWiosRH20oqk-xHa7A'
+
+
+curl -X 'GET' \
+ 'http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com:80/api/contact-addresses' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDMxMzkzMCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MjI3NTMwfQ.UkbDaxL5zIVW0wCLji1zBNHM9uvQPiDPqjk3BQdZwKCe0kOWXrH-qUtDfzmNQE8sdhQMJRN2l3nPSJqbq2cmbA'
+
+curl -X 'GET' \
+ 'http://localhost:8084/api/contact-addresses' \
+ --header 'accept: */*' \
+ --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNDMxMzkzMCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA0MjI3NTMwfQ.UkbDaxL5zIVW0wCLji1zBNHM9uvQPiDPqjk3BQdZwKCe0kOWXrH-qUtDfzmNQE8sdhQMJRN2l3nPSJqbq2cmbA'
+
+https://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/
+
+nc -vz dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com 443
+
+----------------------------------
+
+customerLocationBusinessInfoDTO.setBusinessDescription("Bismillah-" + customerLocationBusinessInfo.getBusinessDescription());
+----------------------------------
+ssh://git@gitlab.us.bank-dns.com:2222/ELAVON_DOMAIN_SERVICES/elavon-na-domain-model.git
+
+----------------------------------
+Move all the following git repos to https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/pocs
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/graphqltest
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/fieldencryption
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/fieldencryptwithnewk8s
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/gradle-poc
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/jhipster-apps
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/jhipster-demo
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/kafka-testcontainers-dev
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/legalorganizationcontext
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/merchantlocationcontextpipelinetest
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/newcustomerlocationmicroservice
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/newcustomerlocationmicroservicepostgres
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/poc
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/springhazelcast
+
+----------------------------------
+
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/blackduckscan
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/context-mapper-eds
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/cryptoshredding
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/customer_domain_hashicorp
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/customer-ed-service
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/customerlocation-graphql
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/edm-gen5
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/eds6
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/edscicd
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon_domain_api_dev
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-domain-model-customer-location
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavondomainmodel-customerlocation
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/edscicdpipelinetest
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-domain-model-customer-location-test
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-domain-model-mvp5
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/elavon-domain-model
+----------------------------------
+curl --location 'http://localhost:8084/api/customer-locations' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMzAxOTUwMSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAyOTMzMTAxfQ.vKplzirQCggkpHyggFDLI8ZSKazo_mOy6mKX7u2M-AOA-S5A0M52tuaugGOiuWJcCcnUhsfLJch2vGLxrnIXKw' \
+--header 'Connection: keep-alive' \
+--header 'Referer: http://localhost:9000/customer-location?sort=id,asc' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "macOS"'
+----------------------------------
+./mvnw -Pdev
+
+./mvnw spring-boot:run -Pdev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+----------------------------------
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMjc2MDM3NiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAyNjczOTc2fQ.oSsQbslBfB4SYmwbHminx8wNwFD0YHp0jv1vt6yzURtWtXiTa4Q_AldzGsEkHYPg1QdahHYZW1UuCzoVA9z8KA
+
+http://localhost:8080/api/authenticate
+
+
+curl -X 'GET' \
+  'http://localhost:8084/api/customerlocations' \
+  -H 'accept: application/x-ndjson' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMjc2MDM3NiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAyNjczOTc2fQ.oSsQbslBfB4SYmwbHminx8wNwFD0YHp0jv1vt6yzURtWtXiTa4Q_AldzGsEkHYPg1QdahHYZW1UuCzoVA9z8KA'
+
+
+
+
+----------------------------------
+Here is a good way to fetch from localhost.
+
+[Yesterday 8:50 PM] Vasa, Flavel Satish H
+I was able to inject the API call by using fetch.
+
+let fetch = require('node-fetch');
+fetch('http://localhost:8080/services/customerlocation/api/customer-locations/d458263a-c23d-4ceb-9183-f4ce75c96d4f', {
+  method: 'GET',
+  headers: {'Content-Type': 'application/json',
+  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTcwMjUwMjc5Mn0.5c_kdLSMVwQna5JzqtDCTudb-y-rlWJT28C3vyjDw9Z9oFAaZdofNObyur2Ai_jQJV8wJzLuWcPOw4M_8Atfwg'
+},
+  // body: '{}'
+}).then(response => {
+    return response.json();
+}).then(data => {
+  customerLocationResolved = data;
+}).catch(err => {console.log(err);});
+ 
+[Yesterday 8:53 PM] Vasa, Flavel Satish H
+
+----------------------------------
+Venkata, Sowjanya Lavu
+----------------------------------
+Antrun Plugin with Replace Task: Use the Maven Antrun Plugin in combination with Ant's replace task, which supports regular expressions. Here's an example of how you could configure it in your pom.xml:
+
+`
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+                <execution>
+                    <phase>process-sources</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <target>
+                            <!-- Define the directory and include Java files -->
+                            <fileset dir="${project.basedir}/src/main/java" includes="**/*.java" id="java-files"/>
+                            <replace file="@(java-files)" token="originalRegex" value="replacement" flags="g"/>
+                        </target>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+----------------------------------
+
+http://na-webproxymain.servers.global.prv:8080
+
+export http_proxy="http://web-proxymain.us.bank-dns.com:3128"
+
+export http_proxy="na-webproxymain.servers.global.prv"
+export http_proxyPort=8080
+
+http://proxy.na.global.prv:8080
+
+  export HTTP_PROXY="http://proxy.na.global.prv:8080"
+  export HTTPS_PROXY="http://proxy.na.global.prv:8080"
+  export http_proxy="http://proxy.na.global.prv:8080"
+  export https_proxy="http://proxy.na.global.prv:8080"
+
+curl --location 'https://dev-api2.elavon.com/graphql/v1' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'AuthZ-ID: awsconextusrAPPIDIT' \
+--header 'Correlation-ID: ddcfcc97-9260-458f-b994-ce1b4cf98146' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode '%7B%22query%22%3A%22query%20CollectionsByCustomerLocationId(%24customerLocationId%3A%20ID!)%7B%5Cr%5Cn%20%20%20%20customerlocationById(id%3A%20%24customerLocationId)%7B%5Cr%5Cn%20%20%20%20id%5Cr%5Cn%20%20%20%20customerLocationEnterpriseId%5Cr%5Cn%20%20%20%20midGroup%5Cr%5Cn%20%20%20%20generalFinanceSetup%7B%5Cr%5Cn%20%20%20%20%20%20clientGroupNumber%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20businessInfo%7B%5Cr%5Cn%20%20%20%20%20%20id%5Cr%5Cn%20%20%20%20%20%20establishedYear%5Cr%5Cn%20%20%20%20%20%20businessDescription%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20grouping%7B%5Cr%5Cn%20%20%20%20%20portfolioId%5Cr%5Cn%20%20%20%20%20%20portfolioName%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20applicationContext%7B%5Cr%5Cn%20%20%20%20%20%20applicationEnterpriseId%5Cr%5Cn%20%20%20%20%20%20submittingClientName%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20generalFinanceSetup%7B%5Cr%5Cn%20%20%20%20%20%20clientGroupNumber%5Cr%5Cn%20%20%20%20%20%20billingMerchantNumber%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%7D%5Cr%5Cn%7D%22%2C%22variables%22%3A%22%7B%5C%22customerLocationId%5C%22%20%3A%5C%22415b2a10-3023-44cf-a2a5-11de9533dd54%5C%22%7D%22%7D=' --cert '/Users/c089602/Desktop/tls/customer-locations-tls/el-customerlocation-ds-na-tls-secret-dev.crt' --key '
+/Users/c089602/Desktop/tls/customer-locations-tls/el-customerlocation-ds-na-tls-secret-dev.key' -ivk
+
+curl --location 'https://dev-api2.elavon.com/graphql/v1' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'AuthZ-ID: awsconextusrAPPIDIT' \
+--header 'Correlation-ID: ddcfcc97-9260-458f-b994-ce1b4cf98146' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode '%7B%22query%22%3A%22query%20CollectionsByCustomerLocationId(%24customerLocationId%3A%20ID!)%7B%5Cr%5Cn%20%20%20%20customerlocationById(id%3A%20%24customerLocationId)%7B%5Cr%5Cn%20%20%20%20id%5Cr%5Cn%20%20%20%20customerLocationEnterpriseId%5Cr%5Cn%20%20%20%20midGroup%5Cr%5Cn%20%20%20%20generalFinanceSetup%7B%5Cr%5Cn%20%20%20%20%20%20clientGroupNumber%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20businessInfo%7B%5Cr%5Cn%20%20%20%20%20%20id%5Cr%5Cn%20%20%20%20%20%20establishedYear%5Cr%5Cn%20%20%20%20%20%20businessDescription%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20grouping%7B%5Cr%5Cn%20%20%20%20%20portfolioId%5Cr%5Cn%20%20%20%20%20%20portfolioName%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20applicationContext%7B%5Cr%5Cn%20%20%20%20%20%20applicationEnterpriseId%5Cr%5Cn%20%20%20%20%20%20submittingClientName%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%20%20generalFinanceSetup%7B%5Cr%5Cn%20%20%20%20%20%20clientGroupNumber%5Cr%5Cn%20%20%20%20%20%20billingMerchantNumber%5Cr%5Cn%20%20%20%20%7D%5Cr%5Cn%20%20%7D%5Cr%5Cn%7D%22%2C%22variables%22%3A%22%7B%5C%22customerLocationId%5C%22%20%3A%5C%22415b2a10-3023-44cf-a2a5-11de9533dd54%5C%22%7D%22%7D=' 
+--cert '/Users/c089602/Desktop/tls/customer-locations-tls/el-customerlocation-ds-na-tls-secret-dev.crt' 
+--key '/Users/c089602/Desktop/tls/customer-locations-tls/el-customerlocation-ds-na-tls-secret-dev.key' -ivk
+
+
+
+[5:12 PM] Vasa, Flavel Satish H
+-Dhttp.proxyHost=na-webproxymain.servers.global.prv
+[5:12 PM] Vasa, Flavel Satish H
+-Dhttp.proxyPort=8080
+----------------------------------
+curl 'http://localhost:8080/user'\
+--request POST \
+--header 'Content-Type: application/json' \
+--data '{"name" :"encrypt rancher test1 ",\
+"creditCardNumber" : "75555555555544442",\
+"accountNumber":"75555555555544442",\
+"ssnNumber":"777-62-8144"}' \
+--compressed
+----------------------------------
+
+    3  cd Documents/gitlab/
+    4  ls -ltr
+    5  cd istio-01/
+    6  ls -ltr
+    7  clear
+    8  echo $JAVA_HOME
+    9  java --version
+   10  jhipster --version
+   11  npx jhipster jdl app.jdl --force
+----------------------------------
+Car ID: 10066
+----------------------------------
+https://shell.cloud.google.com/?hl=en_US&fromcloudshell=true&show=ide%2Cterminal
+----------------------------------
+Questions: EDS Touch Points, Azure to AWS or On Prem??
+TODO
+
+https://medium.com/@brentrobinson5/crypto-shredding-how-it-can-solve-modern-data-retention-challenges-da874b01745b
+
+Audit Fields
+
+@convert
+
+ENUMS description.
+
+Enumerations Story for Seed Data.
+Story for Blocker on Docker Desktops on VDI machines.
+
+DB Seed Values.
+
+
+RDS Connection with EDS6.
+
+Jenkins. (https://gitlab.us.bank-dns.com/help/topics/autodevops/index.md)
+
+Spring
+
+
+Liquibase.
+API Test Code.
+
+Adan: 
+run with empty db, test insert update.
+run with h2 db and test debugging.
+cacheProvider hazelcast.
+Dockerize.
+Patterns: Rules for UUIDs / Enterprise IDs
+https://confluence.servers.global.prv/pages/viewpage.action?pageId=192546015
+
+Dev:
+Liquibase, Sequences.
+Liguibase access of particular columns?
+GraphQL
+authenticationType jwt
+
+
+----------------------------------
+Questions:
+
+pipeline? 
+Duvvuri, Venkatesh
+
+venkatesh.duvvuri@elavon.com
+
+----------------------------------
+C:\Users\C089602\tools\apache-maven-3.9.3
+
+C:\Users\C089602\tools\apache-maven-3.9.3\bin
+
+$Env:Path+=";C:\Users\C089602\tools\apache-maven-3.9.3\bin"
+
+
+:/c/Users/C089602/tools/jdk-17.0.7_windows-x64_bin/jdk-17.0.7/bin
+:/c/Users/C089602/AppData/Roaming/npm:
+
+----------------------------------
+[9:03 AM] Vasa, Flavel Satish H
+
+Step#1: Authenticate to Vault:
+
+curl --location --insecure --request POST 'https://hcvault.us.bank-dns.com/v1/auth/approle/login' --header 'X-Vault-Namespace: certificates' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'role_id=$CERTIFICATES_ROLE_ID' --data-urlencode 'secret_id=$CERTIFICATES_SECRET_ID'
+
+Step#2: Request Certificate using Token from previous response
+
+curl --location --insecure --output response.txt --request POST 'https://hcvault.us.bank-dns.com/v1/venafi-pki/issue/$VENAFI-FOLDER_role' --header 'X-Vault-Namespace: certificates' --header 'X-Vault-Token: $APPROLE_TOKEN' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'common_name=$YOUR_COMMON_NAME'
+
+Step#3: Extract the Certificate and Private Key from the output file (response.txt).
+
+Note: Stream the output to a text file since it will take time for vault to generate a new certificate and respond. CURL command will add some download logs that will mess up the output when you copy from console.
+
+Step#4: Replace "\n" characters in the extracted certificate and private keys with newline characters. Otherwise, the openssl and keytool will not recognize them as valid certificate files. I have provided the below instructions earlier.
+
+Steps to generate Keystore and Truststore from Certificate
+
+Request for openssl to be installed from Software Catalog. Search for "OpenSSL" and request for 64-bit windows version or appropriate one for Mac.
+Download the USBank Root CA, certificate and the private key
+
+Consider USBankRootCA.cer as the downloaded USBank Root CA certificate file
+Consider reference-data-service-dev-tls.cer as the downloaded Certificate file
+Consider reference-data-service-dev-tls_PK as the downloaded Private Key file
+Using openssl, convert USBank Root CA to correct format:
+
+openssl x509 -inform PEM -in .\USBankRootCA.cer -out .\USBankRootCA.crt
+
+Using openssl, convert Certificate to correct format:
+
+openssl x509 -inform PEM -in .\reference-data-service-dev-tls.cer -out .\reference-data-service-dev-tls.crt
+
+Using openssl, create a PKCS12 Keystore using the Key
+
+openssl pkcs12 -export -inkey reference-data-service-dev-tls_PK -in reference-data-service-dev-tls.crt -out reference-data-service-dev.us.bank-dns.com.pfx -name reference-data-service-dev.us.bank-dns.com.pfx
+
+Using keytool, create a JKS keystore. Note the password you use when prompted.
+
+keytool -importkeystore -srckeystore reference-data-service-dev.us.bank-dns.com.pfx -srcstoretype pkcs12 -destkeystore reference-data-service-dev-keystore.jks -deststoretype jks
+
+Using keytool, Create a truststore that includes USBank Root CA root certificate. Note the password you use when prompted.
+
+keytool -import -file USBankRootCA.crt -keystore reference-data-service-dev-truststore.jks -storetype jks -alias UsRootCA
+
+Use the above generated JKS keystore and truststore to connect to Kafka.
+----------------------------------
+
+# set the JAVA_HOME environment variable and add it to your user profile 
+
+$env:JAVA_HOME='C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7'
+[Environment]::SetEnvironmentVariable('JAVA_HOME', $env:JAVA_HOME, 'USER')
+
+~~~~~~~~~~~~~~
+
+$env:IDEA_JDK='C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7'
+[Environment]::SetEnvironmentVariable('IDEA_JDK', $env:IDEA_JDK, 'USER')
+
+It has critical issues. Reverting back to null.
+
+[Environment]::SetEnvironmentVariable('IDEA_JDK',  $null, 'USER')
+$env:IDEA_JDK=''
+
+~~~~~~~~~~~~~~
+beyond trust.
+
+mac...
+source ~/.zshrc-shakeel
+chmod +x gradlew
+chmod +x mvnw
+
+export PATH=$PATH:$JAVA_HOME/bin
+curl -k "https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/usb-root/pem" | keytool -import -cacerts -storepass changeit -noprompt -alias usb_root
+
+curl -k "https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/usb-issuing/pem" | keytool -import -cacerts -storepass changeit -noprompt -alias usb_issuing
+
+curl -k "https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-root-ca/pem" | keytool -import -cacerts -storepass changeit -noprompt -alias elavon_root
+
+curl -k "https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-1/pem" | keytool -import -cacerts -storepass changeit -noprompt -alias elavon_issuing_1
+
+curl -k "https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-2/pem" | keytool -import -cacerts -storepass changeit -noprompt -alias elavon_issuing_2
+
+Downloading 
+	https://registry.npmjs.org/npm/-/npm-9.8.0.tgz 
+to 
+	/Users/c089602/.m2/repository/com/github/eirslett/npm/9.8.0/npm-9.8.0.tar.gz
+
+https://github.com/Homebrew/brew/archive/master.zip
+https://github.com/Homebrew/brew/archive/core.zip
+
+  git config --global user.email "shakeel.ahmad@elavon.com"
+  git config --global user.name "Shakeel Ahmad"
+
+
+
+./mvnw -Pdev -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
+
+
+ssh://gitlab.us.bank-dns.com:2222/c089602/eds5.git
+
+na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com
+RDS User: devC089602
+devC089602
+
+CREATE ROLE "devC089602" NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT LOGIN NOREPLICATION NOBYPASSRLS PASSWORD 'devC089602';
+COMMENT ON ROLE "devC089602" IS 'Test user';
+GRANT ALL ON SCHEMA customerdb_dev TO "devC089602";
+
+GRANT ALL ON SCHEMA public TO "devC089602";
+----------
+local: postgres2
+
+~~~~~~~~~~~~~~
+
+[INFO] Downloading https://nodejs.org/dist/v18.18.0/node-v18.18.0-darwin-x64.tar.gz to 
+/Users/c089602/.m2/repository/com/github/eirslett/node/18.18.0/node-18.18.0-darwin-x64.tar.gz
+
+/Users/c089602/.m2/repository/com/github/eirslett/node/18.18.0
+node-18.18.0-darwin-x64.tar.gz
+
+
+Downloading https://registry.npmjs.org/npm/-/npm-10.2.0.tgz to 
+/Users/c089602/.m2/repository/com/github/eirslett/npm/10.2.0/npm-10.2.0.tar.gz
+
+/Users/c089602/.m2/repository/com/github/eirslett/npm/10.2.0
+npm-10.2.0.tar.gz
+--------------
+
+Jira link for Epics.
+
+https://jira.us.bank-dns.com/secure/PortfolioPlanView.jspa?id=2977&sid=3010&vid=12863#plan/backlog
+--------------
+eks-lucas-devtest
+
+--------------
+pipeline:
+
+https://gitlab.us.bank-dns.com/ELAVON_DOMAIN_SERVICES/edscicd.git
+
+
+users/v1
+~~~~~~~~~~~~~~
+mvn -s YourOwnSettings.xml clean install
+--------------
+{
+  "builder": {
+    "gc": {
+    "defaultKeepStorage": "20GB",
+      "enabled": true      
+    }
+  },
+  "experimental": false,
+    "registry-mirrors": [
+      "https://artifactory.us.bank-dns.com:5000",
+      "https://docker-mirror.us.bank-dns.com:5000"
+    ]
+  }
+
+http://docker-mirror.us.bank-dns.com:5000
+--------------
+
+[ERROR] Failed to execute goal com.github.eirslett:frontend-maven-plugin:1.13.4:install-node-and-npm 
+(install-node-and-npm) on project edsapp: Could not download Node.js: 
+Could not download https://nodejs.org/dist/v18.15.0/node-v18.15.0-darwin-x64.tar.gz: 
+
+Connect to web-proxyapp.us.bank-dns.com:3128 [web-proxyapp.us.bank-dns.com/192.168.221.93] failed: 
+Operation timed out -> [Help 1]
+
+
+--------------
+Cannot open Eclipse Marketplace
+Cannot install remote marketplace locations: Connection failed
+
+This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+Cannot complete request to http://marketplace.eclipse.org/catalogs/api/p: Connection failed
+
+This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+Connection failed
+
+This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+Connect to marketplace.eclipse.org:80 [marketplace.eclipse.org/198.41.30.195] failed: Operation timed out
+Connection failed
+
+This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+Connect to marketplace.eclipse.org:80 [marketplace.eclipse.org/198.41.30.195] failed: Operation timed out
+Connection failed
+
+This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+Connect to marketplace.eclipse.org:80 [marketplace.eclipse.org/198.41.30.195] failed: Operation timed out
+--------------
+
+181a5264-7114-25fc-1b7b-1ab93515bfc5
+
+{
+  "secretSA98146": "secretSA98146_Value"
+}
+
+export VAULT_ADDR=https://hashicorp-vault-test.us.bank-dns.com
+export VAULT_TOKEN=X-Vault-Token
+
+vault login X-Vault-Token
+--------------
+c089602@ME-C02DP89EMD6R ~ % echo $PATH     
+/Users/c089602/tools:/Users/c089602/.docker/bin:/Users/c089602/tools/apache-maven-3.9.4/bin:/Users/c089602/tools/node-v18.17/bin:/Users/c089602/tools/jdk-17.0.2.jdk/Contents/Home/bin:/Users/c089602/tools:/Users/c089602/.docker/bin:/Users/c089602/tools/apache-maven-3.9.4/bin:/Users/c089602/tools/node-v18.17/bin:/Users/c089602/tools/jdk-17.0.2.jdk/Contents/Home/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+c089602@ME-C02DP89EMD6R ~ % 
+
+---------------------
+kubectl exec deployment.apps/edscicd-edscicd-0-29-snapshot -it -- /bin/bash
+
+kubectl exec edscicd-edscicd-0-29-snapshot-5dfc49bc88-vlhl2 -it -- /bin/bash -n apl-lucas-customerlocation-dev1
+
+# Logs for a POD from Kubectl
+kubectl -n apl-lucas-customerlocation-dev1 logs edscicd-edscicd-0-31-snapshot-868fd5cc64-stw62
+
+kubectl -n apl-lucas-customerlocation-dev1 logs customer-location-1-0-30-snapshot-86b6c8f7d9-vchck
+
+    1  kubectl get svc
+    2  kubectl get svc -n apl-lucas-customerlocation-dev1
+    3  kubectl get svc -n apl-lucas-customerlocation-dev1 -o wide | grep LoadBalancer
+    4  kubectl get svc -n apl-lucas-customerlocation-dev1 -o wide
+    5  kubectl get svc -n apl-lucas-integrations-dev1 -o wide | grep LoadBalancer
+    6  kubectl get svc -n apl-lucas-integrations-dev1 -o wide 
+    7  kubectl get pods -n istio-system -l app=istio-ingressgateway 
+
+    live logs.
+    8  kubectl logs -f customer-location-1-1-3-snapshot-589d595694-jj6r6 -n apl-lucas-customerlocation-dev1
+
+kubectl logs -f edscicd-edscicd-0-2-snapshot-7dc9b95456-2mgr8 -n apl-lucas-customerlocation-dev1
+
+
+
+---------------------
+2023-11-09T22:21:52.797+01:00  WARN 7 --- [           main] c.c.c.ConfigServicePropertySourceLocator : 
+Could not locate PropertySource: 
+I/O error on GET request for "http://localhost:8888/application/dev": Connection refused
+
+kubectl -n apl-lucas-customerlocation-dev1 logs edscicd-edscicd-0-31-snapshot-868fd5cc64-stw62
+
+
+curl --location 'http://localhost:8080/api/authenticate' \
+--header 'sec-ch-ua: "Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Content-Type: application/json' \
+--header 'Referer: http://localhost:9000/login' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua-platform: "Windows"' \
+--data '{
+"username": "admin",
+"password": "admin",
+"rememberMe": false
+}'
+
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDU5OTMzNCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAwNTEyOTM0fQ.c61AD7Pb44xJlY43BgSPsnlXBj7sbLFhHj9z3HubgzxhiRnADSV7OUjruMQQ0gtCRggRCp_ONugxloTEbMvZQg
+
+curl --location 'http://localhost:8080/api/people' \
+--header 'Accept: application/json, text/plain, /' \
+--header 'Accept-Language: en-US,en;q=0.9' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMDU5OTMzNCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAwNTEyOTM0fQ.c61AD7Pb44xJlY43BgSPsnlXBj7sbLFhHj9z3HubgzxhiRnADSV7OUjruMQQ0gtCRggRCp_ONugxloTEbMvZQg' \
+--header 'Connection: keep-alive' \
+--header 'Sec-Fetch-Dest: empty' \
+--header 'Sec-Fetch-Mode: cors' \
+--header 'Sec-Fetch-Site: same-origin' \
+--header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua: "Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'sec-ch-ua-platform: "Windows"'
+---------------------
+https://rancher.cps.nonprod.aws.prv/k8s/clusters/c-6674k/api/v1/namespaces/apl-lucas-customerlocation-dev1/services/http:edscicd:8080/proxy/
+
+
+http://dev-api-lbi-eu-aws.p-sf978.c-sfs4p.euw1.nonprod.cps.aws.cloud.bank-dns.com/edscicd/
+
+---------------------
+
+
+curl -k --request POST "https://hashicorp-vault-test.us.bank-dns.com/v1/sys/mounts/mySecretStore2" \
+--header "X-Vault-Token: " \
+--header 'X-Vault-Namespace: 10066' \
+--header 'Content-Type: text/plain' \
+--data-raw '{
+    "type": "kv",
+    "options": {
+        "version": "2",
+        "description" : "Very very secret store"
+    }
+}'
+
+~~~~~~~
+
+("https://hashicorp-vault-test.us.bank-dns.com/v1/secret/data/pco"))
+
+
+
+curl --location --request GET 'https://hashicorp-vault-test.us.bank-dns.com/v1/secrets/secret/create/eds-password' --header 'X-Vault-Namespace: 10066' --header 'X-Vault-Token: 
+
+
+curl --location --request GET 'https://hashicorp-vault-test.us.bank-dns.com/v1/secret/data/test' --header 'X-Vault-Namespace: 10066' --header 'X-Vault-Token: X-Vault-Token
+
+
+curl --location --request POST 'https://hashicorp-vault-test.us.bank-dns.com/v1/venafi-pki/issue/app_role' --header 'X-Vault-Namespace: 10066' --header 'X-Vault-Token: X-Vault-Token
+
+Last login: Mon Dec  4 08:11:37 on ttys003
+c089602@ME-C02DP89EMD6R ~ % curl --location --request POST 'https://hashicorp-vault-test.us.bank-dns.com/v1/auth/approle/login' 
+--header 'X-Vault-Namespace: 10066' --data-raw '{  "role_id": "3ee7310c-912a-415d-6456-98f30722f7e7", 
+"secret_id": "6acdd814-0d8d-c7b6-4057-192826922623"}'
+{"request_id":"b4153311-2a3e-9b92-2c2a-3561178b936c","lease_id":"","renewable":false,"lease_duration":0,"data":null,
+"wrap_info":null,"warnings":null,"auth":{"client_token":"
+
+X-Vault-Token
+"token_type":"service","orphan":true,"mfa_requirement":null,"num_uses":0}}
+--------------------
+curl --location 'http://localhost:8084/api/authenticate' \
+--header 'sec-ch-ua: "Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Content-Type: application/json' \
+--header 'Referer: http://localhost:9000/login' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--data '{
+    "username": "admin",
+    "password": "admin",
+    "rememberMe": false
+}'
+
+curl --location 'http://localhost:8085/api/authenticate' \
+--header 'sec-ch-ua: "Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"' \
+--header 'Accept: application/json, text/plain, */*' \
+--header 'Content-Type: application/json' \
+--header 'Referer: http://localhost:9000/login' \
+--header 'sec-ch-ua-mobile: ?0' \
+--header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
+--header 'sec-ch-ua-platform: "macOS"' \
+--data '{
+    "username": "admin",
+    "password": "admin",
+    "rememberMe": false
+}'
+
+http://localhost:8761/
+
+
+---------------------
+
+/Users/c089602/gitlab/mvp/mvp-03/elavon-na-domain-model
+
+/Users/c089602/gitlab/mvp/mvp-04-manoj/elavon-domain-model/gencode-2/clms/src/main/docker/jhipster-registry.yml
+docker-compose -f src/main/docker/jhipster-registry.yml up
+
+---------------------
+
+curl 'http://localhost:9000/services/customerlocation/api/people?sort=id,asc&cacheBuster=1701901994962' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwMTk4ODMzOCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzAxOTAxOTM4fQ.9Ag5o9EdsiBTcy6-7hTCFt3DEU3k9HphKjwESLvJNXLU32XKIWgmzYVQZ_RDkHk3mU3zMMrPJsBTL-u8UqiaXA' \
+  -H 'Connection: keep-alive' \
+  -H 'Referer: http://localhost:9000/person?sort=id,asc' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  --compressed
+
+  
+---------------------
+for Jenkins Service Accounts??
+
+
+Windows ...
+Correct way of setting up java 17 and starting the IntelliJ Idea.
+
+C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin
+
+C:\Program Files\PowerShell\7;C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\;C:\Users\C089602\AppData\Roaming\npm;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\PASSPORT WEB TO HOST Client\;C:\Program Files (x86)\Sennheiser\SenncomSDK\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Users\C089602\AppData\Local\Microsoft\WindowsApps;
+
+$env:PATH='C:\Program Files\PowerShell\7;C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\;C:\Users\C089602\AppData\Roaming\npm;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\PASSPORT WEB TO HOST Client\;C:\Program Files (x86)\Sennheiser\SenncomSDK\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Users\C089602\AppData\Local\Microsoft\WindowsApps;'
+[Environment]::SetEnvironmentVariable('PATH', $env:PATH, 'USER')
+
+start "C:\IDE\IntelliJ IDEA Community\bin\.\idea.bat"
+
+cd "C:\IDE\IntelliJ IDEA Community\bin"
+.\idea.bat
+
+PS C:\Users\C089602\tools\consul_1.16.0_windows_386> .\consul agent -dev
+http://localhost:8500/
+
+cd C:\Users\C089602\Documents\gitlab\elavon\customer-domain-01
+
+
+npx jhipster jdl output-bismillah-gen-from-Satish.jdl --force
+
+testcontainers/ryuk:latest
+^^^^^^^^^^^^^^^^^^^^^
+cml to jdl
+
+https://contextmapper.org/docs/generic-freemarker-generator/
+
+22.01
+
+flywaydb-mysql
+
+
+Mysql
+docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=password -e MYSQL_USER=mysqluser -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=mysql_database -p 3306:3306 mysql:latest
+
+
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.28</version>
+    <scope>provided</scope>
+</dependency>
+
+====================
+docker login artifactory.us.bank-dns.com:5000
+docker pull artifactory.us.bank-dns.com:5000/confluentinc/cp-kafka:6.2.1
+docker pull artifactory.us.bank-dns.com:5000/localstack/localstack
+docker run -d -p 4566-4597:4566-4597 -p 8080:8080 artifactory.us.bank-dns.com:5000/localstack/localstack
+
+docker pull artifactory.us.bank-dns.com:5000/testcontainers/ryuk:0.5.1
+
+
+docker pull artifactory.us.bank-dns.com:5000/linuxserver/rdesktop
+
+docker run -d --name pgX -e POSTGRES_PASSWORD=postgres -p 5432:5432 artifactory.us.bank-dns.com:5000/postgres
+
+telnet 192.168.7.101 2233
+
+telnet na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com 5432
+
+nc na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com 5432
+
+c089602@ME-C02DP89EMD6R ~ % traceroute na-elavondomain-services-nonprod.cluster-ro-cfnhcyaezu82.us-east-2.rds.amazonaws.com
+traceroute: hostname "na-elavondomain-services-nonprod..." is too long
+
+
+====================
+
+ssh://git@gitlab.us.bank-dns.com:2222/c089602/elavon_domain_api_dev.git
+
+ssh://git@gitlab.us.bank-dns.com:2222/ELAVON_DOMAIN_SERVICES/elavon_domain_api_dev.git
+====================
+- Plugin Repositories (could not resolve plugin artifact 'org.springframework.boot:org.springframework.boot.gradle.plugin:3.0.7')
+
+
+npm WARN EBADENGINE   required: { node: '>=18.16.1' },
+npm WARN EBADENGINE   current: { node: 'v18.15.0', npm: '9.8.0' }
+
+
+^^^^^^^^^^^^^^^^^^^
+Path
+----
+===================
+
+So far the best version is here.
+C:\Users\C089602\Documents\gitlab\elavon\istio-maven
+
+===================
+
+java -jar jhipster-registry-<version>.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./central-config
+
+
+===================
+
+docker run -d --name postgres-container -e POSTGRES_PASSWORD=<your_password> -p 5432:5432 postgres
+
+docker run -d --name postgres-container -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
+
+C:\Users\C089602\Documents\gitlab\elavon\bismillah6-consul\store\src\main\resources\config\application-prod.yml
+    url: r2dbc:postgresql://localhost:5432/store
+    username: postgres
+    password: postgres
+.\mvnw -Pprod
+
+lets me try to start kafka:
+
+kafkamanager/kafka-manager
+
+Docker Command:
+docker run -d --name kafka-container \
+  -p 9092:9092 -p 2181:2181 \
+  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
+  -e KAFKA_ZOOKEEPER_CONNECT=localhost:2181 \
+  confluentinc/cp-kafka
+
+docker run -d --name kafka-container -p 9092:9092 -p 2181:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 -e KAFKA_ZOOKEEPER_CONNECT=localhost:2181 confluentinc/cp-kafka
+
+docker run -d --name kafka-container -p 9092:9092 -p 2181:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 -e KAFKA_ZOOKEEPER_CONNECT=localhost:2181 kafkamanager/kafka-manager
+
+
+java.lang.IllegalStateException: Failed to verify that image 'artifactory.us.bank-dns.com:5000/confluentinc/cp-kafka:6.2.1' is a compatible substitute for 'confluentinc/cp-kafka'. 
+This generally means that you are trying to use an image that Testcontainers has not been designed to use. 
+
+If this is deliberate, and if you are confident that the image is compatible, you should declare compatibility in code using the `asCompatibleSubstituteFor` method. For example:
+   DockerImageName myImage = DockerImageName.parse("artifactory.us.bank-dns.com:5000/confluentinc/cp-kafka:6.2.1").asCompatibleSubstituteFor("confluentinc/cp-kafka");
+and then use `myImage` instead.
+
+	at org.testcontainers.utility.DockerImageName.assertCompatibleWith(DockerImageName.java:270)
+	at org.testcontainers.containers.KafkaContainer.<init>(KafkaContainer.java:43)
+	at com.example.springboottestcontainers.KafkaTest.beforeAll(KafkaTest.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:126)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:68) Container startup failed
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$11(ClassBasedTestDescriptor.java:397)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:395)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:209)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:80)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+
+===================
+
+Size:
+bismillah5-eureka       1.21 GB (1,300,754,419 bytes)
+bismillah7-size-check   1.02 GB (1,100,859,670 bytes)
+
+===================
+NVM Location
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows
+
+PS C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows> ls
+
+    Directory: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           7/17/2023 12:29 PM            745 nvm.lnk
+
+PS C:\ProgramData\Microsoft\Windows\Start Menu\Programs\NVM for Windows>
+^^^^^^^^^^^^^^^^^^^
+----------------------------------
+
+Error: unexpected character: -><<- at offset: 0, skipped 2 characters. node_modules/generator-jhipster/dist/jdl/parsing/api.js:38:1
+
+    at getCst (file:///C:/Users/C089602/Documents/gitlab/jhipster7/node_modules/generator-jhipster/dist/jdl/parsing/api.js:38:15)
+    at Module.parse (file:///C:/Users/C089602/Documents/gitlab/jhipster7/node_modules/generator-jhipster/dist/jdl/parsing/api.js:31:17)
+
+
+----------------------------------
+Final Notes JHipster Installation using NPM.
+
+1- The certs are created at C:\Users\C089602\usb_ca_chain.crt
+        I created this .crt file using the https://wiki.us.bank-dns.com/index.php?title=Setting_up_U.S._Bank_%26_Elavon_Self-Signed_Certificate_Bundle&title=Setting_up_U.S._Bank_%26_Elavon_Self-Signed_Certificate_Bundle
+1.5- $env:NODE_EXTRA_CA_CERTS=$env:SSL_CERT_FILE
+2-    npm login
+3-           
+
+$env:NODE_EXTRA_CA_CERTS=$env:SSL_CERT_FILE
+$Env:JAVA_HOME="C:\Users\C089602\.jdks\corretto-17.0.7"
+$Env:Path+=";C:\Users\C089602\AppData\Roaming\npm"
+
+npm login
+npm install -g generator-jhipster
+npx install -g generator-jhipster
+
+npx jhipster import-jdl jhipster-jdl.jdl
+
+~~~~~~~~~~~~~~~~~~~~~~~
+https://artifactory.us.bank-dns.com/artifactory/grade_distribution/gradle-8.0.2-bin.zip
+
+
+./gradlew wrapper --gradle-distribution-url https://artifactory.us.bank-dns.com/artifactory/grade_distribution/gradle-8.0.2-bin.zip
+
+!!!!!!!!!!!!!!!!!!!!!1
+
+./mvnw -Pdev clean verify
+[INFO] BUILD SUCCESS
+
+./mvnw verify
+----------------------------------
+
+After executing following commands IntelliJ Build started building??
+
+curl.exe -k https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/usb-root/pem    | C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\keytool -import -cacerts -storepass changeit -noprompt -alias usb_root
+
+
+curl.exe -k https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/usb-issuing/pem | C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\keytool -import -cacerts -storepass changeit -noprompt -alias usb_issuing
+
+curl.exe -k https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-root-ca/pem | C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\keytool -import -cacerts -storepass changeit -noprompt -alias elavon_root
+
+curl.exe -k https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-1/pem | C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\keytool -import -cacerts -storepass changeit -noprompt -alias elavon_issuing_1
+
+curl.exe -k https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-2/pem | C:\Users\C089602\tools\jdk-17.0.7_windows-x64_bin\jdk-17.0.7\bin\keytool -import -cacerts -storepass changeit -noprompt -alias elavon_issuing_2
+
+
+----------------------------------
+
+Stratus.
+
+--------------------------------
+mv pem usb-root
+
+https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/usb-issuing/pem
+
+
+https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-root-ca/pem
+
+https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-1/pem
+
+https://hcvault.us.bank-dns.com/v1/certificates/cert-download/issuer/elavon-intermediate-ca-2/pem
+
+
+-------------------------------
+From the teams chat:
+
+https://wiki.us.bank-dns.com/index.php?title=Setting_up_Proxy_for_CLI_Applications
+
+PS C:\Users\C089602\Documents\gitlab\jhipster> npm config set always-auth true
+npm ERR! `always-auth` is not a valid npm option
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\C089602\AppData\Local\npm-cache\_logs\2023-07-03T20_20_45_656Z-debug-0.log
+--------------------------------
+[Friday 1:11 PM] Ahmad, Shakeel
+
+$Env:JAVA_HOME="C:\Users\C089602\.jdks\corretto-17.0.7"
+
+$Env:Path+=";C:\Users\C089602\AppData\Roaming\npm"
+
+$Env:NODE_EXTRA_CA_CERTS = "C:\Users\C089602\Documents\Certificates\USBankRootCA.cer"
+
+$Env:HTTP_PROXY="http://proxy.na.global.prv:8080"
+
+$Env:HTTPS_PROXY="http://proxy.na.global.prv:8080"
+
+ 
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/usb-ui-tools-npm-virtual/
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/npm-remotes/
+
+[Friday 1:11 PM] Ahmad, Shakeel
+
+but npm login fails as shown below
+
+---------------------------------
+Docker:
+https://wiki.us.bank-dns.com/index.php?title=Setting_up_docker_desktop#Instructions_for_All_Platforms
+It did work after login.
+
+docker login artifactory.us.bank-dns.com:5000
+
+
+http://web-proxymain.us.bank-dns.com:3128
+artifactory.us.bank-dns.com
+
+docker run -it artifactory.us.bank-dns.com:5000/usb/alpine
+
+docker pull artifactory.us.bank-dns.com:5000/artifactory/ei_dev_tools-docker-snapshot-local/kt_test_image_3:1.0
+
+d5447fc01ae6
+
+~~~~~~~~~~~~~~~
+docker pull artprod.mycompany/<DOCKER_REPOSITORY>:<DOCKER_TAG>
+
+docker pull artifactory.us.bank-dns.com:5000/busybox:latest
+
+docker pull artifactory.us.bank-dns.com:5000/ubuntu/nginx:latest
+
+docker pull artifactory.us.bank-dns.com:5000/library/ubuntu:latest
+
+
+library/ubuntu
+
+ubuntu/nginx
+busybox:latest
+---------------------------------
+
+C:\Users\C089602\Documents\gitlab\generator-jhipster-main
+
+
+C:\Users\C089602\.jdks\corretto-17.0.7
+
+/c/Users/C089602/.jdks/corretto-17.0.7/bin
+;
+/c/Users/C089602/Documents/gitlab/jhipster
+
+$Env:NODE_EXTRA_CA_CERTS = "C:\_home\programs\heroku\certs\USBankRootCA.cer"
+
+$Env:NODE_EXTRA_CA_CERTS = "C:\Users\C089602\Documents\Certificates\USBankRootCA.cer"
+
+C:\Users\C089602\Documents\Certificates
+
+/c/Users/C089602/Documents/Certificates
+
+C:\Users\C089602\AppData\Local\npm-cache\_logs
+
+~~~
+$Env:NODE_EXTRA_CA_CERTS = "C:\Users\C089602\Documents\Certificates\USBankRootCA.cer"
+$Env:HTTP_PROXY = "http://proxy.na.global.prv:8080"
+$Env:HTTPS_PROXY = "http://proxy.na.global.prv:8080"
+
+
+$Env:Path+=";C:\Users\FHVASA\AppData\Roaming\npm"
+$Env:Path+=";C:\Users\C089602\AppData\Roaming\npm"
+
+
+
+$Env:JAVA_HOME="C:\Users\C089602\.jdks\corretto-17.0.7"
+
+
+PS C:\Users\C089602\Documents\gitlab\jhipster> npm config list
+; "builtin" config from C:\Program Files\nodejs\node_modules\npm\npmrc
+
+prefix = "C:\\Users\\C089602\\AppData\\Roaming\\npm"
+
+; "user" config from C:\Users\C089602\.npmrc
+
+registry = "https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/"
+
+; node bin location = C:\Program Files\nodejs\node.exe
+; node version = v18.15.0
+; npm local prefix = C:\Users\C089602\Documents\gitlab\jhipster
+; npm version = 9.5.0
+; cwd = C:\Users\C089602\Documents\gitlab\jhipster
+; HOME = C:\Users\C089602
+; Run `npm config ls -l` to show all defaults.
+PS C:\Users\C089602\Documents\gitlab\jhipster>
+--------------------------------------------
+
+X-Vault-Token
+
+------------
+
+https://gitlab.us.bank-dns.com/help/ssh/index#generate-an-ssh-key-pair
+
+ssh-keygen -t ed25519 -C "shakeel.ahmad@elavon.com"
+
+cat ~/.ssh/id_ed25519.pub | clip
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0OjSKsmFkyYPNezaFpndS7Qq8gegmqwlWeC1ZgQEJq shakeel.ahmad@elavon.com
+--------------------------------
+Qilk Replicate
+IBM Stage.
+Pentaho.
+
+--------------------------------
+AWS:
+
+AWS LUCAS INTEGRATIONS NONPROD Read Only Role
+
+AWS LUCAS INTEGRATIONS NONPROD Read Only Role
+
+--------------------------------
+
+
+[6/14 12:06 PM] Agarwal, Sandeep badge access.
+
+https://badgeaccess.us.bank-dns.com/RightCrowd/#!
+---------------------
+Agent: https://accessmanagement.us.bank-dns.com/identity/?_adf.ctrl-state=cvyi9edcx_1&_afrLoop=193171636877550&_afrWindowMode=0&_afrWindowId=null
+---------------------
+Provides access to GitLab, Jira, Confluence, Jenkins, Docker, Splunk, Kibana, and ReportPortal
+
+---------------------
+https://docs.google.com/document/d/1v5clqWO5KtxKY6tI3Pfj0hqGMh-aTImPV_ma8SsgEbQ/edit?usp=sharing 
+---------------------
+
+curl  -X GET \
+  'http://dev-el-eds-customer-location-service.p-n4jgm.c-6674k.use2.nonprod.cps.aws.cloud.bank-dns.com/api/customer-locations' \
+  --header 'Accept: application/json, text/plain, */*' \
+  --header 'Accept-Language: en-US,en;q=0.9' \
+  --header 'Connection: keep-alive' \
+  --header 'Referer: http://localhost:9000/customer-location/17eec438-491c-4952-9c67-2bb639de6923' \
+  --header 'Sec-Fetch-Dest: empty' \
+  --header 'Sec-Fetch-Mode: cors' \
+  --header 'Sec-Fetch-Site: same-origin' \
+  --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+  --header 'sec-ch-ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+  --header 'sec-ch-ua-mobile: ?0' \
+  --header 'sec-ch-ua-platform: "macOS"' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcwNTY4MjA5MiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzA1NTk1NjkyfQ.wj8n4L03RS-40uy5Ki0xNbJTNeQad8GyJWi9bPYNn4k4TxI91odpFdQK-QVJqLKDqqebF2BewHxXco6Oth5gZw'
+
+---------------------
+
+Elavon Notes:
+
+Node Additional Tools.
+
+https://github.com/nodejs/node-gyp#on-windows
+
+
+Badge Access.
+https://badgeaccess.us.bank-dns.com/RightCrowd/#!
+
+Parking Access:
+
+https://itsmnow.service-now.com/mytech
+
+
+Agarwal, Sandeep <Sandeep.Agarwal@elavon.com>
+
+D, Tharani <tharani.d1@elavon.com>
+
+-------------------------------------
+$ git clone https://github.com/jhipster/generator-jhipster.git
+Cloning into 'generator-jhipster'...
+fatal: unable to access 'https://github.com/jhipster/generator-jhipster.git/': Failed to connect to github.com port 443 after 21058 ms: Timed out
+
+c089602@WNWH-CND3022S54 MINGW64 ~/Documents/github
+
+https://itsmnow.service-now.com/mytech?id=sc_cat_item&table=sc_cat_item&sys_id=6565043adb5f37c065d98fd3399619bf
+-------------------------------------
+
+[Yesterday 2:54 PM] Vasa, Flavel Satish H
+
+Check these resources... Context Mapper | Context Mapper is an open source project providing a Domain-specific Language (DSL) based on Domain-driven Design (DDD) patterns for context mapping and service decomposition.
+
+ like 1
+
+Context Mapper
+
+Context Mapper is an open source project providing a Domain-specific Language (DSL) based on Domain-driven Design (DDD) patterns for context mapping and service decomposition.
+
+[Yesterday 2:54 PM] Vasa, Flavel Satish H
+
+JHipster - Full Stack Platform for the Modern Developer!
+
+JHipster - Full Stack Platform for the Modern Developer!
+
+JHipster is a development platform to quickly generate, develop, and deploy modern web applications + microservice architectures.
+
+[Yesterday 2:55 PM] Ahmad, Shakeel
+
+thanks.
+
+[Yesterday 2:57 PM] Vasa, Flavel Satish H
+
+Homepage - Flyway (flywaydb.org)
+
+Homepage - Flyway
+
+Version control for your database. Robust schema evolution across all your environments. With ease, pleasure, and plain SQL.
+
+[Yesterday 3:02 PM] Vasa, Flavel Satish H
+
+Istio / The Istio service mesh
+
+ like 1
+
+The Istio service mesh
+
+Service mesh.
+
+[Yesterday 4:12 PM] Vasa, Flavel Satish H
+
+Here is a confluence link for Eclipse: Eclipse - NABSD - Confluence (global.prv)
+
+[Yesterday 4:17 PM] Vasa, Flavel Satish H
+
+Microservices. - EASE - ConsumerChannel_Confluence (bank-dns.com)
+
+[Yesterday 4:53 PM] Vasa, Flavel Satish H
+
+Istio & JWT: Step-by-Step Guide for Micro-Services Authentication | by Ferdous Shourove | intelligentmachines | Medium
+
+Istio & JWT: Step by Step Guide for Micro-Services Authentication
+
+If you are developing micro-services, then you can use Istio to offload a lot of Authentication & Authorization logic from your app logic
+
+
+-------------------------------
+
+IT Help Desk.
+
+https://itsmnow.service-now.com/kb_view.do?sysparm_article=KB0019249
+
+My Due Trainings.
+https://globallearninglab.csod.com/ui/lms-learner-home/home?tab_page_id=-200300006&tab_id=-1
+
+------------------------
+
+2022-2023: Enterprise - Introduction to Ethics at U.S. Bancorp
+
+----------------------
+
+SAFE 2023: Information Security Awareness for New Hires
+
+-----------
+
+EDS Team IDs.
+
+c088277
+c089456
+c083784
+c089580
+c083557
+c089001
 
 >>>>>>>>>>>>>>>>>>>>
+CommandHistory.txt
+
+Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
+CommandHistory.txt
+C:\Users\C089602\Documents\gitlab\jhipster
+
+$Env:JAVA_HOME="C:\Users\C089602\.jdks\corretto-17.0.7"
+$Env:Path+=";C:\Users\C089602\AppData\Roaming\npm"
+$Env:NODE_EXTRA_CA_CERTS=$env:SSL_CERT_FILE
+
+????$Env:NODE_EXTRA_CA_CERTS = "C:\Users\C089602\Documents\Certificates\USBankRootCA.cer"
+??$Env:HTTP_PROXY="http://proxy.na.global.prv:8080"
+??$Env:HTTPS_PROXY="http://proxy.na.global.prv:8080"
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/usb-ui-tools-npm-virtual/
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/npm-remotes/
+
+npm config set registry http://artifactory.us.bank-dns.com/artifactory/api/npm/usb-ui-tools-npm-virtual/
+npm config set registry http://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+npm config set registry http://artifactory.us.bank-dns.com/artifactory/npm-remotes/
+
+npm login
+--------------------------
+
+C:\Program Files\PowerShell\7;C:\Program Files\Zulu\zulu-17-jre\bin\;
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\PASSPORT WEB TO HOST Client\;C:\Program Files (x86)\Sennheiser\SenncomSDK\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X64\;C:\Program Files (x86)\Pulse Secure\VC142.CRT\X86\
+;C:\Program Files (x86)\Common Files\Pulse Secure\TNC Client Plugin\;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Git\cmd;C:\Users\C089602\AppData\Local\Microsoft\WindowsApps;
+PS C:\Users\C089602\Documents\gitlab\jhipster5>
+
+
+
   >>>>>>>>>>>>>>>>>>>>
  JHipster-Notes-From-Satish.txt
 
