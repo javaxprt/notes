@@ -1,0 +1,428 @@
+
+>>>>>>>>>>>>>>>>>>>>
+  
+
+>>>>>>>>>>>>>>>>>>>>
+
+  >>>>>>>>>>>>>>>>>>>>
+  
+
+>>>>>>>>>>>>>>>>>>>>
+  >>>>>>>>>>>>>>>>>>>>
+  
+
+>>>>>>>>>>>>>>>>>>>>
+  >>>>>>>>>>>>>>>>>>>>
+ JHipster-Notes-From-Satish.txt
+
+  Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
+JHipster-Notes-From-Satish.txt
+Setup:
+
+New Message: Hi Shakeel, I was able to get the jhipster generator working on my local after I re-installed the npm package
+
+------------------------
+https://stackoverflow.com/questions/48915738/npm-err-405-method-not-allowed-expresslatest#:~:text=2-,Use%20these%20commands%3A,-npm%20config%20set
+
+------------------------
+
+$ npm login
+npm notice Log in on https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+npm ERR! code SELF_SIGNED_CERT_IN_CHAIN
+npm ERR! errno SELF_SIGNED_CERT_IN_CHAIN
+npm ERR! request to https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/-/v1/login failed, reason: self-signed certificate in certificate chain
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\C089602\AppData\Local\npm-cache\_logs\2023-06-30T13_18_46_319Z-debug-0.log
+
+
+------------------------
+
+Install jhipster-generator:
+jhipster.tech website is blocked by proxy.
+Workaround:
+Install npm
+Configure npm registry to Artifactory
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+
+Login to Artifactory, provide your credentials.
+
+npm login
+
+Install jhipster-generator npm package
+
+npm install -g generator-jhipster
+
+Download jhipster-registry
+Navigate to https://github.com/jhipster/jhipster-registry/releases
+Download latest release jar
+Copy it to C:\_home\programs directory
+Ensure the following ENV properties are set:
+Path to include C:\Users\<<NTLOGIN>>\AppData\Roaming\npm
+JAVA_HOME set to a JDK > 11 and < 19
+Commands:
+Open PowerShell and run the below commands:
+
+$Env:Path+=";C:\Users\FHVASA\AppData\Roaming\npm"
+
+$Env:JAVA_HOME="C:\_home\programs\jdk-17.0.6.10-hotspot"
+
+$Env:NODE_EXTRA_CA_CERTS = "C:\_home\programs\heroku\certs\USBankRootCA.cer"
+
+$Env:HTTP_PROXY = "http://proxy.na.global.prv:8080"
+
+$Env:HTTPS_PROXY = "http://proxy.na.global.prv:8080"
+
+Using Context Mapper
+
+Generate entities / bounded contexts, context maps using ContextMapper Eclipse Plugin
+Create a new Example Project of type ContextMapper.
+This will add Free Marker examples for ContextMapper to generate JDL (JHipster Domain Language) Entities and Microservices spec file.
+Use JHipster generator to generate microservices code
+Jhipster jdl <<path to JDL file>>
+Troubleshoot: If you receive the below error, edit the JDL file and update the
+
+clientFramework react
+
+to
+
+clientFramework angularX
+
+Update maven-wrapper.properties for all generated projects to include artifactory URL
+
+distributionUrl=https://artifactory.us.bank-dns.com/artifactory/aplusrepo-maven-virtual/org/apache/maven/apache-maven/3.8.6/apache-maven-3.8.6-bin.zip
+
+wrapperUrl=https://artifactory.us.bank-dns.com/artifactory/aplusrepo-maven-virtual/org/apache/maven/wrapper/maven-wrapper/3.1.1/maven-wrapper-3.1.1.jar
+
+Update src/main/resources/swagger/api.yml.
+Download the shema.yml directly from zalando website and save it in a local directory. Update the ref to the local path
+
+ 
+
+       'application/problem+json':
+
+         schema:
+
+           $ref: 'C:/_home/programs/eclipse/zalando-problem-schema.yaml#/Problem'
+
+Open each .h2.server.properties and update the h2 server port to a unique port# for each of the microservices
+Set npm registry to Artifactory:
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/usb-ui-tools-npm-virtual/
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+Download nodejs from https://nodejs.org/dist/v16.17.0/node-v16.17.0-win-x64.zip
+Unzip the file.
+Copy node.exe to C:\Users\FHVASA\.m2\repository\com\github\eirslett\node\16.17.0\node-16.17.0-win-x64.exe
+
+ 
+
+Powershell Script to set the ENV:
+
+$Env:HTTP_PROXY="http://proxy.na.global.prv:8080"
+
+$Env:HTTPS_PROXY="http://proxy.na.global.prv:8080"
+
+$Env:Path+=";C:\Users\FHVASA\AppData\Roaming\npm"
+
+$Env:JAVA_HOME="C:\_home\programs\jdk-17.0.6.10-hotspot"
+
+$Env:NODE_EXTRA_CA_CERTS = "C:\_home\programs\heroku\certs\USBankRootCA.cer"
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/usb-ui-tools-npm-virtual/
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/api/npm/npm-remotes/
+
+npm config set registry https://artifactory.us.bank-dns.com/artifactory/npm-remotes/
+
+ 
+
+ 
+
+ 
+
+Run JHipster Registry:
+
+java -jar .\jhipster-registry-7.4.0.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=Yzg2ODIzMDhlYjY2ZjU3NjEyN2E0Y2M3MGRmNWU3MTlkY2Y1OWY4NzVmZjE5Yjk3OWE1MGI0YmY2YTEyNWIwMzhhMzcyZDVjOWY3ZThhYzNkZDcxNDkzNTUyNWJiMDgyZWU2OWJhZWZlODdlMmY0YTI4ZjAwMjdlY2M2YzIzNGU= --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:/C:/_home/programs/jhipster-registry-sample-config
+
+>>>>>>>>>>>>>>>>>>>>
+settings.xml
+
+  Updates to keyboard shortcuts … On Thursday, August 1, 2024, Drive keyboard shortcuts will be updated to give you first-letters navigation.Learn more
+settings.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups>
+    </pluginGroups>
+    <proxies>
+        <proxy>
+            <id>USBankProxy1</id>
+            <active>true</active>
+            <protocol>https</protocol>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <host>web-proxyapp.us.bank-dns.com</host>
+            <port>3128</port>
+            <nonProxyHosts>localhost|artifactory.us.bank-dns.com|*.bank-dns.com</nonProxyHosts>
+        </proxy>
+        <proxy>
+            <id>USBankProxy2</id>
+            <active>true</active>
+            <protocol>http</protocol>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <host>web-proxyapp.us.bank-dns.com</host>
+            <port>3128</port>
+            <nonProxyHosts>localhost|artifactory.us.bank-dns.com|*.bank-dns.com</nonProxyHosts>
+        </proxy>
+    </proxies>
+    <servers>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>idc_openapi-maven-virtual_central</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>EDAI-Central</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>EDAI-Central-plugins</id>
+        </server>
+        <server>
+           <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>idc_openapi-maven-virtual_snapshots</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>idc_olb_all-maven-virtual_snapshots</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>artifactory</id>
+        </server>
+        <server>
+           <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>localartifactory</id>
+        </server>
+        <server>
+           <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>snapshots</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>central</id>
+        </server>
+        <server>
+           <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>EDAI-Central-MuleSoft</id>
+        </server>
+        <server>
+           <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>Mulesoft-Central</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>Mulesoft-Central-plugins</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>_digitalservicing-maven-virtual_central</id>
+        </server>
+        <server>
+            <username>C089602</username>
+            <password>AP4vFk8DvwY5VBkbk47dNt9xuWh</password>
+            <id>_digitalservicing-maven-virtual_snapshots</id>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>_usbank-edai-maven</name>
+                    <url>https://artifactory.us.bank-dns.com/artifactory/usb-edai-maven-virtual/</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>_usbank-edai-maven</name>
+                    <url>https://artifactory.us.bank-dns.com/artifactory/usb-edai-maven-virtual/</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>idc_openapi-maven-virtual_central</id>
+                    <name>idc_openapi-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-virtual</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>idc_openapi-maven-virtual_snapshots</id>
+                    <name>idc_openapi-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-virtual</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>idc_olb_all-maven-virtual_central</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>idc_olb_all-maven-virtual_snapshots</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>_idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>_idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>_usbank-edai-maven</name>
+                    <url>https://artifactory.us.bank-dns.com/artifactory/usb-edai-maven-virtual/</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>_usbank-edai-maven</name>
+                    <url>https://artifactory.us.bank-dns.com/artifactory/usb-edai-maven-virtual//</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>olb_all_central</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>olb_all_snapshots</id>
+                    <name>idc_olb_all-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-virtual</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>idc_openapi-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-virtual</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>snapshots</id>
+                    <name>idc_openapi-maven-virtual</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-virtual</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>artifactory</id>
+        </profile>
+
+        <profile>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>idc_openapi-maven-local_central</id>
+                    <name>idc_openapi-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-release-local/</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>idc_openapi-maven-local_snapshots</id>
+                    <name>idc_openapi-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-release-local/</url>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>idc_olb_all-maven-local_central</id>
+                    <name>idc_olb_all-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-release-local/</url>
+                </repository>
+                <repository>
+                    <snapshots/>
+                    <id>idc_olb_all-maven-local_snapshots</id>
+                    <name>idc_olb_all-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_olb_all-maven-release-local</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>_openapi-maven-local_central</id>
+                    <name>_openapi-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-release-local/</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots/>
+                    <id>_openapi-maven-local_snapshots</id>
+                    <name>_openapi-maven-local</name>
+                    <url>https://artifactory.us.bank-dns.com:443/artifactory/idc_openapi-maven-release-local/</url>
+                </pluginRepository>
+            </pluginRepositories>
+
+            <id>localartifactory</id>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>artifactory</activeProfile>
+        <activeProfile>localartifactory</activeProfile>
+    </activeProfiles>
+</settings>
