@@ -1,0 +1,531 @@
+Java Resolvers and Schema
+
+
+query CollectionsByCustomerLocation($customerLocationEnterpriseId: String!) {
+  customerLocation(customerLocationEnterpriseId: $customerLocationEnterpriseId) {
+    id
+    customerLocationEnterpriseId
+    externalMerchantId
+    midGroup
+    processingCenterCode
+    generalFinanceSetup {
+      clientGroupNumber
+      billingMerchantNumber
+    }
+    businessInfo {
+      id
+      establishedYear
+      businessDescription
+      extendedMcc {
+        extendedMccCode
+        name
+      }
+    }
+  }
+}
+
+The query above is my apollo federated query. All the fields belong to the subgraph customerLocation. Only extendedMCC entity belongs to the other subgraph known as referenceData. I need specific code to write the _entities and union and other required scalars for schema.graphls file.
+Also I need the Java based Resolvers with service classes. Also generate the Test Code for unit testing with hard coded values.
+Make sure to use only following libraries,
+1- spring-boot-starter-graphql
+2- Federation-graphql-java-support version 4.3.0
+3- Graphql-java-extended-scalars 21.0
+<<<<<<
+Here is a step-by-step guide to create the required GraphQL schema and Java-based resolvers, including unit tests with hard-coded values, using the specified libraries.
+
+1. GraphQL Schema Configuration
+In your schema.graphqls file, define the schema for the customerLocation and extendedMCC entities. You will also need to define _Entity union and _Service type for Apollo Federation.
+
+graphql
+TODO
+type Query {
+  _entities(representations: [_Any!]!): [_Entity]!
+  _service: _Service!
+  customerLocation(customerLocationEnterpriseId: String!): CustomerLocation
+}
+
+type CustomerLocation {
+  id: ID!
+  customerLocationEnterpriseId: String!
+  externalMerchantId: String
+  midGroup: String
+  processingCenterCode: String
+  generalFinanceSetup: GeneralFinanceSetup
+  businessInfo: BusinessInfo
+}
+
+type GeneralFinanceSetup {
+  clientGroupNumber: String
+  billingMerchantNumber: String
+}
+
+type BusinessInfo {
+  id: ID!
+  establishedYear: String
+  businessDescription: String
+  extendedMcc: ExtendedMcc
+}
+
+type ExtendedMcc {
+  extendedMccCode: String
+  name: String
+}
+
+union _Entity = CustomerLocation | ExtendedMcc
+
+scalar _Any
+
+type _Service {
+  sdl: String!
+}
+2. Java Configuration
+Dependencies
+Add the following dependencies to your pom.xml:
+
+xml
+TODO
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-graphql</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.apollographql.federation</groupId>
+        <artifactId>federation-graphql-java-support</artifactId>
+        <version>4.3.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.graphql-java-kickstart</groupId>
+        <artifactId>graphql-java-extended-scalars</artifactId>
+        <version>21.0</version>
+    </dependency>
+</dependencies>
+Entity Classes
+java
+TODO
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomerLocation {
+    private String id;
+    private String customerLocationEnterpriseId;
+    private String externalMerchantId;
+    private String midGroup;
+    private String processingCenterCode;
+    private GeneralFinanceSetup generalFinanceSetup;
+    private BusinessInfo businessInfo;
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class GeneralFinanceSetup {
+    private String clientGroupNumber;
+    private String billingMerchantNumber;
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class BusinessInfo {
+    private String id;
+    private String establishedYear;
+    private String businessDescription;
+    private ExtendedMcc extendedMcc;
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ExtendedMcc {
+    private String extendedMccCode;
+    private String name;
+}
+Service Classes
+java
+TODO
+@Service
+public class CustomerLocationService {
+    public CustomerLocation getCustomerLocation(String id) {
+        // Mock data, replace with actual database/service call
+        return new CustomerLocation(
+                id,
+                "12345",
+                "extMerchant123",
+                "midGroup123",
+                "processingCenterCode123",
+                new GeneralFinanceSetup("clientGroup123", "billingMerchant123"),
+                new BusinessInfo("businessId123", "2000", "Business Description", new ExtendedMcc("mccCode123", "MCC Name"))
+        );
+    }
+}
+Resolver Classes
+java
+TODO
+@Component
+public class QueryResolver implements GraphQLQueryResolver {
+    @Autowired
+    private CustomerLocationService customerLocationService;
+
+    public CustomerLocation customerLocation(String customerLocationEnterpriseId) {
+        return customerLocationService.getCustomerLocation(customerLocationEnterpriseId);
+    }
+
+    public List<Object> _entities(List<Map<String, Object>> representations) {
+        return representations.stream()
+            .map(this::resolveEntity)
+            .collect(Collectors.toList());
+    }
+
+    private Object resolveEntity(Map<String, Object> representation) {
+        String typeName = (String) representation.get("__typename");
+        if ("CustomerLocation".equals(typeName)) {
+            return customerLocationService.getCustomerLocation((String) representation.get("customerLocationEnterpriseId"));
+        }
+        // Add other entity resolutions here
+        return null;
+    }
+
+    public String _service() {
+        return "schema { query: Query }";
+    }
+}
+3. Unit Tests
+Create unit tests for your resolvers.
+
+java
+TODO
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class QueryResolverTest {
+
+    @Autowired
+    private QueryResolver queryResolver;
+
+    @Test
+    public void testCustomerLocation() {
+        CustomerLocation customerLocation = queryResolver.customerLocation("12345");
+        assertNotNull(customerLocation);
+        assertEquals("12345", customerLocation.getCustomerLocationEnterpriseId());
+    }
+
+    @Test
+    public void testEntities() {
+        Map<String, Object> representation = new HashMap<>();
+        representation.put("__typename", "CustomerLocation");
+        representation.put("customerLocationEnterpriseId", "12345");
+
+        List<Map<String, Object>> representations = Collections.singletonList(representation);
+        List<Object> entities = queryResolver._entities(representations);
+
+        assertNotNull(entities);
+        assertEquals(1, entities.size());
+        assertTrue(entities.get(0) instanceof CustomerLocation);
+        assertEquals("12345", ((CustomerLocation) entities.get(0)).getCustomerLocationEnterpriseId());
+    }
+}
+This setup provides a GraphQL schema with Apollo Federation support, Java-based resolvers, and unit tests for the specified query using the specified libraries.
+
+What needs to be changed for referenceData subgraph?
+<<<<<<
+For the referenceData subgraph, you'll need to define and implement the ExtendedMcc entity. This involves updating the schema, creating service classes, resolvers, and unit tests specifically for the ExtendedMcc entity in the referenceData subgraph.
+
+1. GraphQL Schema Configuration
+Update the schema.graphqls file to include the ExtendedMcc type and necessary Federation support.
+
+graphql
+TODO
+type Query {
+  _entities(representations: [_Any!]!): [_Entity]!
+  _service: _Service!
+  extendedMcc(extendedMccCode: String!): ExtendedMcc
+}
+
+type ExtendedMcc @key(fields: "extendedMccCode") {
+  extendedMccCode: String!
+  name: String
+}
+
+union _Entity = ExtendedMcc
+
+scalar _Any
+
+type _Service {
+  sdl: String!
+}
+2. Java Configuration
+Entity Classes
+java
+TODO
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ExtendedMcc {
+    private String extendedMccCode;
+    private String name;
+}
+Service Classes
+Create a service class to handle the ExtendedMcc entity.
+
+java
+TODO
+@Service
+public class ExtendedMccService {
+    public ExtendedMcc getExtendedMcc(String extendedMccCode) {
+        // Mock data, replace with actual database/service call
+        return new ExtendedMcc(extendedMccCode, "MCC Name");
+    }
+}
+Resolver Classes
+Create a resolver class to handle queries and entity resolution for ExtendedMcc.
+
+java
+TODO
+@Component
+public class ExtendedMccResolver implements GraphQLQueryResolver {
+    @Autowired
+    private ExtendedMccService extendedMccService;
+
+    public ExtendedMcc extendedMcc(String extendedMccCode) {
+        return extendedMccService.getExtendedMcc(extendedMccCode);
+    }
+
+    public List<Object> _entities(List<Map<String, Object>> representations) {
+        return representations.stream()
+            .map(this::resolveEntity)
+            .collect(Collectors.toList());
+    }
+
+    private Object resolveEntity(Map<String, Object> representation) {
+        String typeName = (String) representation.get("__typename");
+        if ("ExtendedMcc".equals(typeName)) {
+            return extendedMccService.getExtendedMcc((String) representation.get("extendedMccCode"));
+        }
+        return null;
+    }
+
+    public String _service() {
+        return "schema { query: Query }";
+    }
+}
+3. Unit Tests
+Create unit tests for your resolvers.
+
+java
+TODO
+@SpringBootTest
+@RunWith(SpringRunner.class)
+public class ExtendedMccResolverTest {
+
+    @Autowired
+    private ExtendedMccResolver extendedMccResolver;
+
+    @Test
+    public void testExtendedMcc() {
+        ExtendedMcc extendedMcc = extendedMccResolver.extendedMcc("mccCode123");
+        assertNotNull(extendedMcc);
+        assertEquals("mccCode123", extendedMcc.getExtendedMccCode());
+        assertEquals("MCC Name", extendedMcc.getName());
+    }
+
+    @Test
+    public void testEntities() {
+        Map<String, Object> representation = new HashMap<>();
+        representation.put("__typename", "ExtendedMcc");
+        representation.put("extendedMccCode", "mccCode123");
+
+        List<Map<String, Object>> representations = Collections.singletonList(representation);
+        List<Object> entities = extendedMccResolver._entities(representations);
+
+        assertNotNull(entities);
+        assertEquals(1, entities.size());
+        assertTrue(entities.get(0) instanceof ExtendedMcc);
+        assertEquals("mccCode123", ((ExtendedMcc) entities.get(0)).getExtendedMccCode());
+        assertEquals("MCC Name", ((ExtendedMcc) entities.get(0)).getName());
+    }
+}
+Summary
+For the referenceData subgraph:
+
+Update the schema.graphqls file to include the ExtendedMcc entity with Federation support.
+Create the ExtendedMcc entity class.
+Implement the ExtendedMccService class.
+Implement the ExtendedMccResolver class.
+Create unit tests for the ExtendedMccResolver.
+This setup allows the ExtendedMcc entity to be part of the Apollo Federation and provides the necessary service and resolver logic in Java using the specified libraries.
+
+How the ExtendedMccResolver class code be triggered from apollo when the federated query is executed? How the runtime will know the correct resolver?
+<<<<<<
+To ensure the ExtendedMccResolver class code is correctly triggered by Apollo when executing a federated query, you need to implement the Apollo Federation's _entities query resolver in a way that it properly resolves the entities based on their type. Apollo Federation uses the @key directive to identify and resolve references to entities in subgraphs.
+
+Here's a step-by-step guide to set this up:
+
+1. Define the ExtendedMcc Entity with the @key Directive in Schema
+Ensure your ExtendedMcc type is defined with the @key directive in the schema.graphqls file:
+
+graphql
+TODO
+type ExtendedMcc @key(fields: "extendedMccCode") {
+  extendedMccCode: String!
+  name: String
+}
+2. Implement _Entity Union and _Any Scalar
+In your schema, the _Entity union and _Any scalar should be defined as follows:
+
+graphql
+TODO
+scalar _Any
+
+union _Entity = CustomerLocation | ExtendedMcc
+
+type Query {
+  _entities(representations: [_Any!]!): [_Entity]!
+  _service: _Service!
+  extendedMcc(extendedMccCode: String!): ExtendedMcc
+}
+
+type _Service {
+  sdl: String!
+}
+3. Create a Custom Scalar for _Any
+You need a custom scalar to handle the _Any type. Here's an example using the graphql-java-extended-scalars library:
+
+java
+TODO
+import graphql.language.StringValue;
+import graphql.schema.Coercing;
+import graphql.schema.GraphQLScalarType;
+
+public class AnyScalar extends GraphQLScalarType {
+    public AnyScalar() {
+        super("Any", "Custom scalar for representing any type", new Coercing<Object, Object>() {
+            @Override
+            public Object serialize(Object dataFetcherResult) {
+                return dataFetcherResult;
+            }
+
+            @Override
+            public Object parseValue(Object input) {
+                return input;
+            }
+
+            @Override
+            public Object parseLiteral(Object input) {
+                if (input instanceof StringValue) {
+                    return ((StringValue) input).getValue();
+                }
+                return input;
+            }
+        });
+    }
+}
+4. Implement the _entities Resolver
+The _entities resolver needs to delegate to the correct service based on the __typename field in the representations. Update your resolver to handle this:
+
+java
+TODO
+import org.springframework.stereotype.Component;
+import graphql.kickstart.tools.GraphQLQueryResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@Component
+public class ExtendedMccResolver implements GraphQLQueryResolver {
+    @Autowired
+    private CustomerLocationService customerLocationService;
+
+    @Autowired
+    private ExtendedMccService extendedMccService;
+
+    public CustomerLocation customerLocation(String customerLocationEnterpriseId) {
+        return customerLocationService.getCustomerLocation(customerLocationEnterpriseId);
+    }
+
+    public ExtendedMcc extendedMcc(String extendedMccCode) {
+        return extendedMccService.getExtendedMcc(extendedMccCode);
+    }
+
+    public List<Object> _entities(List<Map<String, Object>> representations) {
+        return representations.stream()
+            .map(this::resolveEntity)
+            .collect(Collectors.toList());
+    }
+
+    private Object resolveEntity(Map<String, Object> representation) {
+        String typeName = (String) representation.get("__typename");
+        if ("CustomerLocation".equals(typeName)) {
+            return customerLocationService.getCustomerLocation((String) representation.get("customerLocationEnterpriseId"));
+        } else if ("ExtendedMcc".equals(typeName)) {
+            return extendedMccService.getExtendedMcc((String) representation.get("extendedMccCode"));
+        }
+        return null;
+    }
+
+    public String _service() {
+        return "schema { query: Query }";
+    }
+}
+5. Spring Configuration
+Ensure your Spring Boot application is configured to recognize the GraphQL schema and resolvers. This is typically done in your main application class or a configuration class:
+
+java
+TODO
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class GraphqlApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(GraphqlApplication.class, args);
+    }
+}
+6. Unit Tests
+You should have unit tests to ensure your resolver works correctly:
+
+java
+TODO
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
+public class ExtendedMccResolverTest {
+
+    @Autowired
+    private ExtendedMccResolver extendedMccResolver;
+
+    @Test
+    public void testExtendedMcc() {
+        ExtendedMcc extendedMcc = extendedMccResolver.extendedMcc("mccCode123");
+        assertNotNull(extendedMcc);
+        assertEquals("mccCode123", extendedMcc.getExtendedMccCode());
+        assertEquals("MCC Name", extendedMcc.getName());
+    }
+
+    @Test
+    public void testEntities() {
+        Map<String, Object> representation = new HashMap<>();
+        representation.put("__typename", "ExtendedMcc");
+        representation.put("extendedMccCode", "mccCode123");
+
+        List<Map<String, Object>> representations = List.of(representation);
+        List<Object> entities = extendedMccResolver._entities(representations);
+
+        assertNotNull(entities);
+        assertEquals(1, entities.size());
+        assertTrue(entities.get(0) instanceof ExtendedMcc);
+        assertEquals("mccCode123", ((ExtendedMcc) entities.get(0)).getExtendedMccCode());
+        assertEquals("MCC Name", ((ExtendedMcc) entities.get(0)).getName());
+    }
+}
+By following these steps, Apollo Federation will be able to correctly delegate the _entities query to your ExtendedMccResolver and resolve ExtendedMcc entities properly. This configuration ensures that the runtime can correctly identify and call the appropriate resolver based on the __typename field in the query.
+
