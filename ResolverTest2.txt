@@ -1,3 +1,54 @@
+
+import static graphql.schema.idl.RuntimeWiring.newRuntimeWiring;
+import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
+import static graphql.schema.idl.SchemaGenerator.makeExecutableSchema;
+import static graphql.schema.idl.SchemaParser.newParser;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import graphql.GraphQL;
+import graphql.schema.DataFetcher;
+import graphql.schema.GraphQLSchema;
+
+import java.util.List;
+
+public class ExtendedMccResolverTest {
+    private final Logger log = LoggerFactory.getLogger(ExtendedMccResolverTest.class);
+
+    private GraphQL graphQL;
+
+    @BeforeEach
+    public void setup() {
+        String schema = "type Query { _entities(representations: [_Any!]!): [_Entity]! } "
+                      + "scalar _Any "
+                      + "union _Entity = YourEntityType "
+                      + "type YourEntityType { id: ID! }";
+
+        DataFetcher<List<Object>> entitiesDataFetcher = new SchemaTransformer().resolveEntities();
+
+        GraphQLSchema graphQLSchema = makeExecutableSchema(
+            newParser().parse(schema),
+            newRuntimeWiring()
+                .type(newTypeWiring("Query")
+                    .dataFetcher("entities", entitiesDataFetcher))
+                .build()
+        );
+
+        graphQL = GraphQL.newGraphQL(graphQLSchema).build();
+    }
+
+    @Test
+    public void testGraphQLSetup() {
+        // Add your test cases here
+    }
+}
+
+
+
 import graphql.ExecutionInput;
 import graphql.GraphQL;
 import graphql.schema.DataFetcher;
