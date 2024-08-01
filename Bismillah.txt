@@ -1,211 +1,34 @@
-Sure! Here's how you can implement a GraphQL resolver in Java using the `graphql-java` library.
+pipeline {
+    agent any
 
-### Step 1: Define Your GraphQL Schema
-Create a file named `schema.graphqls` in your resources directory.
+    stages {
+        stage('Clean Up Old Deployments') {
+            steps {
+                script {
+                    def namespace = 'your-namespace'
+                    def labelSelector = 'app=your-app-label'
+                    // Fetch all deployments with the specified label
+                    def deployments = sh(script: "kubectl get deployments -n ${namespace} -l ${labelSelector} -o jsonpath='{.items[*].metadata.name}'", returnStdout: true).trim()
+                    def deploymentList = deployments.split(' ')
 
-```graphql
-type ExtendedMcc {
-  id: ID!
-  name: String!
-  code: String!
-  # other fields...
-}
+                    // Iterate through the deployments and delete the old ones
+                    for (deployment in deploymentList) {
+                        if (deployment != '') {
+                            // Customize the condition to decide which deployments to delete
+                            if (deployment.contains('old-criteria')) {
+                                sh "kubectl delete deployment ${deployment} -n ${namespace}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-type Query {
-  getExtendedMcc(id: ID!): ExtendedMcc
-  # other queries...
-}
-```
-
-### Step 2: Implement the Resolver in Java
-
-#### 1. Add Dependencies
-Ensure you have the necessary dependencies in your `pom.xml` file for `graphql-java` and `spring-boot`.
-
-```xml
-<dependency>
-    <groupId>com.graphql-java</groupId>
-    <artifactId>graphql-java</artifactId>
-    <version>17.3</version>
-</dependency>
-<dependency>
-    <groupId>com.graphql-java-kickstart</groupId>
-    <artifactId>graphql-spring-boot-starter</artifactId>
-    <version>11.1.0</version>
-</dependency>
-<dependency>
-    <groupId>com.graphql-java-kickstart</groupId>
-    <artifactId>graphiql-spring-boot-starter</artifactId>
-    <version>11.1.0</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-</dependency>
-```
-
-#### 2. Create the ExtendedMcc Model
-
-```java
-package com.example.graphql.model;
-
-public class ExtendedMcc {
-    private String id;
-    private String name;
-    private String code;
-
-    // Constructors, getters, and setters
-    public ExtendedMcc(String id, String name, String code) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
+        stage('Deploy New Version') {
+            steps {
+                // Your deployment steps here, e.g., running a helm chart or kubectl apply
+                sh 'kubectl apply -f your-deployment-file.yaml'
+            }
+        }
     }
 }
-```
-
-#### 3. Create the Data Fetcher
-
-```java
-package com.example.graphql.datafetcher;
-
-import com.example.graphql.model.ExtendedMcc;
-import graphql.schema.DataFetcher;
-import graphql.schema.DataFetchingEnvironment;
-import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.List;
-
-@Component
-public class GetExtendedMccDataFetcher implements DataFetcher<ExtendedMcc> {
-    private static List<ExtendedMcc> extendedMccList = Arrays.asList(
-        new ExtendedMcc("1", "MCC 1", "4411"),
-        new ExtendedMcc("2", "MCC 2", "4422")
-    );
-
-    @Override
-    public ExtendedMcc get(DataFetchingEnvironment dataFetchingEnvironment) {
-        String id = dataFetchingEnvironment.getArgument("id");
-        return extendedMccList.stream()
-                .filter(extendedMcc -> extendedMcc.getId().equals(id))
-                .findFirst()
-                .orElse(null);
-    }
-}
-```
-
-#### 4. Configure GraphQL
-
-```java
-package com.example.graphql.config;
-
-import com.example.graphql.datafetcher.GetExtendedMccDataFetcher;
-import graphql.schema.idl.RuntimeWiring;
-import graphql.schema.idl.TypeRuntimeWiring;
-import graphql.schema.idl.SchemaParser;
-import graphql.schema.idl.SchemaGenerator;
-import graphql.GraphQL;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
-
-import javax.annotation.PostConstruct;
-import java.io.File;
-import java.io.IOException;
-
-@Configuration
-public class GraphQLConfig {
-
-    private final ResourceLoader resourceLoader;
-    private GraphQL graphQL;
-    private final GetExtendedMccDataFetcher getExtendedMccDataFetcher;
-
-    public GraphQLConfig(ResourceLoader resourceLoader, GetExtendedMccDataFetcher getExtendedMccDataFetcher) {
-        this.resourceLoader = resourceLoader;
-        this.getExtendedMccDataFetcher = getExtendedMccDataFetcher;
-    }
-
-    @Bean
-    public GraphQL graphQL() {
-        return graphQL;
-    }
-
-    @PostConstruct
-    public void init() throws IOException {
-        Resource resource = new ClassPathResource("schema.graphqls");
-        File schemaFile = resource.getFile();
-        graphQL = GraphQL.newGraphQL(buildSchema(schemaFile)).build();
-    }
-
-    private graphql.schema.GraphQLSchema buildSchema(File schemaFile) throws IOException {
-        TypeRuntimeWiring.Builder typeWiring = TypeRuntimeWiring.newTypeWiring("Query")
-                .dataFetcher("getExtendedMcc", getExtendedMccDataFetcher);
-
-        RuntimeWiring runtimeWiring = RuntimeWiring.newRuntimeWiring()
-                .type(typeWiring)
-                .build();
-
-        SchemaParser schemaParser = new SchemaParser();
-        SchemaGenerator schemaGenerator = new SchemaGenerator();
-        return schemaGenerator.makeExecutableSchema(schemaParser.parse(schemaFile), runtimeWiring);
-    }
-}
-```
-
-#### 5. Create the Spring Boot Application
-
-```java
-package com.example.graphql;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class GraphqlApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(GraphqlApplication.class, args);
-    }
-}
-```
-
-### Step 3: Test the Query
-Start your Spring Boot application and navigate to the GraphiQL interface (typically available at `http://localhost:8080/graphiql`). You can then test the following query:
-
-```graphql
-query {
-  getExtendedMcc(id: "1") {
-    id
-    name
-    code
-  }
-}
-```
-
-By following these steps, you should be able to implement the entity fetcher in Java and resolve the "No entity fetcher" error.
